@@ -1,4 +1,8 @@
 import './styles.css'
-import backgroundImage from './pexels-miguel-á-padriñán-255379.jpg'
+
+const main = document.getElementById('main')
+
+
+ 
 
 console.log('hello!')
