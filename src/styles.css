@@ -4,6 +4,25 @@ body {
     background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
 }
 
-#main {
+#header {
+    background: white;
+    opacity: 0.3;
+    min-height: 80px;
+    height: 20vh;
+}
 
+#container {
+    display: grid;
+    grid-template-columns: 20vw auto; 
+
+}
+
+.sidebar {
+    background: grey;
+    opacity: 0.2;
+    height: 80vh;
+}
+
+.content {
+    height: 80vh; 
 }

@@ -21,7 +21,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\n    margin: 0;\n    background: rgb(238,174,202);\n    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);\n}\n\n#main {\n\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\n    margin: 0;\n    background: rgb(238,174,202);\n    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);\n}\n\n#header {\n    background: white;\n    opacity: 0.3;\n    min-height: 80px;\n    height: 20vh;\n}\n\n#container {\n    display: grid;\n    grid-template-columns: 20vw auto; \n\n}\n\n.sidebar {\n    background: grey;\n    opacity: 0.2;\n    height: 80vh;\n}\n\n.content {\n    height: 80vh; \n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -494,6 +494,40 @@ function styleTagTransform(css, styleElement) {
 
 module.exports = styleTagTransform;
 
+/***/ }),
+
+/***/ "./src/DOM.js":
+/*!********************!*\
+  !*** ./src/DOM.js ***!
+  \********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "webContent": () => (/* binding */ webContent)
+/* harmony export */ });
+
+const webContent = (() => {
+    const main = document.getElementById('main');
+    const header = document.createElement('header');
+    const container = document.createElement('div');
+    const sidebar = document.createElement('div');
+    const content = document.createElement('div')
+    
+    header.id = 'header'
+    container.id = 'container'
+    sidebar.className = 'sidebar'
+    content.className = 'content'
+
+    main.appendChild(header)
+    main.appendChild(container)
+    container.appendChild(sidebar)
+    container.appendChild(content)
+})();
+
+
+
+
 /***/ })
 
 /******/ 	});
@@ -577,9 +611,13 @@ var __webpack_exports__ = {};
   \**********************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles.css */ "./src/styles.css");
+/* harmony import */ var _DOM_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DOM.js */ "./src/DOM.js");
 
+ 
 
-const main = document.getElementById('main')
+// const main = document.getElementById('main')
+
+(0,_DOM_js__WEBPACK_IMPORTED_MODULE_1__.webContent)()
 
 
  
