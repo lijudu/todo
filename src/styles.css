@@ -1,3 +1,7 @@
+:root {
+    --rowNum: "";
+}
+
 body {
     margin: 0;
     background: rgb(238,174,202);
@@ -24,5 +28,9 @@ body {
 }
 
 .content {
+    display: grid;
     height: 80vh; 
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat((--rowNum), 1fr);
+    row-gap: 20px;
 }
