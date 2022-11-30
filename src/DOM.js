@@ -1,4 +1,5 @@
 
+// Set up basic webpage layout (header, sidebar, content)
 const webContent = (() => {
     const main = document.getElementById('main');
     const header = document.createElement('header');
@@ -17,9 +18,23 @@ const webContent = (() => {
     container.appendChild(content)
 
     header.innerText = 'ToDo App - expand sidebar btn'
-    sidebar.innerText = 'Sidebar - home/today/upcoming/projects'
+    sidebar.innerText = 'Sidebar'
+
+    // create new (todo, project) button
+    const newButton = document.createElement('button')
+    newButton.id = 'new'
+    newButton.innerText = '+'
+    sidebar.appendChild(newButton)
 
 })();
 
+// createNew button (allows user to create new todo or project)
+
+// const addNew = (() => {
+//     const newButton = document.createElement('button')
+//     newButton.innerText = '+'
+
+//     return newButton
+// })();
 
 export { webContent }
