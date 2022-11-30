@@ -21,7 +21,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ":root {\n    --rowNum: \"\";\n}\n\nbody {\n    margin: 0;\n    background: rgb(238,174,202);\n    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);\n}\n\n#header {\n    background: white;\n    opacity: 0.3;\n    min-height: 80px;\n    height: 20vh;\n}\n\n#container {\n    display: grid;\n    grid-template-columns: 20vw auto; \n\n}\n\n.sidebar {\n    background: grey;\n    opacity: 0.2;\n    height: 80vh;\n}\n\n.content {\n    display: grid;\n    height: 80vh; \n    grid-template-columns: repeat(3, 1fr);\n    grid-template-rows: repeat((--rowNum), 1fr);\n    row-gap: 20px;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ":root {\n    --rowNum: \"\";\n}\n\nbody {\n    margin: 0;\n}\n\n#header {\n    background: rgba(221, 44, 195, 0.2);\n    /* min-height: 80px; */\n    height: 10vh;\n}\n\n#container {\n    display: grid;\n    grid-template-columns: 20vw auto; \n    height: 90vh;\n\n}\n\n.sidebar {\n    background: rgba(35, 131, 92, 0.4);\n    /* height: 90vh; */\n}\n\n.content {\n    display: grid;\n    /* height: 90vh;  */\n    grid-template-columns: repeat(3, 1fr);\n    grid-template-rows: repeat((--rowNum), 1fr);\n    gap: 20px;\n    background: rgb(238,174,202);\n    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);\n    \n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -513,7 +513,7 @@ const webContent = (() => {
     const container = document.createElement('div');
     const sidebar = document.createElement('div');
     const content = document.createElement('div')
-    
+
     header.id = 'header'
     container.id = 'container'
     sidebar.className = 'sidebar'
@@ -523,6 +523,10 @@ const webContent = (() => {
     main.appendChild(container)
     container.appendChild(sidebar)
     container.appendChild(content)
+
+    header.innerText = 'ToDo App - expand sidebar btn'
+    sidebar.innerText = 'Sidebar - home/today/upcoming/projects'
+
 })();
 
 
@@ -617,7 +621,7 @@ __webpack_require__.r(__webpack_exports__);
 
 // const main = document.getElementById('main')
 
-// (0,_DOM_js__WEBPACK_IMPORTED_MODULE_1__.webContent)()
+(0,_DOM_js__WEBPACK_IMPORTED_MODULE_1__.webContent)()
 
 
  

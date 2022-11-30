@@ -5,7 +5,7 @@ const webContent = (() => {
     const container = document.createElement('div');
     const sidebar = document.createElement('div');
     const content = document.createElement('div')
-    
+
     header.id = 'header'
     container.id = 'container'
     sidebar.className = 'sidebar'
@@ -15,6 +15,10 @@ const webContent = (() => {
     main.appendChild(container)
     container.appendChild(sidebar)
     container.appendChild(content)
+
+    header.innerText = 'ToDo App - expand sidebar btn'
+    sidebar.innerText = 'Sidebar - home/today/upcoming/projects'
+
 })();
 
 
