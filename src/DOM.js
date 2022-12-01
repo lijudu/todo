@@ -1,6 +1,6 @@
 
 // Set up basic webpage layout (header, sidebar, content)
-const webContent = (() => {
+function webContent() {
     const main = document.getElementById('main');
     const header = document.createElement('header');
     const container = document.createElement('div');
@@ -26,15 +26,44 @@ const webContent = (() => {
     newButton.innerText = '+'
     sidebar.appendChild(newButton)
 
-})();
+    // create popup with input for todo/project 
+    const popinput = document.createElement('div')
+    popinput.id = 'popup'
+    const popcontent = document.createElement('div')
+    popcontent.id = 'popcontent'
 
-// createNew button (allows user to create new todo or project)
+    popcontent.innerText = 'click to make new todo or project'
 
-// const addNew = (() => {
-//     const newButton = document.createElement('button')
-//     newButton.innerText = '+'
+    main.appendChild(popinput)
+    popinput.appendChild(popcontent)
+}
 
-//     return newButton
-// })();
+// createNew button popup (allows user to create new todo or project)
 
-export { webContent }
+function popup(){
+    const newBTN = document.getElementById('new')
+    const popup = document.getElementById('popup')
+    
+    newBTN.addEventListener('click', function() {
+        popup.style.display = 'inline-block'  
+    })
+
+    // popup delete button
+    const popdelete = document.createElement('button')
+    popdelete.id = 'popdelete'
+
+    popcontent.appendChild(popdelete)
+
+    popdelete.onclick = function(){
+        popup.style.display = 'none'
+    }
+
+    // delete popup if clicked outiside modal 
+    window.onclick = function(e) {
+        if (e.target == popup) {
+            popup.style.display = 'none'
+        }
+    }
+}
+
+export { webContent, popup }

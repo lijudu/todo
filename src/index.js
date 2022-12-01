@@ -1,5 +1,6 @@
 import './styles.css'
-import { webContent }from './DOM.js' 
+import { webContent, popup }from './DOM.js' 
 
 
 webContent()
+popup()

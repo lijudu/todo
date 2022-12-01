@@ -34,3 +34,33 @@ body {
     background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
     
 }
+
+#popup {
+    display: none;
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 20%;
+    overflow: auto; 
+    background: white;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0);
+    /* filter: blur(8px); */
+    /* margin: auto; */
+}
+
+#popdelete::before {
+    content: "\2715";
+    font-size: 20px;
+
+}
+
+#popcontent {
+    background-color: grey;
+    width: 70%;
+    height: 30%;
+    position: fixed;
+    left: 20%;
+}
