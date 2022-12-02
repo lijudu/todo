@@ -50,9 +50,18 @@ function popup(){
     // format popup modal content - should popup be own function?
     const poptitle = document.createElement('div')
     poptitle.className = 'poptitle'
+    poptitle.innerText = 'Create New Todo or Project'
     popcontent.appendChild(poptitle)
 
-    poptitle.innerText = 'Create New Todo or Project'
+
+    const popbelow = document.createElement('div')
+    popbelow.className = 'popbelow'
+    poptitle.appendChild(popbelow)
+
+    const popsidebar = document.createElement('div')
+    popsidebar.className = 'popsidebar'
+    popsidebar.innerText = 'newToDoBTN'
+    popbelow.appendChild(popsidebar)
 
 
     // popup delete button

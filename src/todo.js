@@ -1,4 +1,4 @@
-// button that 
+// input content for new todo (title, description, duedate priority) 
 
 
-// will eventually create createNew(todo, project)
+// add input into new content section on maincontent 

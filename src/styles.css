@@ -60,10 +60,17 @@ body {
 #popcontent {
     background-color: white;
     width: 70%;
-    height: 30%;
+    /* height: 30%; */
     position: fixed;
     left: 20%;
     display: flex;
     align-items:flex-start;
     justify-content: space-between;
+}
+
+
+.popsidebar {
+    width: 55%;
+    height: 30vh;
+    border-right: 1px solid black;
 }
