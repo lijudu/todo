@@ -53,14 +53,17 @@ body {
 
 #popdelete::before {
     content: "\2715";
-    font-size: 20px;
+    font-size: 10px;
 
 }
 
 #popcontent {
-    background-color: grey;
+    background-color: white;
     width: 70%;
     height: 30%;
     position: fixed;
     left: 20%;
+    display: flex;
+    align-items:flex-start;
+    justify-content: space-between;
 }

@@ -26,16 +26,15 @@ function webContent() {
     newButton.innerText = '+'
     sidebar.appendChild(newButton)
 
-    // create popup with input for todo/project 
+    // create popup modal that is display:none by default
     const popinput = document.createElement('div')
     popinput.id = 'popup'
     const popcontent = document.createElement('div')
     popcontent.id = 'popcontent'
 
-    popcontent.innerText = 'click to make new todo or project'
-
     main.appendChild(popinput)
     popinput.appendChild(popcontent)
+    
 }
 
 // createNew button popup (allows user to create new todo or project)
@@ -47,6 +46,14 @@ function popup(){
     newBTN.addEventListener('click', function() {
         popup.style.display = 'inline-block'  
     })
+
+    // format popup modal content - should popup be own function?
+    const poptitle = document.createElement('div')
+    poptitle.className = 'poptitle'
+    popcontent.appendChild(poptitle)
+
+    poptitle.innerText = 'Create New Todo or Project'
+
 
     // popup delete button
     const popdelete = document.createElement('button')
