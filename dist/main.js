@@ -21,7 +21,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ":root {\n    --rowNum: \"\";\n}\n\nbody {\n    margin: 0;\n}\n\n#header {\n    background: rgba(221, 44, 195, 0.2);\n    /* min-height: 80px; */\n    height: 10vh;\n}\n\n#container {\n    display: grid;\n    grid-template-columns: 15vw auto; \n    height: 90vh;\n\n}\n\n.sidebar {\n    background: rgba(35, 131, 92, 0.4);\n    /* height: 90vh; */\n}\n\n.content {\n    display: grid;\n    /* height: 90vh;  */\n    grid-template-columns: repeat(3, 1fr);\n    grid-template-rows: repeat((--rowNum), 1fr);\n    gap: 20px;\n    background: rgb(238,174,202);\n    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);\n    \n}\n\n#popup {\n    display: none;\n    z-index: 1;\n    position: fixed;\n    top: 0;\n    left: 0;\n    padding-top: 20%;\n    overflow: auto; \n    background: white;\n    height: 100%;\n    width: 100%;\n    background-color: rgba(0,0,0,0);\n    /* filter: blur(8px); */\n    /* margin: auto; */\n}\n\n#popdelete::before {\n    content: \"\\2715\";\n    font-size: 10px;\n\n}\n\n#popcontent {\n    background-color: white;\n    width: 70%;\n    /* height: 30%; */\n    position: fixed;\n    left: 20%;\n    display: flex;\n    align-items:flex-start;\n    justify-content: space-between;\n}\n\n\n.popsidebar {\n    width: 55%;\n    height: 30vh;\n    border-right: 1px solid black;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ":root {\n    --rowNum: \"\";\n}\n\nbody {\n    margin: 0;\n}\n\n#header {\n    background: rgba(221, 44, 195, 0.2);\n    /* min-height: 80px; */\n    height: 10vh;\n}\n\n#container {\n    display: grid;\n    grid-template-columns: 15vw auto; \n    height: 90vh;\n\n}\n\n.sidebar {\n    background: rgba(35, 131, 92, 0.4);\n    /* height: 90vh; */\n}\n\n.content {\n    display: grid;\n    /* height: 90vh;  */\n    grid-template-columns: repeat(3, 1fr);\n    grid-template-rows: repeat((--rowNum), 1fr);\n    gap: 20px;\n    background: rgb(238,174,202);\n    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);\n    \n}\n\n#popup {\n    display: none;\n    z-index: 1;\n    position: fixed;\n    top: 0;\n    left: 0;\n    padding-top: 20%;\n    overflow: auto; \n    background: white;\n    height: 100%;\n    width: 100%;\n    background-color: rgba(0,0,0,0);\n    /* filter: blur(8px); */\n    /* margin: auto; */\n}\n\n#popdelete::before {\n    content: \"\\2715\";\n    font-size: 10px;\n\n}\n\n#popcontent {\n    background-color: white;\n    width: 70%;\n    /* height: 30%; */\n    position: fixed;\n    left: 20%;\n    display: flex;\n    align-items:flex-start;\n    justify-content: space-between;\n}\n\n\n.popsidebar {\n    width: 55%;\n    height: 30vh;\n    border-right: 1px solid black;\n}\n\n.popbelow {\n    display: flex;\n}\n\n.popinput {\n    width: 100%;\n    background-color: pink;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -572,6 +572,13 @@ function popup(){
     popsidebar.innerText = 'newToDoBTN'
     popbelow.appendChild(popsidebar)
 
+    // popup input section (appended to popbelow)
+    const popinput = document.createElement('div')
+    popinput.className = 'popinput'
+
+    popinput.innerText = 'main content'
+
+    popbelow.appendChild(popinput)
 
     // popup delete button
     const popdelete = document.createElement('button')

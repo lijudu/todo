@@ -63,6 +63,13 @@ function popup(){
     popsidebar.innerText = 'newToDoBTN'
     popbelow.appendChild(popsidebar)
 
+    // popup input section (appended to popbelow)
+    const popinput = document.createElement('div')
+    popinput.className = 'popinput'
+
+    popinput.innerText = 'main content'
+
+    popbelow.appendChild(popinput)
 
     // popup delete button
     const popdelete = document.createElement('button')

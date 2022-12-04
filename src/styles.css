@@ -74,3 +74,12 @@ body {
     height: 30vh;
     border-right: 1px solid black;
 }
+
+.popbelow {
+    display: flex;
+}
+
+.popinput {
+    width: 100%;
+    background-color: pink;
+}
