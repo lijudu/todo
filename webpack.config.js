@@ -1,3 +1,4 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path')
 
 module.exports = {
@@ -8,6 +9,7 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
     },
     devtool: false,
+    plugins: [new HtmlWebpackPlugin()],
     module: {
         rules: [
             {
@@ -17,7 +19,11 @@ module.exports = {
             {
                 test: /\.css$/i,
                 use: ["style-loader", "css-loader"],
-            }
+            },
+            {
+                test: /\.html$/i,
+                loader: "html-loader",
+              },
         ]
     }
 }

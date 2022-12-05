@@ -59,20 +59,24 @@ body {
 
 #popcontent {
     background-color: white;
-    width: 70%;
+    /* width: 70%; */
     /* height: 30%; */
     position: fixed;
-    left: 20%;
-    display: flex;
-    align-items:flex-start;
-    justify-content: space-between;
+    left: 30%;
+    width: 400px;
+    /* display: flex; */
+    /* align-items:flex-start; */
+    /* justify-content: space-between; */
 }
 
+.poptitle {
+    background-color: yellow;
+}
 
 .popsidebar {
-    width: 55%;
-    height: 30vh;
-    border-right: 1px solid black;
+    /* width: 10vw; */
+    height: 40vh;
+    /* border-right: 1px solid black; */
 }
 
 .popbelow {
@@ -83,3 +87,4 @@ body {
     width: 100%;
     background-color: pink;
 }
+

@@ -1,6 +1,7 @@
 import './styles.css'
-import { webContent, popup }from './DOM.js' 
+import { deletepop, popup } from './DOM.js' 
 
 
-webContent()
+// webContent()
 popup()
+deletepop()
