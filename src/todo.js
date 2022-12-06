@@ -1,4 +1,5 @@
-
+// define array of todos
+let myToDo = [];
 
 // object contructor for todo
 function Todo(title, description, priority, date) {
@@ -6,17 +7,28 @@ function Todo(title, description, priority, date) {
     this.description = description
     this.priority = priority
     this.date = date
-    this.info(()=>{
-        console.log(title, author, priority)
-    })
 }
 
 // new todo (title, description, duedate priority) 
-function createNewTD(){
+function createNew(){
     const content = document.getElementById('content')
     const submit = document.getElementById('submit')
 
-    const titleInput = document.getElementById('titleInput').value
+    const title = document.getElementById('titleInput').value
+    const detail = document.getElementById('detailInput').value
 
-    console.log(titleInput)
+    // get priority value
+    // get date selection
+
+    const newToDo = new Todo(title, detail)
+    myToDo.push(newToDo)
+    console.log(myToDo)
 }
+
+function createCard(){
+    const submit = document.getElementById('submit')
+
+    submit.addEventListener('click', createNew)
+}
+
+export { createCard }

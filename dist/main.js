@@ -536,6 +536,53 @@ function deletepop(){
 
 
 
+/***/ }),
+
+/***/ "./src/todo.js":
+/*!*********************!*\
+  !*** ./src/todo.js ***!
+  \*********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "createCard": () => (/* binding */ createCard)
+/* harmony export */ });
+// define array of todos
+let myToDo = [];
+
+// object contructor for todo
+function Todo(title, description, priority, date) {
+    this.title = title
+    this.description = description
+    this.priority = priority
+    this.date = date
+}
+
+// new todo (title, description, duedate priority) 
+function createNew(){
+    const content = document.getElementById('content')
+    const submit = document.getElementById('submit')
+
+    const title = document.getElementById('titleInput').value
+    const detail = document.getElementById('detailInput').value
+
+    // get priority value
+    // get date selection
+
+    const newToDo = new Todo(title, detail)
+    myToDo.push(newToDo)
+    console.log(myToDo)
+}
+
+function createCard(){
+    const submit = document.getElementById('submit')
+
+    submit.addEventListener('click', createNew)
+}
+
+
+
 /***/ })
 
 /******/ 	});
@@ -620,13 +667,16 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles.css */ "./src/styles.css");
 /* harmony import */ var _DOM_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DOM.js */ "./src/DOM.js");
+/* harmony import */ var _todo_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./todo.js */ "./src/todo.js");
 
  
+
 
 
 // webContent()
 (0,_DOM_js__WEBPACK_IMPORTED_MODULE_1__.popup)()
 ;(0,_DOM_js__WEBPACK_IMPORTED_MODULE_1__.deletepop)()
+;(0,_todo_js__WEBPACK_IMPORTED_MODULE_2__.createCard)()
 
 })();
 
