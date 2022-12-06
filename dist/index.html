@@ -11,27 +11,43 @@
     </head>
     <body>
         <div id="main">
-            <header id="header">todo project</header>
+            <header id="header">HEADER</header>
             <div id="container">
                 <div class="sidebar">
                     <button id="new">+</button>
                 </div>
-                <div class="content">content</div>
+                <div class="content"></div>
             </div>
-            <div id="popup">
-                <div id="popcontent">
-                    <div class="poptitle">Create New</div>
-                    <div class="popbelow">
-                        <div class="popsidebar">sidebar</div>
-                        <div class="popinput">
-                            <span class="popinputtitle">here</span>
+            <div id="popup" style="display: none">
+                <div id="popContent">
+                    <div class="popTop">
+                        <div class="popTitle">Create New</div>
+                        <button id="popDelete"></button>
+                    </div>
+                    <div class="popBelow">
+                        <div class="popSidebar">sidebar</div>
+                        <div class="popInput">
+                            <input type="text" id="titleInput" placeholder= "Title: Go for a run" required>
+                            <input type="text" id="detailInput" placeholder="Details: Try to run 5km">
+                            <div class="priority">
+                                <label for="priority">Priority</label>
+                                <input type="radio" id="lowPriority" name="priority" value="low">
+                                <label for="lowPriority">Low</label>
+                                <input type="radio" id="medPriority" name="priority" value="medium">
+                                <label for="medPriority">Medium</label>
+                                <input type="radio" id="highPriority" name="priority" value="high">
+                                <label for="highPriority">High</label>
+                            </div>
+                            <div class="duedate">
+                                <label for="setDate">Due Date:</label>
+                                <input type="date" id="setDate" required>
+                            </div>
+                            <button id="submit">ADD TO DO</button>
                         </div>
                     </div>
-                    <button id="popdelete"></button>
+
                 </div>
             </div>
-
-
         </div>
         
         <script src="./main.js" async defer></script>

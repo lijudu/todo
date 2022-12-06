@@ -11,7 +11,7 @@ function popup(){
 
 // popup delete button & delete if clicked outside
 function deletepop(){
-    const popdelete = document.getElementById('popdelete')
+    const popdelete = document.getElementById('popDelete')
     const popup = document.getElementById('popup')
     
     popdelete.onclick = function(){
@@ -23,8 +23,6 @@ function deletepop(){
             popup.style.display = 'none'
             }    
         }
-    }
-
-
+}
 
 export { popup, deletepop }
