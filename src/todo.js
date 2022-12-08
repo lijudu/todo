@@ -1,3 +1,4 @@
+
 // define array of todos
 let myToDo = [];
 
@@ -40,6 +41,7 @@ function newLine() {
 
     container.className = 'container'
     check.setAttribute('type', 'checkbox')
+    check.setAttribute('class', 'check')
     title.className = 'todo'
     detailBTN.setAttribute('type', 'button')
     editBTN.setAttribute('type', 'button')
@@ -71,5 +73,6 @@ function createCard(){
 
     submit.addEventListener('click', addToDo)
 }
+
 
 export { createCard }

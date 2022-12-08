@@ -7,3 +7,16 @@ import { createCard } from './todo.js'
 popup()
 deletepop()
 createCard()
+
+function hasClass(elem, className) {
+    return elem.classList.contains(className)
+}
+
+document.addEventListener('click', function(e) {
+    if(hasClass(e.target, 'check')) {
+        e.target.parentElement.style.textDecoration = 'line-through'
+    } if (e.target.checked == false) {
+        e.target.parentElement.style.textDecoration = 'none'
+    }
+})
+

@@ -554,6 +554,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "createCard": () => (/* binding */ createCard)
 /* harmony export */ });
+
 // define array of todos
 let myToDo = [];
 
@@ -596,6 +597,7 @@ function newLine() {
 
     container.className = 'container'
     check.setAttribute('type', 'checkbox')
+    check.setAttribute('class', 'check')
     title.className = 'todo'
     detailBTN.setAttribute('type', 'button')
     editBTN.setAttribute('type', 'button')
@@ -627,6 +629,7 @@ function createCard(){
 
     submit.addEventListener('click', addToDo)
 }
+
 
 
 
@@ -724,6 +727,19 @@ __webpack_require__.r(__webpack_exports__);
 (0,_DOM_js__WEBPACK_IMPORTED_MODULE_1__.popup)()
 ;(0,_DOM_js__WEBPACK_IMPORTED_MODULE_1__.deletepop)()
 ;(0,_todo_js__WEBPACK_IMPORTED_MODULE_2__.createCard)()
+
+function hasClass(elem, className) {
+    return elem.classList.contains(className)
+}
+
+document.addEventListener('click', function(e) {
+    if(hasClass(e.target, 'check')) {
+        e.target.parentElement.style.textDecoration = 'line-through'
+    } if (e.target.checked == false) {
+        e.target.parentElement.style.textDecoration = 'none'
+    }
+})
+
 
 })();
 
