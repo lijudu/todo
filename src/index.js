@@ -15,8 +15,10 @@ function hasClass(elem, className) {
 document.addEventListener('click', function(e) {
     if(hasClass(e.target, 'check')) {
         e.target.parentElement.style.textDecoration = 'line-through'
+        let container = document.getElementById('todoContainer')
     } if (e.target.checked == false) {
         e.target.parentElement.style.textDecoration = 'none'
     }
 })
+
 

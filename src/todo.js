@@ -28,18 +28,21 @@ function createNew(){
     console.log(myToDo)
 }
 
+
 // creates new card todo appended to div content (should this be under DOM??)
 function newLine() {
     const content = document.getElementById('content')
-    const container = document.createElement('div')
+    const todoContainer = document.createElement('div')
+    const leftcontainer = document.createElement('div')
     const check = document.createElement('input')
-    const title = document.createElement('div')
+    const title = document.createElement('label')
     const detailBTN = document.createElement('button')
     const due = document.createElement('div')
     const editBTN = document.createElement('button')
     const deleteBTN = document.createElement('button')
 
-    container.className = 'container'
+    todoContainer.id = 'todoContainer'
+    leftcontainer.className = 'check-container'
     check.setAttribute('type', 'checkbox')
     check.setAttribute('class', 'check')
     title.className = 'todo'
@@ -53,15 +56,30 @@ function newLine() {
     editBTN.innerText = 'Edit'
     deleteBTN.innerText = 'Delete'
 
-    content.appendChild(container)
-    container.appendChild(check)
-    container.appendChild(title)
-    container.appendChild(detailBTN)
-    container.appendChild(due)
-    container.appendChild(editBTN)
-    container.appendChild(deleteBTN)
+    content.appendChild(todoContainer)
+    todoContainer.appendChild(leftcontainer)
+    leftcontainer.appendChild(check)
+    leftcontainer.appendChild(title)
+    todoContainer.appendChild(detailBTN)
+    todoContainer.appendChild(due)
+    todoContainer.appendChild(editBTN)
+    todoContainer.appendChild(deleteBTN)
+
+    // set background based on priority (should this be switch statement?)
+    // need to get this out of this function so it can act independently 
+function setPriority(myToDo) {
+    if (myToDo[myToDo.length - 1].priority == 'low') {
+        todoContainer.style.backgroundColor = 'green'
+    } else if (myToDo[myToDo.length - 1].priority == "medium") {
+        todoContainer.style.backgroundColor = 'yellow'
+    } else if (myToDo[myToDo.length - 1].priority == 'high') {
+        todoContainer.style.backgroundColor = 'red'
+    } 
+}
+setPriority(myToDo)
 
 }
+
 
 function addToDo() {
     createNew()
@@ -73,6 +91,7 @@ function createCard(){
 
     submit.addEventListener('click', addToDo)
 }
+
 
 
 export { createCard }
