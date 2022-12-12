@@ -3,11 +3,12 @@
 let myToDo = [];
 
 // object contructor for todo
-function Todo(title, description, priority, date) {
+function Todo(title, description, priority, date, number) {
     this.title = title
     this.description = description
     this.priority = priority
     this.date = date
+    this.number = number
 }
 
 // new todo (title, description, duedate priority) 
@@ -23,12 +24,16 @@ function createNew(){
     // get date selection
     const date = document.getElementById('setDate').value
 
-    const newToDo = new Todo(title, detail, priority, date)
+    // set a number to refer to later when clicking details/link to DOM
+    const number = String(idIncrement)
+
+    const newToDo = new Todo(title, detail, priority, date, number)
     myToDo.push(newToDo)
     console.log(myToDo)
     return myToDo
 }
 
+let idIncrement = 0
 
 // creates new card todo appended to div content (should this be under DOM??)
 function newLine() {
@@ -42,6 +47,7 @@ function newLine() {
     const editBTN = document.createElement('button')
     const deleteBTN = document.createElement('button')
 
+
     todoContainer.id = 'todoContainer'
     leftcontainer.className = 'check-container'
     check.setAttribute('type', 'checkbox')
@@ -49,9 +55,9 @@ function newLine() {
     title.className = 'todo'
     detailBTN.setAttribute('type', 'button')
 
-    detailBTN.id = myToDo[myToDo.length - 1].title
+    // link detailBTN id to a value in array so theyre linked
+    detailBTN.id = idIncrement
     detailBTN.className = 'detail'
-    detailBTN.name = 'detail'
 
     editBTN.setAttribute('type', 'button')
     deleteBTN.setAttribute('type', 'button')
@@ -80,8 +86,11 @@ function newLine() {
         } else if (myToDo[myToDo.length - 1].priority == 'high') {
             todoContainer.style.backgroundColor = 'red'
         } 
+        // increment number so when new todo created number increments
+    idIncrement++
+    return idIncrement
+    
 }
-
 
 
 function addToDo() {
@@ -109,13 +118,22 @@ function todoJob() {
         } if (e.target.checked == false) {
             e.target.parentElement.style.textDecoration = 'none'
         }
-        // // pop up detiail modal when detailBTN clicked
-        // if(hasClass(e.target, 'detail')){
-        //     let mandu = e.target.name
-        //     const item = myToDo.findIndex(item => item.title === mandu)
-        //     console.log(mandu)
-        //     console.log(item)
-        // }
+    // pop up detiail modal when detailBTN clicked
+        if (hasClass(e.target, 'detail')) {
+            const detail = e.target.id
+            const getIndex = myToDo.findIndex(item => item.number === detail)
+            
+            const deet = document.createElement('div')
+            deet.className = 'deet'
+            deet.innerText = myToDo[getIndex].title
+            const container = document.getElementById('container')
+            container.appendChild(deet)
+
+
+
+            console.log('this index= ' + getIndex)
+            console.log(detail)
+        }
     })
 
 }

@@ -21,7 +21,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ":root {\n    --rowNum: \"\";\n}\n\nbody {\n    margin: 0;\n}\n\n#header {\n    background: rgba(221, 44, 195, 0.2);\n    /* min-height: 80px; */\n    height: 10vh;\n}\n\n#container {\n    display: grid;\n    grid-template-columns: 15vw auto; \n    height: 90vh;\n\n}\n\n.sidebar {\n    background: rgba(35, 131, 92, 0.4);\n    /* height: 90vh; */\n}\n\n#content {\n    display: grid;\n    /* height: 90vh;  */\n    grid-template-columns: auto;\n    grid-template-rows: repeat((--rowNum), 50px);\n    gap: 10px;\n    background: rgb(238,174,202);\n    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);\n    \n}\n\n#popup {\n    /* display: none; */\n    z-index: 1;\n    position: fixed;\n    top: 0;\n    left: 0;\n    padding-top: 20%;\n    overflow: auto; \n    background: white;\n    height: 100%;\n    width: 100%;\n    background-color: rgba(0,0,0,0);\n    /* filter: blur(8px); */\n    /* margin: auto; */\n}\n\n.popTop {\n    display: flex;\n    justify-content: space-between;\n}\n\n#popDelete::before {\n    content: \"\\2715\";\n    font-size: 10px;\n    /* position: fixed; */\n    /* z-index: 1; */\n\n}\n\n#popContent {\n    background-color: white;\n    /* width: 70%; */\n    /* height: 30%; */\n    position: fixed;\n    left: 30%;\n    width: 400px;\n    /* display: flex; */\n    /* align-items:flex-start; */\n    /* justify-content: space-between; */\n}\n\n.popTitle {\n    background-color: yellow;\n}\n\n.popSidebar {\n    /* width: 10vw; */\n    height: 40vh;\n    /* border-right: 1px solid black; */\n}\n\n.popBelow {\n    display: flex;\n}\n\n.popInput {\n    width: 100%;\n    background-color: pink;\n    display: flex;\n    flex-direction: column;\n}\n\n#todoContainer {\n    display: flex;\n    /* align-content: center; */\n    justify-content: space-around;\n    flex-direction: row;\n    height: 50px;\n    border: 1px solid black;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ":root {\n    --rowNum: \"\";\n}\n\nbody {\n    margin: 0;\n}\n\n#header {\n    background: rgba(221, 44, 195, 0.2);\n    /* min-height: 80px; */\n    height: 10vh;\n}\n\n#container {\n    display: grid;\n    grid-template-columns: 15vw auto; \n    height: 90vh;\n\n}\n\n.sidebar {\n    background: rgba(35, 131, 92, 0.4);\n    /* height: 90vh; */\n}\n\n#content {\n    display: grid;\n    /* height: 90vh;  */\n    grid-template-columns: auto;\n    grid-template-rows: repeat((--rowNum), 50px);\n    gap: 10px;\n    background: rgb(238,174,202);\n    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);\n    \n}\n\n#popup {\n    /* display: none; */\n    z-index: 1;\n    position: fixed;\n    top: 0;\n    left: 0;\n    padding-top: 20%;\n    overflow: auto; \n    background: white;\n    height: 100%;\n    width: 100%;\n    background-color: rgba(0,0,0,0);\n    /* filter: blur(8px); */\n    /* margin: auto; */\n}\n\n.popTop {\n    display: flex;\n    justify-content: space-between;\n}\n\n#popDelete::before {\n    content: \"\\2715\";\n    font-size: 10px;\n    /* position: fixed; */\n    /* z-index: 1; */\n\n}\n\n#popContent {\n    background-color: white;\n    /* width: 70%; */\n    /* height: 30%; */\n    position: fixed;\n    left: 30%;\n    width: 400px;\n    /* display: flex; */\n    /* align-items:flex-start; */\n    /* justify-content: space-between; */\n}\n\n.popTitle {\n    background-color: yellow;\n}\n\n.popSidebar {\n    /* width: 10vw; */\n    height: 40vh;\n    /* border-right: 1px solid black; */\n}\n\n.popBelow {\n    display: flex;\n}\n\n.popInput {\n    width: 100%;\n    background-color: pink;\n    display: flex;\n    flex-direction: column;\n}\n\n#todoContainer {\n    display: flex;\n    /* align-content: center; */\n    justify-content: space-around;\n    flex-direction: row;\n    height: 50px;\n    border: 1px solid black;\n}\n\n.deet {\n    z-index: 1; \n    width: 100px;\n    height: 100px;\n    background-color: white;\n    position: fixed;\n    top: 50%;\n    left: 50%;\n    \n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -561,11 +561,12 @@ __webpack_require__.r(__webpack_exports__);
 let myToDo = [];
 
 // object contructor for todo
-function Todo(title, description, priority, date) {
+function Todo(title, description, priority, date, number) {
     this.title = title
     this.description = description
     this.priority = priority
     this.date = date
+    this.number = number
 }
 
 // new todo (title, description, duedate priority) 
@@ -581,12 +582,16 @@ function createNew(){
     // get date selection
     const date = document.getElementById('setDate').value
 
-    const newToDo = new Todo(title, detail, priority, date)
+    // set a number to refer to later when clicking details/link to DOM
+    const number = String(idIncrement)
+
+    const newToDo = new Todo(title, detail, priority, date, number)
     myToDo.push(newToDo)
     console.log(myToDo)
     return myToDo
 }
 
+let idIncrement = 0
 
 // creates new card todo appended to div content (should this be under DOM??)
 function newLine() {
@@ -600,6 +605,7 @@ function newLine() {
     const editBTN = document.createElement('button')
     const deleteBTN = document.createElement('button')
 
+
     todoContainer.id = 'todoContainer'
     leftcontainer.className = 'check-container'
     check.setAttribute('type', 'checkbox')
@@ -607,9 +613,9 @@ function newLine() {
     title.className = 'todo'
     detailBTN.setAttribute('type', 'button')
 
-    detailBTN.id = myToDo[myToDo.length - 1].title
+    // link detailBTN id to a value in array so theyre linked
+    detailBTN.id = idIncrement
     detailBTN.className = 'detail'
-    detailBTN.name = 'detail'
 
     editBTN.setAttribute('type', 'button')
     deleteBTN.setAttribute('type', 'button')
@@ -638,8 +644,11 @@ function newLine() {
         } else if (myToDo[myToDo.length - 1].priority == 'high') {
             todoContainer.style.backgroundColor = 'red'
         } 
+        // increment number so when new todo created number increments
+    idIncrement++
+    return idIncrement
+    
 }
-
 
 
 function addToDo() {
@@ -667,13 +676,22 @@ function todoJob() {
         } if (e.target.checked == false) {
             e.target.parentElement.style.textDecoration = 'none'
         }
-        // // pop up detiail modal when detailBTN clicked
-        // if(hasClass(e.target, 'detail')){
-        //     let mandu = e.target.name
-        //     const item = myToDo.findIndex(item => item.title === mandu)
-        //     console.log(mandu)
-        //     console.log(item)
-        // }
+    // pop up detiail modal when detailBTN clicked
+        if (hasClass(e.target, 'detail')) {
+            const detail = e.target.id
+            const getIndex = myToDo.findIndex(item => item.number === detail)
+            
+            const deet = document.createElement('div')
+            deet.className = 'deet'
+            deet.innerText = myToDo[getIndex].title
+            const container = document.getElementById('container')
+            container.appendChild(deet)
+
+
+
+            console.log('this index= ' + getIndex)
+            console.log(detail)
+        }
     })
 
 }
@@ -778,21 +796,6 @@ __webpack_require__.r(__webpack_exports__);
 ;(0,_DOM_js__WEBPACK_IMPORTED_MODULE_1__.deletepop)()
 ;(0,_todo_js__WEBPACK_IMPORTED_MODULE_2__.createCard)()
 ;(0,_todo_js__WEBPACK_IMPORTED_MODULE_2__.todoJob)()
-
-
-function hasClass(elem, className) {
-    return elem.classList.contains(className)
-}
-
-document.addEventListener('click', function(e) {
-    if (hasClass(e.target, 'detail')) {
-        const detail = e.target.id
-        const getIndex = _todo_js__WEBPACK_IMPORTED_MODULE_2__.myToDo.findIndex(item => item.title === detail)
-        console.log(getIndex)
-        console.log(detail)
-    }
-}, false)
-
 
 })();
 
