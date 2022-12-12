@@ -552,7 +552,9 @@ function deletepop(){
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "createCard": () => (/* binding */ createCard)
+/* harmony export */   "createCard": () => (/* binding */ createCard),
+/* harmony export */   "myToDo": () => (/* binding */ myToDo),
+/* harmony export */   "todoJob": () => (/* binding */ todoJob)
 /* harmony export */ });
 
 // define array of todos
@@ -582,6 +584,7 @@ function createNew(){
     const newToDo = new Todo(title, detail, priority, date)
     myToDo.push(newToDo)
     console.log(myToDo)
+    return myToDo
 }
 
 
@@ -603,6 +606,11 @@ function newLine() {
     check.setAttribute('class', 'check')
     title.className = 'todo'
     detailBTN.setAttribute('type', 'button')
+
+    detailBTN.id = myToDo[myToDo.length - 1].title
+    detailBTN.className = 'detail'
+    detailBTN.name = 'detail'
+
     editBTN.setAttribute('type', 'button')
     deleteBTN.setAttribute('type', 'button')
 
@@ -622,19 +630,16 @@ function newLine() {
     todoContainer.appendChild(deleteBTN)
 
     // set background based on priority (should this be switch statement?)
-    // need to get this out of this function so it can act independently 
-function setPriority(myToDo) {
-    if (myToDo[myToDo.length - 1].priority == 'low') {
-        todoContainer.style.backgroundColor = 'green'
-    } else if (myToDo[myToDo.length - 1].priority == "medium") {
-        todoContainer.style.backgroundColor = 'yellow'
-    } else if (myToDo[myToDo.length - 1].priority == 'high') {
-        todoContainer.style.backgroundColor = 'red'
-    } 
+    // can this be a separate function?
+        if (myToDo[myToDo.length - 1].priority == 'low') {
+            todoContainer.style.backgroundColor = 'green'
+        } else if (myToDo[myToDo.length - 1].priority == "medium") {
+            todoContainer.style.backgroundColor = 'yellow'
+        } else if (myToDo[myToDo.length - 1].priority == 'high') {
+            todoContainer.style.backgroundColor = 'red'
+        } 
 }
-setPriority(myToDo)
 
-}
 
 
 function addToDo() {
@@ -647,6 +652,32 @@ function createCard(){
 
     submit.addEventListener('click', addToDo)
 }
+
+function todoJob() {
+    function hasClass(elem, className) {
+        return elem.classList.contains(className)
+    }
+    
+    // strikethrough when checkbox checked
+    document.addEventListener('click', function(e) {
+        if(hasClass(e.target, 'check')) {
+            e.target.parentElement.style.textDecoration = 'line-through'
+            let container = document.getElementById('todoContainer')
+    
+        } if (e.target.checked == false) {
+            e.target.parentElement.style.textDecoration = 'none'
+        }
+        // // pop up detiail modal when detailBTN clicked
+        // if(hasClass(e.target, 'detail')){
+        //     let mandu = e.target.name
+        //     const item = myToDo.findIndex(item => item.title === mandu)
+        //     console.log(mandu)
+        //     console.log(item)
+        // }
+    })
+
+}
+
 
 
 
@@ -746,20 +777,21 @@ __webpack_require__.r(__webpack_exports__);
 (0,_DOM_js__WEBPACK_IMPORTED_MODULE_1__.popup)()
 ;(0,_DOM_js__WEBPACK_IMPORTED_MODULE_1__.deletepop)()
 ;(0,_todo_js__WEBPACK_IMPORTED_MODULE_2__.createCard)()
+;(0,_todo_js__WEBPACK_IMPORTED_MODULE_2__.todoJob)()
+
 
 function hasClass(elem, className) {
     return elem.classList.contains(className)
 }
 
 document.addEventListener('click', function(e) {
-    if(hasClass(e.target, 'check')) {
-        e.target.parentElement.style.textDecoration = 'line-through'
-        let container = document.getElementById('todoContainer')
-    } if (e.target.checked == false) {
-        e.target.parentElement.style.textDecoration = 'none'
+    if (hasClass(e.target, 'detail')) {
+        const detail = e.target.id
+        const getIndex = _todo_js__WEBPACK_IMPORTED_MODULE_2__.myToDo.findIndex(item => item.title === detail)
+        console.log(getIndex)
+        console.log(detail)
     }
-})
-
+}, false)
 
 
 })();

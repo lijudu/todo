@@ -1,24 +1,25 @@
 import './styles.css'
 import { deletepop, popup } from './DOM.js' 
-import { createCard } from './todo.js'
+import { createCard, todoJob, myToDo } from './todo.js'
 
 
 // webContent()
 popup()
 deletepop()
 createCard()
+todoJob()
+
 
 function hasClass(elem, className) {
     return elem.classList.contains(className)
 }
 
 document.addEventListener('click', function(e) {
-    if(hasClass(e.target, 'check')) {
-        e.target.parentElement.style.textDecoration = 'line-through'
-        let container = document.getElementById('todoContainer')
-    } if (e.target.checked == false) {
-        e.target.parentElement.style.textDecoration = 'none'
+    if (hasClass(e.target, 'detail')) {
+        const detail = e.target.id
+        const getIndex = myToDo.findIndex(item => item.title === detail)
+        console.log(getIndex)
+        console.log(detail)
     }
-})
-
+}, false)
 
