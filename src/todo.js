@@ -123,20 +123,24 @@ function todoJob() {
             const detail = e.target.id
             const getIndex = myToDo.findIndex(item => item.number === detail)
             
-            const deet = document.createElement('div')
-            deet.className = 'deet'
-            deet.innerText = myToDo[getIndex].title
-            const container = document.getElementById('container')
-            container.appendChild(deet)
+            const newdeet = document.createElement('div')
+            newdeet.className = 'deet'
+            // newdeet.innerText = myToDo[getIndex].title
+            const deet = document.getElementById('deet')
+            deet.appendChild(newdeet)
 
+            deet.style.display = 'inline-block'
 
-
+            if (deet.style.display = 'inline-block') {
+                newdeet.innerText = myToDo[getIndex].title
+            }
             console.log('this index= ' + getIndex)
             console.log(detail)
         }
     })
 
 }
+
 
 
 
