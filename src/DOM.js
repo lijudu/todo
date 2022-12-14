@@ -28,7 +28,19 @@ function deletepop(){
     // delete if submit button clicked 
     submit.onclick = function(){
         popup.style.display = 'none'
+        deet.style.display = 'none'
     }
 }
 
-export { popup, deletepop }
+function deleteDeet(){
+    const deet = document.getElementById('deet')
+    const deetDel = document.getElementById('deetDelete')
+
+    // delete if x button clicked
+    deetDel.onclick = function(){
+        deet.style.display = 'none'
+    }
+    
+}
+
+export { popup, deletepop, deleteDeet }

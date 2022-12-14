@@ -1,5 +1,5 @@
 import './styles.css'
-import { deletepop, popup } from './DOM.js' 
+import { deletepop, popup, deleteDeet } from './DOM.js' 
 import { createCard, todoJob, myToDo } from './todo.js'
 
 
@@ -8,3 +8,4 @@ popup()
 deletepop()
 createCard()
 todoJob()
+deleteDeet()
