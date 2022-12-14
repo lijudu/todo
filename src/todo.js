@@ -54,6 +54,7 @@ function newLine() {
     check.setAttribute('class', 'check')
     title.className = 'todo'
     detailBTN.setAttribute('type', 'button')
+    deleteBTN.setAttribute('class', 'deletetodo')
 
     // link detailBTN id to a value in array so theyre linked
     detailBTN.id = idIncrement
@@ -135,13 +136,15 @@ function todoJob() {
                 deetpriority.innerText = 'Priority: ' + myToDo[getIndex].priority
                 deetdate.innerText = 'Due: ' + myToDo[getIndex].date
             }
-
-
-            // if (deet.style.display = 'inline-block') {
-            //     newdeet.innerText = myTodo[getIndex].title
-            // }
             console.log('this index= ' + getIndex)
-            console.log(detail)
+        }
+    // delete BTN
+        if (hasClass(e.target, 'deletetodo')) {
+            e.target.parentElement.remove()
+            const removetodo = e.target.number
+            const removeIndex = myToDo.findIndex(item => item.number === removetodo)
+            myToDo.splice(removeIndex, 1)
+            console.log(myToDo)
         }
     })
 
