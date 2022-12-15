@@ -538,7 +538,6 @@ function deletepop(){
     // delete if submit button clicked 
     submit.onclick = function(){
         popup.style.display = 'none'
-        deet.style.display = 'none'
     }
 }
 
@@ -601,7 +600,7 @@ function createNew(){
     const newToDo = new Todo(title, detail, priority, date, number)
     myToDo.push(newToDo)
     console.log(myToDo)
-    return myToDo
+    return myToDo, idIncrement
 }
 
 let idIncrement = 0
@@ -626,10 +625,12 @@ function newLine() {
     title.className = 'todo'
     detailBTN.setAttribute('type', 'button')
     deleteBTN.setAttribute('class', 'deletetodo')
+    editBTN.setAttribute('class', 'editBTN')
 
     // link detailBTN id to a value in array so theyre linked
     detailBTN.id = idIncrement
     detailBTN.className = 'detail'
+    deleteBTN.id = idIncrement
 
     editBTN.setAttribute('type', 'button')
     deleteBTN.setAttribute('type', 'button')
@@ -690,7 +691,7 @@ function todoJob() {
         } if (e.target.checked == false) {
             e.target.parentElement.style.textDecoration = 'none'
         }
-    // pop up detiail modal when detailBTN clicked
+        // pop up detiail modal when detailBTN clicked
         if (hasClass(e.target, 'detail')) {
             const detail = e.target.id
             const getIndex = myToDo.findIndex(item => item.number === detail)
@@ -709,13 +710,19 @@ function todoJob() {
             }
             console.log('this index= ' + getIndex)
         }
-    // delete BTN
+        // delete BTN
         if (hasClass(e.target, 'deletetodo')) {
+            const removetodo = e.target.id
             e.target.parentElement.remove()
-            const removetodo = e.target.number
             const removeIndex = myToDo.findIndex(item => item.number === removetodo)
             myToDo.splice(removeIndex, 1)
+            console.log(removetodo)
             console.log(myToDo)
+        }
+        // edit BTN
+        if(hasClass(e.target, 'editBTN')) {
+            const popup = document.getElementById('popup')
+            popup.style.display = 'inline-block'
         }
     })
 

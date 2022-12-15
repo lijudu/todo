@@ -28,7 +28,6 @@ function deletepop(){
     // delete if submit button clicked 
     submit.onclick = function(){
         popup.style.display = 'none'
-        deet.style.display = 'none'
     }
 }
 
