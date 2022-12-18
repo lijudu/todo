@@ -722,11 +722,18 @@ function todoJob() {
         // edit BTN
         if(hasClass(e.target, 'editBTN')) {
             const popup = document.getElementById('popup')
+            const submit = document.getElementById('submit')
+            const sidebar = document.getElementsByClassName('popSidebar')[0]
             popup.style.display = 'inline-block'
+
+            document.getElementsByClassName('popTitle')[0].innerText = 'EDIT'
+            submit.innerText = 'CONFIRM EDIT'
+            sidebar.remove()
         }
     })
 
 }
+
 
 
 

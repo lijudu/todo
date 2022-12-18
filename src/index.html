@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <div id="main">
+            <header id="header">HEADER</header>
+            <div id="container">
+                <div class="sidebar">
+                    <button id="new">+</button>
+                </div>
+                <div id="content"></div>
+            </div>
+            <div id="popup" style="display: none">
+                <div id="popContent">
+                    <div class="popTop">
+                        <div class="popTitle">Create New</div>
+                        <button id="popDelete"></button>
+                    </div>
+                    <div class="popBelow">
+                        <div class="popSidebar">sidebar</div>
+                        <div class="popInput">
+                            <input type="text" id="titleInput" placeholder= "Title: Go for a run" required>
+                            <input type="text" id="detailInput" placeholder="Details: Try to run 5km">
+                            <div class="priority">
+                                <label for="priority">Priority: </label>
+                                <input type="radio" id="priority" name="priority" value="low" checked>
+                                <label for="priority">Low</label>
+                                <input type="radio" id="priority" name="priority" value="medium">
+                                <label for="priority">Medium</label>
+                                <input type="radio" id="priority" name="priority" value="high">
+                                <label for="priority">High</label>
+                            </div>
+                            <div class="duedate">
+                                <label for="setDate">Due Date:</label>
+                                <input type="date" id="setDate" required>
+                            </div>
+                            <button id="submit">ADD TO DO</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div id="deet" style="display: none">
+                <button id="deetDelete"></button>
+                <div class="deettitle"></div>
+                <div class="deetdetails"></div>
+                <div class="deetpriority"></div>
+                <div class="deetdate"></div>
+            </div>
+        </div>
+        
+        <script src="./main.js" async defer></script>
+    </body>
+</html>

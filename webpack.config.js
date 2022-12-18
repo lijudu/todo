@@ -1,4 +1,4 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+// const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path')
 
 module.exports = {
@@ -9,21 +9,19 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
     },
     devtool: false,
-    plugins: [new HtmlWebpackPlugin()],
+    // plugins: [new HtmlWebpackPlugin({
+    //     filename: './index.html'
+    // })],
     module: {
         rules: [
             {
                 test: /\.(jpe?g|png|gif|svg)$/i, 
-                loader: ['url-loader', 'file-loader'],
+                use: ['url-loader', 'file-loader'],
             },
             {
                 test: /\.css$/i,
                 use: ["style-loader", "css-loader"],
             },
-            {
-                test: /\.html$/i,
-                loader: "html-loader",
-              },
         ]
     }
 }
