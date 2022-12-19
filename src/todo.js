@@ -61,6 +61,7 @@ function newLine() {
     detailBTN.id = idIncrement
     detailBTN.className = 'detail'
     deleteBTN.id = idIncrement
+    editBTN.id = idIncrement
 
     editBTN.setAttribute('type', 'button')
     deleteBTN.setAttribute('type', 'button')
@@ -132,6 +133,7 @@ function todoJob() {
             const deetpriority = document.getElementsByClassName('deetpriority')[0]
             const deetdate  = document.getElementsByClassName('deetdate')[0]
 
+
             if (deet.style.display = 'inline-block') {
                 deettitle.innerText = 'Title: ' + myToDo[getIndex].title
                 deetdetails.innerText = 'Details: ' + myToDo[getIndex].description
@@ -139,6 +141,7 @@ function todoJob() {
                 deetdate.innerText = 'Due: ' + myToDo[getIndex].date
             }
             console.log('this index= ' + getIndex)
+            return getIndex
         }
         // delete BTN
         if (hasClass(e.target, 'deletetodo')) {
@@ -151,14 +154,24 @@ function todoJob() {
         }
         // edit BTN
         if(hasClass(e.target, 'editBTN')) {
+            const edittodo = e.target.id
+            const editIndex = myToDo.findIndex(item => item.number === edittodo)
             const popup = document.getElementById('popup')
             const submit = document.getElementById('submit')
-            const sidebar = document.getElementsByClassName('popSidebar')[0]
+            // const sidebar = document.getElementsByClassName('popSidebar')[0]
+            const titleInput = document.getElementById('titleInput')
+            const detailInput = document.getElementById('detailInput')
+            const priority = document.getElementById('priority')
+            const date = document.getElementById('setDate')
             popup.style.display = 'inline-block'
 
             document.getElementsByClassName('popTitle')[0].innerText = 'EDIT'
             submit.innerText = 'CONFIRM EDIT'
-            sidebar.remove()
+            titleInput.value = myToDo[editIndex].title
+            detailInput.value = myToDo[editIndex].description
+            priority.value = myToDo[editIndex].priority
+            date.value = myToDo[editIndex].date
+            
         }
     })
 
