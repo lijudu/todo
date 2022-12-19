@@ -3,9 +3,22 @@
 function popup(){
     const newBTN = document.getElementById('new')
     const popup = document.getElementById('popup')
+    const submit = document.getElementById('submit')
+    const titleInput = document.getElementById('titleInput')
+    const detailInput = document.getElementById('detailInput')
+    const priority = document.getElementById('priority')
+    const date = document.getElementById('setDate')
+    const sidebar = document.getElementsByClassName('popSidebar')[0]
     
     newBTN.addEventListener('click', function() {
         popup.style.display = 'inline-block'  
+        document.getElementsByClassName('popTitle')[0].innerText = 'CREATE NEW'
+        submit.innerText = 'ADD TODO'
+        titleInput.value = ""
+        detailInput.value = ""
+        priority.value = 'low'
+        date.value = ""
+        sidebar.style.display = 'inline'
     })
 }
 

@@ -513,9 +513,22 @@ __webpack_require__.r(__webpack_exports__);
 function popup(){
     const newBTN = document.getElementById('new')
     const popup = document.getElementById('popup')
+    const submit = document.getElementById('submit')
+    const titleInput = document.getElementById('titleInput')
+    const detailInput = document.getElementById('detailInput')
+    const priority = document.getElementById('priority')
+    const date = document.getElementById('setDate')
+    const sidebar = document.getElementsByClassName('popSidebar')[0]
     
     newBTN.addEventListener('click', function() {
         popup.style.display = 'inline-block'  
+        document.getElementsByClassName('popTitle')[0].innerText = 'CREATE NEW'
+        submit.innerText = 'ADD TODO'
+        titleInput.value = ""
+        detailInput.value = ""
+        priority.value = 'low'
+        date.value = ""
+        sidebar.style.display = 'inline'
     })
 }
 
@@ -728,7 +741,7 @@ function todoJob() {
             const editIndex = myToDo.findIndex(item => item.number === edittodo)
             const popup = document.getElementById('popup')
             const submit = document.getElementById('submit')
-            // const sidebar = document.getElementsByClassName('popSidebar')[0]
+            const sidebar = document.getElementsByClassName('popSidebar')[0]
             const titleInput = document.getElementById('titleInput')
             const detailInput = document.getElementById('detailInput')
             const priority = document.getElementById('priority')
@@ -741,6 +754,8 @@ function todoJob() {
             detailInput.value = myToDo[editIndex].description
             priority.value = myToDo[editIndex].priority
             date.value = myToDo[editIndex].date
+
+            sidebar.style.display = 'none'
             
         }
     })

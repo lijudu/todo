@@ -158,7 +158,7 @@ function todoJob() {
             const editIndex = myToDo.findIndex(item => item.number === edittodo)
             const popup = document.getElementById('popup')
             const submit = document.getElementById('submit')
-            // const sidebar = document.getElementsByClassName('popSidebar')[0]
+            const sidebar = document.getElementsByClassName('popSidebar')[0]
             const titleInput = document.getElementById('titleInput')
             const detailInput = document.getElementById('detailInput')
             const priority = document.getElementById('priority')
@@ -171,6 +171,8 @@ function todoJob() {
             detailInput.value = myToDo[editIndex].description
             priority.value = myToDo[editIndex].priority
             date.value = myToDo[editIndex].date
+
+            sidebar.style.display = 'none'
             
         }
     })
