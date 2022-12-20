@@ -96,23 +96,55 @@ function newLine() {
     
 }
 
+function todoedit() {
+    const edittitle = document.getElementById('titleInput').value
+    const editdetail = document.getElementById('detailInput').value
+    const editpriority = document.querySelector('input[name="priority"]:checked').value
+    const editdate = document.getElementById('setDate').value
+    const editNumber = document.getElementById('submit').name
+    // test
+    console.log(editNumber)
+    myToDo[editNumber].title = edittitle
+    myToDo[editNumber].description = editdetail
+    myToDo[editNumber].priority = editpriority
+    myToDo[editNumber].date = editdate
+    console.log(myToDo)
 
-function addToDo() {
-    createNew()
-    newLine()
+    return myToDo
 }
+
+// submitBTN diff functions if creating new or editing todo
+function submitBTN(){
+    const submit = document.getElementById('submit')
+    if (submit.innerText == 'ADD TODO') {
+        createNew()
+        newLine()
+    } else if (submit.innerText == 'CONFIRM EDIT') {
+        todoedit()
+    }
+}
+
+// function addToDo() {
+//     createNew()
+//     newLine()
+// }
 
 function createCard(){
     const submit = document.getElementById('submit')
 
-    submit.addEventListener('click', addToDo)
+    // submit.addEventListener('click', addToDo)
+    submit.addEventListener('click', submitBTN)
 }
+
+let getIndex = ""
 
 function todoJob() {
     function hasClass(elem, className) {
         return elem.classList.contains(className)
     }
     
+    // let getIndex = ""
+
     // strikethrough when checkbox checked
     document.addEventListener('click', function(e) {
         if(hasClass(e.target, 'check')) {
@@ -125,7 +157,7 @@ function todoJob() {
         // pop up detiail modal when detailBTN clicked
         if (hasClass(e.target, 'detail')) {
             const detail = e.target.id
-            const getIndex = myToDo.findIndex(item => item.number === detail)
+            let getIndex = myToDo.findIndex(item => item.number === detail)
             
             const deet = document.getElementById('deet')
             const deettitle = document.getElementsByClassName('deettitle')[0]
@@ -140,7 +172,7 @@ function todoJob() {
                 deetpriority.innerText = 'Priority: ' + myToDo[getIndex].priority
                 deetdate.innerText = 'Due: ' + myToDo[getIndex].date
             }
-            console.log('this index= ' + getIndex)
+            // console.log('this index= ' + getIndex)
             return getIndex
         }
         // delete BTN
@@ -173,13 +205,18 @@ function todoJob() {
             date.value = myToDo[editIndex].date
 
             sidebar.style.display = 'none'
-            
+
+            submit.setAttribute('name', editIndex)
+
+        
+        
         }
+            // console.log('this index= ' + getIndex)
+            // return getIndex
     })
-
+    // console.log('this index= ' + getIndex)
+    // return getIndex
 }
-
-
 
 
 
