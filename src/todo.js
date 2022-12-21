@@ -48,7 +48,7 @@ function newLine() {
     const deleteBTN = document.createElement('button')
 
 
-    todoContainer.id = 'todoContainer'
+    todoContainer.className = 'todoContainer'
     leftcontainer.className = 'check-container'
     check.setAttribute('type', 'checkbox')
     check.setAttribute('class', 'check')
@@ -62,6 +62,8 @@ function newLine() {
     detailBTN.className = 'detail'
     deleteBTN.id = idIncrement
     editBTN.id = idIncrement
+    due.setAttribute('class', 'duedate')
+    // todoContainer.name = idIncrement
 
     editBTN.setAttribute('type', 'button')
     deleteBTN.setAttribute('type', 'button')
@@ -96,14 +98,16 @@ function newLine() {
     
 }
 
+// pressing confirm edit will update myToDo array
 function todoedit() {
     const edittitle = document.getElementById('titleInput').value
     const editdetail = document.getElementById('detailInput').value
     const editpriority = document.querySelector('input[name="priority"]:checked').value
     const editdate = document.getElementById('setDate').value
     const editNumber = document.getElementById('submit').name
-    // test
-    console.log(editNumber)
+
+
+    // console.log(editNumber)
     myToDo[editNumber].title = edittitle
     myToDo[editNumber].description = editdetail
     myToDo[editNumber].priority = editpriority
@@ -111,6 +115,25 @@ function todoedit() {
     console.log(myToDo)
 
     return myToDo
+}
+
+// clicking confirm edit changes DOM properties 
+function editline() {
+    const editNumber = document.getElementById('submit').name
+    const title = document.getElementsByClassName('todo')[editNumber]
+    const date = document.getElementsByClassName('duedate')[editNumber]
+    let todoContainer = document.getElementsByClassName('todoContainer')[editNumber]
+
+    title.innerText = myToDo[editNumber].title
+    date.innerText = myToDo[editNumber].date
+    
+    if (myToDo[editNumber].priority == 'low') {
+        todoContainer.style.backgroundColor = 'green'
+    } else if (myToDo[editNumber].priority == "medium") {
+        todoContainer.style.backgroundColor = 'yellow'
+    } else if (myToDo[editNumber].priority == 'high') {
+        todoContainer.style.backgroundColor = 'red'
+    } 
 }
 
 // submitBTN diff functions if creating new or editing todo
@@ -121,6 +144,7 @@ function submitBTN(){
         newLine()
     } else if (submit.innerText == 'CONFIRM EDIT') {
         todoedit()
+        editline()
     }
 }
 
@@ -149,7 +173,6 @@ function todoJob() {
     document.addEventListener('click', function(e) {
         if(hasClass(e.target, 'check')) {
             e.target.parentElement.style.textDecoration = 'line-through'
-            let container = document.getElementById('todoContainer')
     
         } if (e.target.checked == false) {
             e.target.parentElement.style.textDecoration = 'none'
