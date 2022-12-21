@@ -516,7 +516,7 @@ function popup(){
     const submit = document.getElementById('submit')
     const titleInput = document.getElementById('titleInput')
     const detailInput = document.getElementById('detailInput')
-    const priority = document.getElementById('priority')
+    // const priority = document.getElementById('priority')
     const date = document.getElementById('setDate')
     const sidebar = document.getElementsByClassName('popSidebar')[0]
     
@@ -712,6 +712,7 @@ function editline() {
     date.innerText = myToDo[editNumber].date
     
     if (myToDo[editNumber].priority == 'low') {
+        console.log('low')
         todoContainer.style.backgroundColor = 'green'
     } else if (myToDo[editNumber].priority == "medium") {
         todoContainer.style.backgroundColor = 'yellow'
@@ -800,7 +801,8 @@ function todoJob() {
             const sidebar = document.getElementsByClassName('popSidebar')[0]
             const titleInput = document.getElementById('titleInput')
             const detailInput = document.getElementById('detailInput')
-            const priority = document.getElementById('priority')
+            // const priority = document.getElementById('priority')
+            const priority = document.querySelector('input[name="priority"]')
             const date = document.getElementById('setDate')
             popup.style.display = 'inline-block'
 
@@ -808,8 +810,15 @@ function todoJob() {
             submit.innerText = 'CONFIRM EDIT'
             titleInput.value = myToDo[editIndex].title
             detailInput.value = myToDo[editIndex].description
-            priority.value = myToDo[editIndex].priority
             date.value = myToDo[editIndex].date
+
+            if (myToDo[editIndex].priority == 'low') {
+                document.getElementById('priority1').checked = true
+            } else if (myToDo[editIndex].priority == 'medium'){
+                document.getElementById('priority2').checked = true
+            } else if (myToDo[editIndex].priority == 'high') {
+                document.getElementById('priority3').checked = true
+            }
 
             sidebar.style.display = 'none'
 

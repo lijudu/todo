@@ -6,7 +6,7 @@ function popup(){
     const submit = document.getElementById('submit')
     const titleInput = document.getElementById('titleInput')
     const detailInput = document.getElementById('detailInput')
-    const priority = document.getElementById('priority')
+    // const priority = document.getElementById('priority')
     const date = document.getElementById('setDate')
     const sidebar = document.getElementsByClassName('popSidebar')[0]
     
