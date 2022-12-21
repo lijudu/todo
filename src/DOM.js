@@ -16,7 +16,7 @@ function popup(){
         submit.innerText = 'ADD TODO'
         titleInput.value = ""
         detailInput.value = ""
-        priority.value = 'low'
+        // priority.value = 'low'
         date.value = ""
         sidebar.style.display = 'inline'
     })

@@ -112,6 +112,7 @@ function todoedit() {
     myToDo[editNumber].description = editdetail
     myToDo[editNumber].priority = editpriority
     myToDo[editNumber].date = editdate
+    console.log(editpriority)
     console.log(myToDo)
 
     return myToDo

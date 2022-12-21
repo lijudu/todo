@@ -526,7 +526,7 @@ function popup(){
         submit.innerText = 'ADD TODO'
         titleInput.value = ""
         detailInput.value = ""
-        priority.value = 'low'
+        // priority.value = 'low'
         date.value = ""
         sidebar.style.display = 'inline'
     })
@@ -695,6 +695,7 @@ function todoedit() {
     myToDo[editNumber].description = editdetail
     myToDo[editNumber].priority = editpriority
     myToDo[editNumber].date = editdate
+    console.log(editpriority)
     console.log(myToDo)
 
     return myToDo
