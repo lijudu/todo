@@ -567,6 +567,51 @@ function deleteDeet(){
 
 /***/ }),
 
+/***/ "./src/inbox.js":
+/*!**********************!*\
+  !*** ./src/inbox.js ***!
+  \**********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "inbox": () => (/* binding */ inbox),
+/* harmony export */   "projects": () => (/* binding */ projects),
+/* harmony export */   "today": () => (/* binding */ today)
+/* harmony export */ });
+/* harmony import */ var _todo_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./todo.js */ "./src/todo.js");
+
+
+let inboxBTN = document.getElementById('inbox')
+let todayBTN = document.getElementById('today')
+let projectBTN = document.getElementById('projects')
+
+// click inboxbtn clears container and fills with all objects from myToDo
+function inbox() {
+    inboxBTN.addEventListener('click', function() {
+        console.log('inbox')
+    })
+}
+
+// click todayBtn clears container and fills with objects with due date = today from myToDo
+function today() {
+    todayBTN.addEventListener('click', function(){
+        console.log('today!')
+    })
+}
+
+// click projectsbtn clears container and fills with projects only 
+function projects() {
+    projectBTN.addEventListener('click', function() {
+        console.log('projects!')
+    })
+}
+
+
+
+
+/***/ }),
+
 /***/ "./src/todo.js":
 /*!*********************!*\
   !*** ./src/todo.js ***!
@@ -913,8 +958,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles.css */ "./src/styles.css");
 /* harmony import */ var _DOM_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DOM.js */ "./src/DOM.js");
 /* harmony import */ var _todo_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./todo.js */ "./src/todo.js");
+/* harmony import */ var _inbox_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./inbox.js */ "./src/inbox.js");
 
  
+
 
 
 
@@ -924,6 +971,9 @@ __webpack_require__.r(__webpack_exports__);
 ;(0,_todo_js__WEBPACK_IMPORTED_MODULE_2__.createCard)()
 ;(0,_todo_js__WEBPACK_IMPORTED_MODULE_2__.todoJob)()
 ;(0,_DOM_js__WEBPACK_IMPORTED_MODULE_1__.deleteDeet)()
+;(0,_inbox_js__WEBPACK_IMPORTED_MODULE_3__.inbox)()
+;(0,_inbox_js__WEBPACK_IMPORTED_MODULE_3__.today)()
+;(0,_inbox_js__WEBPACK_IMPORTED_MODULE_3__.projects)()
 })();
 
 /******/ })()

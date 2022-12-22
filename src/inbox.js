@@ -1,15 +1,28 @@
+import { myToDo }  from './todo.js'
 
-// function hasClass(elem, className) {
-//     return elem.classList.contains(className)
-// }
+let inboxBTN = document.getElementById('inbox')
+let todayBTN = document.getElementById('today')
+let projectBTN = document.getElementById('projects')
 
-// checkmark BTN
-// function complete() {
-//     document.addEventListener('click', function(e) {
-//         if(hasClass(e.target, 'check')) {
-//             e.target.parentElement.style.textDecoration = 'line-through'
-//         }
-//     })
-// }
+// click inboxbtn clears container and fills with all objects from myToDo
+function inbox() {
+    inboxBTN.addEventListener('click', function() {
+        console.log('inbox')
+    })
+}
 
-// export { complete }
+// click todayBtn clears container and fills with objects with due date = today from myToDo
+function today() {
+    todayBTN.addEventListener('click', function(){
+        console.log('today!')
+    })
+}
+
+// click projectsbtn clears container and fills with projects only 
+function projects() {
+    projectBTN.addEventListener('click', function() {
+        console.log('projects!')
+    })
+}
+
+export { inbox, today, projects }
