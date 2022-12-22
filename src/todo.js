@@ -215,7 +215,6 @@ function todoJob() {
             const editIndex = myToDo.findIndex(item => item.number === edittodo)
             const popup = document.getElementById('popup')
             const submit = document.getElementById('submit')
-            const sidebar = document.getElementsByClassName('popSidebar')[0]
             const titleInput = document.getElementById('titleInput')
             const detailInput = document.getElementById('detailInput')
             // const priority = document.getElementById('priority')
@@ -237,7 +236,7 @@ function todoJob() {
                 document.getElementById('priority3').checked = true
             }
 
-            sidebar.style.display = 'none'
+
 
             submit.setAttribute('name', editIndex)
 

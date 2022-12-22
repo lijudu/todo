@@ -116,3 +116,12 @@ body {
     left: 50%;
     
 }
+
+#new, #popDelete, #submit, .detail, .editBTN, .deletetodo {
+    cursor: pointer;
+}
+
+li {
+    cursor: pointer;
+    list-style-type: none;
+}

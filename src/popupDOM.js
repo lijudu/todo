@@ -8,7 +8,6 @@ function popup(){
     const detailInput = document.getElementById('detailInput')
     // const priority = document.getElementById('priority')
     const date = document.getElementById('setDate')
-    const sidebar = document.getElementsByClassName('popSidebar')[0]
     
     newBTN.addEventListener('click', function() {
         popup.style.display = 'inline-block'  
@@ -18,7 +17,6 @@ function popup(){
         detailInput.value = ""
         // priority.value = 'low'
         date.value = ""
-        sidebar.style.display = 'inline'
     })
 }
 
