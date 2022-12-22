@@ -112,7 +112,6 @@ function todoedit() {
     myToDo[editNumber].description = editdetail
     myToDo[editNumber].priority = editpriority
     myToDo[editNumber].date = editdate
-    console.log(editpriority)
     console.log(myToDo)
 
     return myToDo
@@ -129,7 +128,6 @@ function editline() {
     date.innerText = myToDo[editNumber].date
     
     if (myToDo[editNumber].priority == 'low') {
-        console.log('low')
         todoContainer.style.backgroundColor = 'green'
     } else if (myToDo[editNumber].priority == "medium") {
         todoContainer.style.backgroundColor = 'yellow'
@@ -197,7 +195,6 @@ function todoJob() {
                 deetpriority.innerText = 'Priority: ' + myToDo[getIndex].priority
                 deetdate.innerText = 'Due: ' + myToDo[getIndex].date
             }
-            // console.log('this index= ' + getIndex)
             return getIndex
         }
         // delete BTN
@@ -206,7 +203,6 @@ function todoJob() {
             e.target.parentElement.remove()
             const removeIndex = myToDo.findIndex(item => item.number === removetodo)
             myToDo.splice(removeIndex, 1)
-            console.log(removetodo)
             console.log(myToDo)
         }
         // edit BTN
@@ -243,11 +239,7 @@ function todoJob() {
         
         
         }
-            // console.log('this index= ' + getIndex)
-            // return getIndex
     })
-    // console.log('this index= ' + getIndex)
-    // return getIndex
 }
 
 

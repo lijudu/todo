@@ -124,4 +124,5 @@ body {
 li {
     cursor: pointer;
     list-style-type: none;
+    padding: 20px;
 }
