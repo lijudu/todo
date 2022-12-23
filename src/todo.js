@@ -56,23 +56,14 @@ function newLine() {
     detailBTN.setAttribute('type', 'button')
     deleteBTN.setAttribute('class', 'deletetodo')
     editBTN.setAttribute('class', 'editBTN')
-
-    // link detailBTN id to a value in array so theyre linked
-    detailBTN.id = idIncrement
-    detailBTN.className = 'detail'
-    deleteBTN.id = idIncrement
-    editBTN.id = idIncrement
     due.setAttribute('class', 'duedate')
-    // todoContainer.name = idIncrement
-
     editBTN.setAttribute('type', 'button')
     deleteBTN.setAttribute('type', 'button')
+    detailBTN.className = 'detail'
 
-    title.innerText = myToDo[myToDo.length - 1].title
-    detailBTN.innerText = 'Details'
-    due.innerText = myToDo[myToDo.length - 1].date
     editBTN.innerText = 'Edit'
     deleteBTN.innerText = 'Delete'
+    detailBTN.innerText = 'Details'
 
     content.appendChild(todoContainer)
     todoContainer.appendChild(leftcontainer)
@@ -83,20 +74,55 @@ function newLine() {
     todoContainer.appendChild(editBTN)
     todoContainer.appendChild(deleteBTN)
 
-    // set background based on priority (should this be switch statement?)
-    // can this be a separate function?
-        if (myToDo[myToDo.length - 1].priority == 'low') {
+    // detailBTN.id = idIncrement
+    // deleteBTN.id = idIncrement
+    // editBTN.id = idIncrement
+
+    function filltodo(){
+        detailBTN.id = idIncrement
+        deleteBTN.id = idIncrement
+        editBTN.id = idIncrement
+
+        title.innerText = myToDo[idIncrement].title
+        due.innerText = myToDo[idIncrement].date
+
+        if (myToDo[idIncrement].priority == 'low') {
             todoContainer.style.backgroundColor = 'green'
-        } else if (myToDo[myToDo.length - 1].priority == "medium") {
+        } else if (myToDo[idIncrement].priority == "medium") {
             todoContainer.style.backgroundColor = 'yellow'
-        } else if (myToDo[myToDo.length - 1].priority == 'high') {
+        } else if (myToDo[idIncrement].priority == 'high') {
             todoContainer.style.backgroundColor = 'red'
         } 
-        // increment number so when new todo created number increments
+    }
+
+    // link detailBTN id to a value in array so theyre linked
+    // detailBTN.id = idIncrement
+    // deleteBTN.id = idIncrement
+    // editBTN.id = idIncrement
+
+
+    // fill in title, due date
+    // title.innerText = myToDo[myToDo.length - 1].title
+    // title.innerText = myToDo[idIncrement].title
+    // due.innerText = myToDo[myToDo.length - 1].date
+    // due.innerText = myToDo[idIncrement].date
+
+
+    // set background based on priority (should this be switch statement?)
+        // if (myToDo[myToDo.length - 1].priority == 'low') {
+        //     todoContainer.style.backgroundColor = 'green'
+        // } else if (myToDo[myToDo.length - 1].priority == "medium") {
+        //     todoContainer.style.backgroundColor = 'yellow'
+        // } else if (myToDo[myToDo.length - 1].priority == 'high') {
+        //     todoContainer.style.backgroundColor = 'red'
+        // } 
+
+    filltodo()
+    // increment number so when new todo created number increments
     idIncrement++
-    return idIncrement
-    
+    return todoContainer
 }
+
 
 // pressing confirm edit will update myToDo array
 function todoedit() {
@@ -244,4 +270,5 @@ function todoJob() {
 
 
 
-export { createCard, todoJob, myToDo }
+
+export { createCard, todoJob, myToDo, newLine }

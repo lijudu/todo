@@ -582,20 +582,65 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _todo_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./todo.js */ "./src/todo.js");
 
 
-let inboxBTN = document.getElementById('inbox')
-let todayBTN = document.getElementById('today')
-let projectBTN = document.getElementById('projects')
 
-// click inboxbtn clears container and fills with all objects from myToDo
+const inboxBTN = document.getElementById('inbox')
+const todayBTN = document.getElementById('today')
+const projectBTN = document.getElementById('projects')
+const content = document.getElementById('content')
+
+function createline() {
+    const content = document.getElementById('content')
+    const todoContainer = document.createElement('div')
+    const leftcontainer = document.createElement('div')
+    const check = document.createElement('input')
+    const title = document.createElement('label')
+    const detailBTN = document.createElement('button')
+    const due = document.createElement('div')
+    const editBTN = document.createElement('button')
+    const deleteBTN = document.createElement('button')
+
+
+    todoContainer.className = 'todoContainer'
+    leftcontainer.className = 'check-container'
+    check.setAttribute('type', 'checkbox')
+    check.setAttribute('class', 'check')
+    title.className = 'todo'
+    detailBTN.setAttribute('type', 'button')
+    deleteBTN.setAttribute('class', 'deletetodo')
+    editBTN.setAttribute('class', 'editBTN')
+    due.setAttribute('class', 'duedate')
+    editBTN.setAttribute('type', 'button')
+    deleteBTN.setAttribute('type', 'button')
+    detailBTN.className = 'detail'
+
+    editBTN.innerText = 'Edit'
+    deleteBTN.innerText = 'Delete'
+    detailBTN.innerText = 'Details'
+
+    content.appendChild(todoContainer)
+    todoContainer.appendChild(leftcontainer)
+    leftcontainer.appendChild(check)
+    leftcontainer.appendChild(title)
+    todoContainer.appendChild(detailBTN)
+    todoContainer.appendChild(due)
+    todoContainer.appendChild(editBTN)
+    todoContainer.appendChild(deleteBTN)
+}
+
+// // click inboxbtn clears container and fills with all objects from myToDo
 function inbox() {
     inboxBTN.addEventListener('click', function() {
+        content.replaceChildren()
+        // myToDo.forEach(createline)
         console.log('inbox')
     })
 }
 
+
 // click todayBtn clears container and fills with objects with due date = today from myToDo
 function today() {
     todayBTN.addEventListener('click', function(){
+        content.replaceChildren()
         console.log('today!')
     })
 }
@@ -622,6 +667,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "createCard": () => (/* binding */ createCard),
 /* harmony export */   "myToDo": () => (/* binding */ myToDo),
+/* harmony export */   "newLine": () => (/* binding */ newLine),
 /* harmony export */   "todoJob": () => (/* binding */ todoJob)
 /* harmony export */ });
 
@@ -682,23 +728,14 @@ function newLine() {
     detailBTN.setAttribute('type', 'button')
     deleteBTN.setAttribute('class', 'deletetodo')
     editBTN.setAttribute('class', 'editBTN')
-
-    // link detailBTN id to a value in array so theyre linked
-    detailBTN.id = idIncrement
-    detailBTN.className = 'detail'
-    deleteBTN.id = idIncrement
-    editBTN.id = idIncrement
     due.setAttribute('class', 'duedate')
-    // todoContainer.name = idIncrement
-
     editBTN.setAttribute('type', 'button')
     deleteBTN.setAttribute('type', 'button')
+    detailBTN.className = 'detail'
 
-    title.innerText = myToDo[myToDo.length - 1].title
-    detailBTN.innerText = 'Details'
-    due.innerText = myToDo[myToDo.length - 1].date
     editBTN.innerText = 'Edit'
     deleteBTN.innerText = 'Delete'
+    detailBTN.innerText = 'Details'
 
     content.appendChild(todoContainer)
     todoContainer.appendChild(leftcontainer)
@@ -709,20 +746,55 @@ function newLine() {
     todoContainer.appendChild(editBTN)
     todoContainer.appendChild(deleteBTN)
 
-    // set background based on priority (should this be switch statement?)
-    // can this be a separate function?
-        if (myToDo[myToDo.length - 1].priority == 'low') {
+    // detailBTN.id = idIncrement
+    // deleteBTN.id = idIncrement
+    // editBTN.id = idIncrement
+
+    function filltodo(){
+        detailBTN.id = idIncrement
+        deleteBTN.id = idIncrement
+        editBTN.id = idIncrement
+
+        title.innerText = myToDo[idIncrement].title
+        due.innerText = myToDo[idIncrement].date
+
+        if (myToDo[idIncrement].priority == 'low') {
             todoContainer.style.backgroundColor = 'green'
-        } else if (myToDo[myToDo.length - 1].priority == "medium") {
+        } else if (myToDo[idIncrement].priority == "medium") {
             todoContainer.style.backgroundColor = 'yellow'
-        } else if (myToDo[myToDo.length - 1].priority == 'high') {
+        } else if (myToDo[idIncrement].priority == 'high') {
             todoContainer.style.backgroundColor = 'red'
         } 
-        // increment number so when new todo created number increments
+    }
+
+    // link detailBTN id to a value in array so theyre linked
+    // detailBTN.id = idIncrement
+    // deleteBTN.id = idIncrement
+    // editBTN.id = idIncrement
+
+
+    // fill in title, due date
+    // title.innerText = myToDo[myToDo.length - 1].title
+    // title.innerText = myToDo[idIncrement].title
+    // due.innerText = myToDo[myToDo.length - 1].date
+    // due.innerText = myToDo[idIncrement].date
+
+
+    // set background based on priority (should this be switch statement?)
+        // if (myToDo[myToDo.length - 1].priority == 'low') {
+        //     todoContainer.style.backgroundColor = 'green'
+        // } else if (myToDo[myToDo.length - 1].priority == "medium") {
+        //     todoContainer.style.backgroundColor = 'yellow'
+        // } else if (myToDo[myToDo.length - 1].priority == 'high') {
+        //     todoContainer.style.backgroundColor = 'red'
+        // } 
+
+    filltodo()
+    // increment number so when new todo created number increments
     idIncrement++
-    return idIncrement
-    
+    return todoContainer
 }
+
 
 // pressing confirm edit will update myToDo array
 function todoedit() {
@@ -867,6 +939,7 @@ function todoJob() {
         }
     })
 }
+
 
 
 
