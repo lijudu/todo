@@ -1,4 +1,3 @@
-
 // define array of todos
 let myToDo = [];
 
@@ -78,46 +77,46 @@ function newLine() {
     // deleteBTN.id = idIncrement
     // editBTN.id = idIncrement
 
-    function filltodo(){
-        detailBTN.id = idIncrement
-        deleteBTN.id = idIncrement
-        editBTN.id = idIncrement
+    // function filltodo(){
+    //     detailBTN.id = idIncrement
+    //     deleteBTN.id = idIncrement
+    //     editBTN.id = idIncrement
 
-        title.innerText = myToDo[idIncrement].title
-        due.innerText = myToDo[idIncrement].date
+    //     title.innerText = myToDo[idIncrement].title
+    //     due.innerText = myToDo[idIncrement].date
 
-        if (myToDo[idIncrement].priority == 'low') {
-            todoContainer.style.backgroundColor = 'green'
-        } else if (myToDo[idIncrement].priority == "medium") {
-            todoContainer.style.backgroundColor = 'yellow'
-        } else if (myToDo[idIncrement].priority == 'high') {
-            todoContainer.style.backgroundColor = 'red'
-        } 
-    }
+    //     if (myToDo[idIncrement].priority == 'low') {
+    //         todoContainer.style.backgroundColor = 'green'
+    //     } else if (myToDo[idIncrement].priority == "medium") {
+    //         todoContainer.style.backgroundColor = 'yellow'
+    //     } else if (myToDo[idIncrement].priority == 'high') {
+    //         todoContainer.style.backgroundColor = 'red'
+    //     } 
+    // }
 
     // link detailBTN id to a value in array so theyre linked
-    // detailBTN.id = idIncrement
-    // deleteBTN.id = idIncrement
-    // editBTN.id = idIncrement
+    detailBTN.id = idIncrement
+    deleteBTN.id = idIncrement
+    editBTN.id = idIncrement
 
 
     // fill in title, due date
-    // title.innerText = myToDo[myToDo.length - 1].title
+    title.innerText = myToDo[myToDo.length - 1].title
     // title.innerText = myToDo[idIncrement].title
-    // due.innerText = myToDo[myToDo.length - 1].date
+    due.innerText = myToDo[myToDo.length - 1].date
     // due.innerText = myToDo[idIncrement].date
 
 
     // set background based on priority (should this be switch statement?)
-        // if (myToDo[myToDo.length - 1].priority == 'low') {
-        //     todoContainer.style.backgroundColor = 'green'
-        // } else if (myToDo[myToDo.length - 1].priority == "medium") {
-        //     todoContainer.style.backgroundColor = 'yellow'
-        // } else if (myToDo[myToDo.length - 1].priority == 'high') {
-        //     todoContainer.style.backgroundColor = 'red'
-        // } 
+        if (myToDo[myToDo.length - 1].priority == 'low') {
+            todoContainer.style.backgroundColor = 'green'
+        } else if (myToDo[myToDo.length - 1].priority == "medium") {
+            todoContainer.style.backgroundColor = 'yellow'
+        } else if (myToDo[myToDo.length - 1].priority == 'high') {
+            todoContainer.style.backgroundColor = 'red'
+        } 
 
-    filltodo()
+    // filltodo()
     // increment number so when new todo created number increments
     idIncrement++
     return todoContainer
@@ -174,10 +173,7 @@ function submitBTN(){
     }
 }
 
-// function addToDo() {
-//     createNew()
-//     newLine()
-// }
+
 
 function createCard(){
     const submit = document.getElementById('submit')
@@ -230,6 +226,7 @@ function todoJob() {
             const removeIndex = myToDo.findIndex(item => item.number === removetodo)
             myToDo.splice(removeIndex, 1)
             console.log(myToDo)
+            return
         }
         // edit BTN
         if(hasClass(e.target, 'editBTN')) {
@@ -262,8 +259,6 @@ function todoJob() {
 
             submit.setAttribute('name', editIndex)
 
-        
-        
         }
     })
 }
@@ -271,4 +266,4 @@ function todoJob() {
 
 
 
-export { createCard, todoJob, myToDo, newLine }
+export { createCard, todoJob, myToDo, newLine, idIncrement }
