@@ -702,9 +702,12 @@ function line(item) {
 function today() {
     todayBTN.addEventListener('click', function(){
         content.replaceChildren()
-        console.log('today!')
+        const today = _todo_js__WEBPACK_IMPORTED_MODULE_0__.myToDo.filter(item => item.date === '2022-12-26')
+        today.forEach((item) => line(item))
+        console.log(today)
     })
 }
+
 
 // click projectsbtn clears container and fills with projects only 
 function projects() {
