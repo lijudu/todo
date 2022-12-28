@@ -1,3 +1,6 @@
+import startOfToday from 'date-fns/startOfToday'
+import format from 'date-fns/format'
+
 
 // popup input modal 
 function popup(){
@@ -6,8 +9,13 @@ function popup(){
     const submit = document.getElementById('submit')
     const titleInput = document.getElementById('titleInput')
     const detailInput = document.getElementById('detailInput')
-    // const priority = document.getElementById('priority')
+    const priority = document.getElementById('priority')
     const date = document.getElementById('setDate')
+    const file = document.getElementById('file')
+    
+    const today = startOfToday()
+    const newdate = format(new Date(today), 'yyyy-MM-dd')
+    date.setAttribute('min', newdate)
     
     newBTN.addEventListener('click', function() {
         popup.style.display = 'inline-block'  
@@ -17,7 +25,14 @@ function popup(){
         detailInput.value = ""
         // priority.value = 'low'
         date.value = ""
+
+        detailInput.style.display = 'inline-block'
+        // priority.style.display = 'inline-block'
+        date.style.display = 'inline-block'
+        file.style.display = 'inline-block'
+
     })
+
 }
 
 // popup delete button & delete if clicked outside

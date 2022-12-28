@@ -25,11 +25,11 @@ body {
 }
 
 #content {
-    display: grid;
+    /* display: grid; */
     /* height: 90vh;  */
-    grid-template-columns: auto;
-    grid-template-rows: repeat((--rowNum), 50px);
-    gap: 10px;
+    /* grid-template-columns: auto; */
+    /* grid-template-rows: repeat((--rowNum), 50px); */
+    /* gap: 10px; */
     background: rgb(238,174,202);
     background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
     
@@ -104,6 +104,7 @@ body {
     flex-direction: row;
     height: 50px;
     border: 1px solid black;
+    margin: 10px;
 }
 
 #deet {
@@ -124,5 +125,6 @@ body {
 li {
     cursor: pointer;
     list-style-type: none;
-    padding: 20px;
+    padding: 10px;
 }
+

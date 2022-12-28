@@ -14,10 +14,14 @@
             <header id="header">HEADER</header>
             <div id="container">
                 <div class="sidebar">
-                    <button id="new">+</button>
+                    <button id="new">Create New ToDo</button>
                     <li id="inbox">Inbox</li>
                     <li id="today">Today</li>
-                    <li id="projects">Projects</li>
+                    <li id="projects">Projects
+                      <button id="newproject">+</button>
+                      <div class="listprojects">
+                      </div>
+                    </li>
                 </div>
                 <div id="content"></div>
             </div>
@@ -40,9 +44,15 @@
                                 <input type="radio" id="priority3" name="priority" value="high">
                                 <label for="priority">High</label>
                             </div>
-                            <div class="duedate">
+                            <div class="duedate" id="date">
                                 <label for="setDate">Due Date:</label>
                                 <input type="date" id="setDate" required>
+                            </div>
+                            <div class="filetodo">
+                              <label for="file">Project: </label>
+                              <select name="file" id="file">
+                                <option value="none">none</option>
+                              </select>
                             </div>
                             <button id="submit"></button>
                         </div>

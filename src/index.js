@@ -1,7 +1,7 @@
 import './styles.css'
 import { deletepop, popup, deleteDeet } from './DOM.js' 
-import { createCard, todoJob, myToDo } from './todo.js'
-import { inbox, today, projects } from './inbox.js'
+import { createCard, todoJob } from './todo.js'
+import { inbox, today, newproject, fillproject } from './inbox.js'
 
 
 // webContent()
@@ -12,4 +12,8 @@ todoJob()
 deleteDeet()
 inbox()
 today()
-projects()
+newproject()
+fillproject()
+
+
+
