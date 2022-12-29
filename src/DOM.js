@@ -9,13 +9,15 @@ function popup(){
     const submit = document.getElementById('submit')
     const titleInput = document.getElementById('titleInput')
     const detailInput = document.getElementById('detailInput')
-    const priority = document.getElementById('priority')
-    const date = document.getElementById('setDate')
-    const file = document.getElementById('file')
+    const priority = document.getElementsByClassName('priority')[0]
+    const duedate = document.getElementsByClassName('duedate')[0]
+    const file = document.getElementsByClassName('filetodo')[0]
     
-    const today = startOfToday()
-    const newdate = format(new Date(today), 'yyyy-MM-dd')
-    date.setAttribute('min', newdate)
+    const date = document.getElementById('setDate')
+    
+    // const today = startOfToday()
+    // const newdate = format(new Date(today), 'yyyy-MM-dd')
+    // date.setAttribute('min', newdate)
     
     newBTN.addEventListener('click', function() {
         popup.style.display = 'inline-block'  
@@ -24,12 +26,16 @@ function popup(){
         titleInput.value = ""
         detailInput.value = ""
         // priority.value = 'low'
-        date.value = ""
+        duedate.value = ""
 
         detailInput.style.display = 'inline-block'
-        // priority.style.display = 'inline-block'
-        date.style.display = 'inline-block'
+        priority.style.display = 'inline-block'
+        duedate.style.display = 'inline-block'
         file.style.display = 'inline-block'
+
+        const today = startOfToday()
+        const newdate = format(new Date(today), 'yyyy-MM-dd')
+        date.setAttribute('min', newdate)
 
     })
 

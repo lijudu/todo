@@ -1,11 +1,14 @@
 import format from 'date-fns/format'
+import startOfToday from 'date-fns/startOfToday'
+
+import { line }  from './inbox.js'
 
 // define array of todos
 let myToDo = [];
 
 // increment number with new todo or new project
 let idIncrement = 0
-let projectIncrement = 1
+let projectIncrement = 0
 
 // object contructor for todo
 function Todo(title, description, priority, date, number, project) {
@@ -139,12 +142,10 @@ function editline() {
     const editNumber = document.getElementById('submit').name
     const title = document.getElementsByClassName('todo')[editNumber]
     const date = document.getElementsByClassName('duedate')[editNumber]
-    const project = document.getElementById('file')
     let todoContainer = document.getElementsByClassName('todoContainer')[editNumber]
 
     title.innerText = myToDo[editNumber].title
     date.innerText = myToDo[editNumber].date
-    // project.value = myToDo[editNumber].project
     
     if (myToDo[editNumber].priority == 'low') {
         todoContainer.style.backgroundColor = 'green'
@@ -153,17 +154,71 @@ function editline() {
     } else if (myToDo[editNumber].priority == 'high') {
         todoContainer.style.backgroundColor = 'red'
     } 
+
+
 }
+
+// createNew()
+// content.replaceChildren()
+
+// const newdate = format(new Date(today), 'yyyy-MM-dd')
+// const filterdates = myToDo.filter(item => item.date == newdate)
+// filterdates.forEach((item) => newLine(item))
+
 
 // submitBTN diff functions if creating new or editing todo or create new project
 function submitBTN(){
     const submit = document.getElementById('submit')
+    let header = document.getElementById('containertitle')
+
+
     if (submit.innerText == 'ADD TODO') {
-        createNew()
-        newLine()
-    } else if (submit.innerText == 'CONFIRM EDIT') {
-        todoedit()
-        editline()
+        if (header.textContent == 'Inbox') {
+            createNew()
+            newLine()
+            return myToDo
+        } else if (header.textContent == 'Today') {
+            createNew()
+            
+            const today = startOfToday()
+            const newdate = format(new Date(today), 'yyyy-MM-dd')
+            
+            content.replaceChildren()
+    
+            const todayheader = document.createElement('div')
+            todayheader.setAttribute('id', 'containertitle')
+            todayheader.innerText = 'Today'
+            content.appendChild(todayheader)
+    
+            const filterdates = myToDo.filter(item => item.date == newdate)
+            filterdates.forEach((item) => line(item))
+            // console.log(filterdates)
+            return myToDo
+        }
+    }
+    else if (submit.innerText == 'CONFIRM EDIT') {
+        if (header.textContent == 'Inbox') {
+            todoedit()
+            editline()
+            return myToDo
+        } else if (header.textContent == 'Today') {
+            todoedit()
+
+            const today = startOfToday()
+            const newdate = format(new Date(today), 'yyyy-MM-dd')
+            
+            content.replaceChildren()
+    
+            const todayheader = document.createElement('div')
+            todayheader.setAttribute('id', 'containertitle')
+            todayheader.innerText = 'Today'
+            content.appendChild(todayheader)
+    
+            const filterdates = myToDo.filter(item => item.date == newdate)
+            filterdates.forEach((item) => line(item))
+            // console.log(filterdates)
+            return myToDo
+        }
     } else if (submit.innerText == 'ADD NEW PROJECT') {
         projectline()
         const detail = document.getElementById('detailInput')
@@ -248,6 +303,10 @@ function todoJob() {
             const file = document.getElementById('file')
             popup.style.display = 'inline-block'
 
+            // const filetodo = document.getElementById('filetodo')
+            // filetodo.style.display = 'none'
+
+
             document.getElementsByClassName('popTitle')[0].innerText = 'EDIT'
             submit.innerText = 'CONFIRM EDIT'
             titleInput.value = myToDo[editIndex].title
@@ -265,7 +324,7 @@ function todoJob() {
                 document.getElementById('priority3').checked = true
             }
 
-
+            
 
             submit.setAttribute('name', editIndex)
 

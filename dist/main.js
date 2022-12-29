@@ -3531,13 +3531,15 @@ function popup(){
     const submit = document.getElementById('submit')
     const titleInput = document.getElementById('titleInput')
     const detailInput = document.getElementById('detailInput')
-    const priority = document.getElementById('priority')
-    const date = document.getElementById('setDate')
-    const file = document.getElementById('file')
+    const priority = document.getElementsByClassName('priority')[0]
+    const duedate = document.getElementsByClassName('duedate')[0]
+    const file = document.getElementsByClassName('filetodo')[0]
     
-    const today = (0,date_fns_startOfToday__WEBPACK_IMPORTED_MODULE_0__["default"])()
-    const newdate = (0,date_fns_format__WEBPACK_IMPORTED_MODULE_1__["default"])(new Date(today), 'yyyy-MM-dd')
-    date.setAttribute('min', newdate)
+    const date = document.getElementById('setDate')
+    
+    // const today = startOfToday()
+    // const newdate = format(new Date(today), 'yyyy-MM-dd')
+    // date.setAttribute('min', newdate)
     
     newBTN.addEventListener('click', function() {
         popup.style.display = 'inline-block'  
@@ -3546,12 +3548,16 @@ function popup(){
         titleInput.value = ""
         detailInput.value = ""
         // priority.value = 'low'
-        date.value = ""
+        duedate.value = ""
 
         detailInput.style.display = 'inline-block'
-        // priority.style.display = 'inline-block'
-        date.style.display = 'inline-block'
+        priority.style.display = 'inline-block'
+        duedate.style.display = 'inline-block'
         file.style.display = 'inline-block'
+
+        const today = (0,date_fns_startOfToday__WEBPACK_IMPORTED_MODULE_0__["default"])()
+        const newdate = (0,date_fns_format__WEBPACK_IMPORTED_MODULE_1__["default"])(new Date(today), 'yyyy-MM-dd')
+        date.setAttribute('min', newdate)
 
     })
 
@@ -3604,6 +3610,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "fillproject": () => (/* binding */ fillproject),
 /* harmony export */   "inbox": () => (/* binding */ inbox),
+/* harmony export */   "line": () => (/* binding */ line),
 /* harmony export */   "newproject": () => (/* binding */ newproject),
 /* harmony export */   "today": () => (/* binding */ today)
 /* harmony export */ });
@@ -3624,6 +3631,12 @@ const content = document.getElementById('content')
 function inbox() {
     inboxBTN.addEventListener('click', function() {
         content.replaceChildren()
+
+        const inboxheader = document.createElement('div')
+        inboxheader.setAttribute('id', 'containertitle')
+        inboxheader.innerText = 'Inbox'
+        content.appendChild(inboxheader)
+
         _todo_js__WEBPACK_IMPORTED_MODULE_0__.myToDo.forEach((item) => line(item))
     })
 }
@@ -3697,12 +3710,17 @@ function today() {
         const newdate = (0,date_fns_format__WEBPACK_IMPORTED_MODULE_2__["default"])(new Date(today), 'yyyy-MM-dd')
         
         content.replaceChildren()
+
+        const todayheader = document.createElement('div')
+        todayheader.setAttribute('id', 'containertitle')
+        todayheader.innerText = 'Today'
+        content.appendChild(todayheader)
+
         const filterdates = _todo_js__WEBPACK_IMPORTED_MODULE_0__.myToDo.filter(item => item.date == newdate)
         filterdates.forEach((item) => line(item))
         console.log(filterdates)
     })
 }
-
 
 // click projectsbtn expands projects section in sidebar
 const projectbtn = document.getElementById('newproject')
@@ -3740,7 +3758,16 @@ function fillproject() {
     document.addEventListener('click', function(e) {
         if(hasClass(e.target, 'projects')) {
             content.replaceChildren()
+
             const findproject = e.target.id
+            const nameheader = e.target.innerText
+
+            const projectheader = document.createElement('div')
+            projectheader.setAttribute('id', 'containertitle')
+            projectheader.innerText = nameheader
+
+            content.appendChild(projectheader)
+
             const filtertodo = _todo_js__WEBPACK_IMPORTED_MODULE_0__.myToDo.filter(item => item.project == findproject)
             filtertodo.forEach((item) => line(item))
             console.log(_todo_js__WEBPACK_IMPORTED_MODULE_0__.myToDo)
@@ -3770,6 +3797,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "newLine": () => (/* binding */ newLine),
 /* harmony export */   "todoJob": () => (/* binding */ todoJob)
 /* harmony export */ });
+/* harmony import */ var date_fns_format__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! date-fns/format */ "./node_modules/date-fns/esm/format/index.js");
+/* harmony import */ var date_fns_startOfToday__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! date-fns/startOfToday */ "./node_modules/date-fns/esm/startOfToday/index.js");
+/* harmony import */ var _inbox_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./inbox.js */ "./src/inbox.js");
+
+
+
 
 
 // define array of todos
@@ -3777,7 +3810,7 @@ let myToDo = [];
 
 // increment number with new todo or new project
 let idIncrement = 0
-let projectIncrement = 1
+let projectIncrement = 0
 
 // object contructor for todo
 function Todo(title, description, priority, date, number, project) {
@@ -3911,12 +3944,10 @@ function editline() {
     const editNumber = document.getElementById('submit').name
     const title = document.getElementsByClassName('todo')[editNumber]
     const date = document.getElementsByClassName('duedate')[editNumber]
-    const project = document.getElementById('file')
     let todoContainer = document.getElementsByClassName('todoContainer')[editNumber]
 
     title.innerText = myToDo[editNumber].title
     date.innerText = myToDo[editNumber].date
-    // project.value = myToDo[editNumber].project
     
     if (myToDo[editNumber].priority == 'low') {
         todoContainer.style.backgroundColor = 'green'
@@ -3925,17 +3956,71 @@ function editline() {
     } else if (myToDo[editNumber].priority == 'high') {
         todoContainer.style.backgroundColor = 'red'
     } 
+
+
 }
+
+// createNew()
+// content.replaceChildren()
+
+// const newdate = format(new Date(today), 'yyyy-MM-dd')
+// const filterdates = myToDo.filter(item => item.date == newdate)
+// filterdates.forEach((item) => newLine(item))
+
 
 // submitBTN diff functions if creating new or editing todo or create new project
 function submitBTN(){
     const submit = document.getElementById('submit')
+    let header = document.getElementById('containertitle')
+
+
     if (submit.innerText == 'ADD TODO') {
-        createNew()
-        newLine()
-    } else if (submit.innerText == 'CONFIRM EDIT') {
-        todoedit()
-        editline()
+        if (header.textContent == 'Inbox') {
+            createNew()
+            newLine()
+            return myToDo
+        } else if (header.textContent == 'Today') {
+            createNew()
+            
+            const today = (0,date_fns_startOfToday__WEBPACK_IMPORTED_MODULE_1__["default"])()
+            const newdate = (0,date_fns_format__WEBPACK_IMPORTED_MODULE_2__["default"])(new Date(today), 'yyyy-MM-dd')
+            
+            content.replaceChildren()
+    
+            const todayheader = document.createElement('div')
+            todayheader.setAttribute('id', 'containertitle')
+            todayheader.innerText = 'Today'
+            content.appendChild(todayheader)
+    
+            const filterdates = myToDo.filter(item => item.date == newdate)
+            filterdates.forEach((item) => (0,_inbox_js__WEBPACK_IMPORTED_MODULE_0__.line)(item))
+            // console.log(filterdates)
+            return myToDo
+        }
+    }
+    else if (submit.innerText == 'CONFIRM EDIT') {
+        if (header.textContent == 'Inbox') {
+            todoedit()
+            editline()
+            return myToDo
+        } else if (header.textContent == 'Today') {
+            todoedit()
+
+            const today = (0,date_fns_startOfToday__WEBPACK_IMPORTED_MODULE_1__["default"])()
+            const newdate = (0,date_fns_format__WEBPACK_IMPORTED_MODULE_2__["default"])(new Date(today), 'yyyy-MM-dd')
+            
+            content.replaceChildren()
+    
+            const todayheader = document.createElement('div')
+            todayheader.setAttribute('id', 'containertitle')
+            todayheader.innerText = 'Today'
+            content.appendChild(todayheader)
+    
+            const filterdates = myToDo.filter(item => item.date == newdate)
+            filterdates.forEach((item) => (0,_inbox_js__WEBPACK_IMPORTED_MODULE_0__.line)(item))
+            // console.log(filterdates)
+            return myToDo
+        }
     } else if (submit.innerText == 'ADD NEW PROJECT') {
         projectline()
         const detail = document.getElementById('detailInput')
@@ -4020,6 +4105,10 @@ function todoJob() {
             const file = document.getElementById('file')
             popup.style.display = 'inline-block'
 
+            // const filetodo = document.getElementById('filetodo')
+            // filetodo.style.display = 'none'
+
+
             document.getElementsByClassName('popTitle')[0].innerText = 'EDIT'
             submit.innerText = 'CONFIRM EDIT'
             titleInput.value = myToDo[editIndex].title
@@ -4037,7 +4126,7 @@ function todoJob() {
                 document.getElementById('priority3').checked = true
             }
 
-
+            
 
             submit.setAttribute('name', editIndex)
 

@@ -12,6 +12,12 @@ const content = document.getElementById('content')
 function inbox() {
     inboxBTN.addEventListener('click', function() {
         content.replaceChildren()
+
+        const inboxheader = document.createElement('div')
+        inboxheader.setAttribute('id', 'containertitle')
+        inboxheader.innerText = 'Inbox'
+        content.appendChild(inboxheader)
+
         myToDo.forEach((item) => line(item))
     })
 }
@@ -85,12 +91,17 @@ function today() {
         const newdate = format(new Date(today), 'yyyy-MM-dd')
         
         content.replaceChildren()
+
+        const todayheader = document.createElement('div')
+        todayheader.setAttribute('id', 'containertitle')
+        todayheader.innerText = 'Today'
+        content.appendChild(todayheader)
+
         const filterdates = myToDo.filter(item => item.date == newdate)
         filterdates.forEach((item) => line(item))
         console.log(filterdates)
     })
 }
-
 
 // click projectsbtn expands projects section in sidebar
 const projectbtn = document.getElementById('newproject')
@@ -128,7 +139,16 @@ function fillproject() {
     document.addEventListener('click', function(e) {
         if(hasClass(e.target, 'projects')) {
             content.replaceChildren()
+
             const findproject = e.target.id
+            const nameheader = e.target.innerText
+
+            const projectheader = document.createElement('div')
+            projectheader.setAttribute('id', 'containertitle')
+            projectheader.innerText = nameheader
+
+            content.appendChild(projectheader)
+
             const filtertodo = myToDo.filter(item => item.project == findproject)
             filtertodo.forEach((item) => line(item))
             console.log(myToDo)
@@ -139,4 +159,4 @@ function fillproject() {
 // clicking on each project clears container, repopulates with todos under project
 // any new todos will now be added to projects container
 
-export { today, inbox, newproject, fillproject }
+export { today, inbox, newproject, fillproject, line }
