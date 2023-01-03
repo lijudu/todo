@@ -158,19 +158,13 @@ function editline() {
 
 }
 
-// createNew()
-// content.replaceChildren()
 
-// const newdate = format(new Date(today), 'yyyy-MM-dd')
-// const filterdates = myToDo.filter(item => item.date == newdate)
-// filterdates.forEach((item) => newLine(item))
 
 
 // submitBTN diff functions if creating new or editing todo or create new project
 function submitBTN(){
     const submit = document.getElementById('submit')
     let header = document.getElementById('containertitle')
-
 
     if (submit.innerText == 'ADD TODO') {
         if (header.textContent == 'Inbox') {
@@ -193,7 +187,32 @@ function submitBTN(){
             const filterdates = myToDo.filter(item => item.date == newdate)
             filterdates.forEach((item) => line(item))
             // console.log(filterdates)
+            idIncrement++
             return myToDo
+        } else if (document.getElementById('file').value == document.getElementById('containertitle').attributes['name'].value) {
+            const editproject = document.getElementById('file').value
+            const projectbox = header.textContent
+            const newname = document.getElementById('containertitle').attributes['name'].value
+
+            createNew()
+
+            content.replaceChildren()
+
+            const projectheader = document.createElement('div')
+            projectheader.setAttribute('id', 'containertitle')
+            projectheader.setAttribute('name', newname)
+            projectheader.innerText = projectbox
+            content.appendChild(projectheader)
+
+            const filtertodo = myToDo.filter(item => item.project == editproject)
+            filtertodo.forEach((item) => line(item))
+
+            console.log(editproject)
+            idIncrement++
+            return myToDo
+        } else {
+            createNew()
+            idIncrement++
         }
     }
     else if (submit.innerText == 'CONFIRM EDIT') {
@@ -218,6 +237,43 @@ function submitBTN(){
             filterdates.forEach((item) => line(item))
             // console.log(filterdates)
             return myToDo
+        } else if (document.getElementById('file').value == document.getElementById('containertitle').attributes['name'].value) {
+            const editproject = document.getElementById('file').value
+            const projectbox = header.textContent
+            const newname = document.getElementById('containertitle').attributes['name'].value
+
+            todoedit()
+
+            content.replaceChildren()
+
+            const projectheader = document.createElement('div')
+            projectheader.setAttribute('id', 'containertitle')
+            projectheader.setAttribute('name', newname)
+            projectheader.innerText = projectbox
+            content.appendChild(projectheader)
+
+            const filtertodo = myToDo.filter(item => item.project == newname)
+            filtertodo.forEach((item) => line(item))
+
+            console.log(editproject)
+            return myToDo
+        } else {
+            const projectbox = header.textContent
+            const newname = document.getElementById('containertitle').attributes['name'].value
+
+            todoedit()
+            content.replaceChildren()
+
+            const projectheader = document.createElement('div')
+            projectheader.setAttribute('id', 'containertitle')
+            projectheader.setAttribute('name', newname)
+            projectheader.innerText = projectbox
+            content.appendChild(projectheader)
+
+            const filtertodo = myToDo.filter(item => item.project == newname)
+            filtertodo.forEach((item) => line(item))
+
+            return myToDo
         }
     } else if (submit.innerText == 'ADD NEW PROJECT') {
         projectline()
@@ -232,7 +288,7 @@ function submitBTN(){
         filetodo.style.display = 'inline-block'
          
         projectIncrement++
-        console.log(projectIncrement)
+        // console.log(projectIncrement)
 
     }
 }

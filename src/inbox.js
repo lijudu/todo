@@ -7,7 +7,6 @@ const todayBTN = document.getElementById('today')
 const content = document.getElementById('content')
 
 
-
 // // click inboxbtn clears container and fills with all objects from myToDo
 function inbox() {
     inboxBTN.addEventListener('click', function() {
@@ -131,6 +130,7 @@ function newproject() {
     })
 }
 
+
 function fillproject() {
     function hasClass(elem, className) {
         return elem.classList.contains(className)
@@ -140,11 +140,12 @@ function fillproject() {
         if(hasClass(e.target, 'projects')) {
             content.replaceChildren()
 
-            const findproject = e.target.id
+            let findproject = e.target.id
             const nameheader = e.target.innerText
 
             const projectheader = document.createElement('div')
             projectheader.setAttribute('id', 'containertitle')
+            projectheader.setAttribute('name', findproject)
             projectheader.innerText = nameheader
 
             content.appendChild(projectheader)
@@ -152,9 +153,14 @@ function fillproject() {
             const filtertodo = myToDo.filter(item => item.project == findproject)
             filtertodo.forEach((item) => line(item))
             console.log(myToDo)
+
+            console.log(findproject)
+
+            
         }
     })
 }
+
 
 // clicking on each project clears container, repopulates with todos under project
 // any new todos will now be added to projects container
