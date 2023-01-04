@@ -159,6 +159,32 @@ function editline() {
 }
 
 
+// add todos to local storage & renders
+function addlocalstorage(myToDo) {
+    localStorage.setItem('todo', JSON.stringify(myToDo))
+    }
+
+// when loading page, get myToDo from local storage
+function getlocalstorage() {
+    const reference = localStorage.getItem('todo') 
+        // if todo/reference exists 
+        if (reference) {
+            // converts todo back to array and stores in myToDo
+            myToDo = JSON.parse(reference)
+            return myToDo
+        }
+    }
+
+// //  todo from localstorage
+// function removelocalstorage(myToDo) {
+//     localStorage.removeItem('todo', JSON.stringify(myToDo))
+// } 
+
+window.onload = (e) => {
+    getlocalstorage()
+    myToDo.forEach((item) => line(item))
+    console.log(myToDo)
+}
 
 
 // submitBTN diff functions if creating new or editing todo or create new project
@@ -170,7 +196,7 @@ function submitBTN(){
         if (header.textContent == 'Inbox') {
             createNew()
             newLine()
-            return myToDo
+
         } else if (header.textContent == 'Today') {
             createNew()
             
@@ -188,7 +214,6 @@ function submitBTN(){
             filterdates.forEach((item) => line(item))
             // console.log(filterdates)
             idIncrement++
-            return myToDo
         } else if (document.getElementById('file').value == document.getElementById('containertitle').attributes['name'].value) {
             const editproject = document.getElementById('file').value
             const projectbox = header.textContent
@@ -209,7 +234,6 @@ function submitBTN(){
 
             console.log(editproject)
             idIncrement++
-            return myToDo
         } else {
             createNew()
             idIncrement++
@@ -219,7 +243,7 @@ function submitBTN(){
         if (header.textContent == 'Inbox') {
             todoedit()
             editline()
-            return myToDo
+
         } else if (header.textContent == 'Today') {
             todoedit()
 
@@ -235,8 +259,6 @@ function submitBTN(){
     
             const filterdates = myToDo.filter(item => item.date == newdate)
             filterdates.forEach((item) => line(item))
-            // console.log(filterdates)
-            return myToDo
         } else if (document.getElementById('file').value == document.getElementById('containertitle').attributes['name'].value) {
             const editproject = document.getElementById('file').value
             const projectbox = header.textContent
@@ -256,7 +278,6 @@ function submitBTN(){
             filtertodo.forEach((item) => line(item))
 
             console.log(editproject)
-            return myToDo
         } else {
             const projectbox = header.textContent
             const newname = document.getElementById('containertitle').attributes['name'].value
@@ -272,8 +293,6 @@ function submitBTN(){
 
             const filtertodo = myToDo.filter(item => item.project == newname)
             filtertodo.forEach((item) => line(item))
-
-            return myToDo
         }
     } else if (submit.innerText == 'ADD NEW PROJECT') {
         projectline()
@@ -291,6 +310,7 @@ function submitBTN(){
         // console.log(projectIncrement)
 
     }
+    addlocalstorage(myToDo)
 }
 
 
@@ -343,7 +363,9 @@ function todoJob() {
             const removeIndex = myToDo.findIndex(item => item.number === removetodo)
             myToDo.splice(removeIndex, 1)
             console.log(myToDo)
-            return
+
+            addlocalstorage(myToDo)
+            getlocalstorage()
         }
         // edit BTN
         if(hasClass(e.target, 'editBTN')) {
@@ -412,4 +434,4 @@ function projectline() {
 
 
 
-export { createCard, todoJob, myToDo, newLine, idIncrement }
+export { createCard, todoJob, myToDo, newLine, idIncrement, projectIncrement }

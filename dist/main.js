@@ -3801,6 +3801,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "idIncrement": () => (/* binding */ idIncrement),
 /* harmony export */   "myToDo": () => (/* binding */ myToDo),
 /* harmony export */   "newLine": () => (/* binding */ newLine),
+/* harmony export */   "projectIncrement": () => (/* binding */ projectIncrement),
 /* harmony export */   "todoJob": () => (/* binding */ todoJob)
 /* harmony export */ });
 /* harmony import */ var date_fns_format__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! date-fns/format */ "./node_modules/date-fns/esm/format/index.js");
@@ -3967,6 +3968,32 @@ function editline() {
 }
 
 
+// add todos to local storage & renders
+function addlocalstorage(myToDo) {
+    localStorage.setItem('todo', JSON.stringify(myToDo))
+    }
+
+// when loading page, get myToDo from local storage
+function getlocalstorage() {
+    const reference = localStorage.getItem('todo') 
+        // if todo/reference exists 
+        if (reference) {
+            // converts todo back to array and stores in myToDo
+            myToDo = JSON.parse(reference)
+            return myToDo
+        }
+    }
+
+// //  todo from localstorage
+// function removelocalstorage(myToDo) {
+//     localStorage.removeItem('todo', JSON.stringify(myToDo))
+// } 
+
+window.onload = (e) => {
+    getlocalstorage()
+    myToDo.forEach((item) => (0,_inbox_js__WEBPACK_IMPORTED_MODULE_0__.line)(item))
+    console.log(myToDo)
+}
 
 
 // submitBTN diff functions if creating new or editing todo or create new project
@@ -3978,7 +4005,7 @@ function submitBTN(){
         if (header.textContent == 'Inbox') {
             createNew()
             newLine()
-            return myToDo
+
         } else if (header.textContent == 'Today') {
             createNew()
             
@@ -3996,7 +4023,6 @@ function submitBTN(){
             filterdates.forEach((item) => (0,_inbox_js__WEBPACK_IMPORTED_MODULE_0__.line)(item))
             // console.log(filterdates)
             idIncrement++
-            return myToDo
         } else if (document.getElementById('file').value == document.getElementById('containertitle').attributes['name'].value) {
             const editproject = document.getElementById('file').value
             const projectbox = header.textContent
@@ -4017,7 +4043,6 @@ function submitBTN(){
 
             console.log(editproject)
             idIncrement++
-            return myToDo
         } else {
             createNew()
             idIncrement++
@@ -4027,7 +4052,7 @@ function submitBTN(){
         if (header.textContent == 'Inbox') {
             todoedit()
             editline()
-            return myToDo
+
         } else if (header.textContent == 'Today') {
             todoedit()
 
@@ -4043,8 +4068,6 @@ function submitBTN(){
     
             const filterdates = myToDo.filter(item => item.date == newdate)
             filterdates.forEach((item) => (0,_inbox_js__WEBPACK_IMPORTED_MODULE_0__.line)(item))
-            // console.log(filterdates)
-            return myToDo
         } else if (document.getElementById('file').value == document.getElementById('containertitle').attributes['name'].value) {
             const editproject = document.getElementById('file').value
             const projectbox = header.textContent
@@ -4064,7 +4087,6 @@ function submitBTN(){
             filtertodo.forEach((item) => (0,_inbox_js__WEBPACK_IMPORTED_MODULE_0__.line)(item))
 
             console.log(editproject)
-            return myToDo
         } else {
             const projectbox = header.textContent
             const newname = document.getElementById('containertitle').attributes['name'].value
@@ -4080,8 +4102,6 @@ function submitBTN(){
 
             const filtertodo = myToDo.filter(item => item.project == newname)
             filtertodo.forEach((item) => (0,_inbox_js__WEBPACK_IMPORTED_MODULE_0__.line)(item))
-
-            return myToDo
         }
     } else if (submit.innerText == 'ADD NEW PROJECT') {
         projectline()
@@ -4099,6 +4119,7 @@ function submitBTN(){
         // console.log(projectIncrement)
 
     }
+    addlocalstorage(myToDo)
 }
 
 
@@ -4151,7 +4172,9 @@ function todoJob() {
             const removeIndex = myToDo.findIndex(item => item.number === removetodo)
             myToDo.splice(removeIndex, 1)
             console.log(myToDo)
-            return
+
+            addlocalstorage(myToDo)
+            getlocalstorage()
         }
         // edit BTN
         if(hasClass(e.target, 'editBTN')) {
@@ -4325,6 +4348,14 @@ __webpack_require__.r(__webpack_exports__);
 ;(0,_inbox_js__WEBPACK_IMPORTED_MODULE_3__.newproject)()
 ;(0,_inbox_js__WEBPACK_IMPORTED_MODULE_3__.fillproject)()
 
+// // add todos to local storage
+// function addlocalstorage(myToDo) {
+//     localStorage.setItem('todo', JSON.stringify(myToDo))
+// }
+
+// const test1 = JSON.parse(localStorage.getItem('todo'))
+
+// console.log(test1)
 
 
 
