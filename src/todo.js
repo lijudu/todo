@@ -425,9 +425,10 @@ function todoJob() {
             myProjects.splice(projindex, 1)
 
             //  remove all todos linked to project being deleted
-            const removetodo = myToDo.findIndex(item => item.project === removeproj)
-            myToDo.splice(removetodo)
-            
+            const removetodo = myToDo.filter(item => item.project === removeproj)
+            for (let i=(removetodo.length -1); i>=0; i--) {
+                myToDo.splice(removetodo[i],1)
+            }
 
             // if container same as one being deleted, go back to inbox
             // NEED TO REDO THIS PART SOMEHOW REUSE INBOX FUNCTION FROM INBOX.JS
@@ -443,9 +444,9 @@ function todoJob() {
 
 
             
-            console.log(myToDo)
-            console.log(myProjects)
-            console.log(removeproj)
+            // console.log(myToDo)
+            // console.log(myProjects)
+            // console.log(removeproj)
 
             addlocalstorage(myToDo)
             getlocalstorage()
@@ -565,4 +566,4 @@ function updateproject(item) {
 
 
 
-export { createCard, todoJob, myToDo, newLine, idIncrement, projectIncrement }
+export { createCard, todoJob, myToDo, newLine, idIncrement, projectIncrement, myProjects }

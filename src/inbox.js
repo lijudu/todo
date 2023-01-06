@@ -1,4 +1,4 @@
-import { myToDo }  from './todo.js'
+import { myToDo, myProjects }  from './todo.js'
 import startOfToday from 'date-fns/startOfToday'
 import format from 'date-fns/format'
 
@@ -141,7 +141,8 @@ function fillproject() {
             content.replaceChildren()
 
             let findproject = e.target.id
-            const nameheader = e.target.innerText
+            const namefind = myProjects.find(item => item.number == e.target.id)
+            const nameheader = namefind.title
 
             const projectheader = document.createElement('div')
             projectheader.setAttribute('id', 'containertitle')
