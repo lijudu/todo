@@ -1,4 +1,4 @@
-import { myToDo, newLine, idIncrement }  from './todo.js'
+import { myToDo }  from './todo.js'
 import startOfToday from 'date-fns/startOfToday'
 import format from 'date-fns/format'
 

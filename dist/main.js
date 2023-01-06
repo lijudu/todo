@@ -3814,6 +3814,8 @@ __webpack_require__.r(__webpack_exports__);
 
 // define array of todos
 let myToDo = [];
+// define array of project titles
+let myProjects = [];
 
 // increment number with new todo or new project
 let idIncrement = 0
@@ -3827,6 +3829,12 @@ function Todo(title, description, priority, date, number, project) {
     this.date = date
     this.number = number
     this.project = project
+}
+
+// object constructor for projects
+function Project(title, number) {
+    this.title = title 
+    this.number = number
 }
 
 // new todo (title, description, duedate priority) 
@@ -3904,9 +3912,7 @@ function newLine() {
 
     // fill in title, due date
     title.innerText = myToDo[myToDo.length - 1].title
-    // title.innerText = myToDo[idIncrement].title
     due.innerText = myToDo[myToDo.length - 1].date
-    // due.innerText = myToDo[idIncrement].date
 
 
     // set background based on priority (should this be switch statement?)
@@ -3972,6 +3978,16 @@ function editline() {
 function addlocalstorage(myToDo) {
     localStorage.setItem('todo', JSON.stringify(myToDo))
     }
+// add projects to local storage & renders
+function addprojectstorage(myProjects) {
+    localStorage.setItem('projects', JSON.stringify(myProjects))
+}
+
+// add idIncrement & projectIncrement to local storage
+function addincrement(idIncrement, projectIncrement) {
+    localStorage.setItem('idIncrement', JSON.stringify(idIncrement))
+    localStorage.setItem('projectIncrement', JSON.stringify(projectIncrement))
+}
 
 // when loading page, get myToDo from local storage
 function getlocalstorage() {
@@ -3983,15 +3999,35 @@ function getlocalstorage() {
             return myToDo
         }
     }
+// load page, get projects from local storage
+function getprojectstorage(){
+    const refer = localStorage.getItem('projects')
+    //if projects exists
+    if (refer) {
+        myProjects = JSON.parse(refer)
+        return myProjects
+    }
+}
 
-// //  todo from localstorage
-// function removelocalstorage(myToDo) {
-//     localStorage.removeItem('todo', JSON.stringify(myToDo))
-// } 
+// load page, get increments from local storage
+function getincrement() {
+    const increment = localStorage.getItem('idIncrement')
+    const projinc = localStorage.getItem('projectIncrement')
+    if (increment || projinc) {
+        idIncrement = JSON.parse(increment)
+        projectIncrement = JSON.parse(projinc)
+        return idIncrement, projectIncrement
+    }
+}
+
+
 
 window.onload = (e) => {
     getlocalstorage()
+    getprojectstorage()
+    getincrement()
     myToDo.forEach((item) => (0,_inbox_js__WEBPACK_IMPORTED_MODULE_0__.line)(item))
+    myProjects.forEach((item) => updateproject(item))
     console.log(myToDo)
 }
 
@@ -4104,6 +4140,7 @@ function submitBTN(){
             filtertodo.forEach((item) => (0,_inbox_js__WEBPACK_IMPORTED_MODULE_0__.line)(item))
         }
     } else if (submit.innerText == 'ADD NEW PROJECT') {
+        addproject()
         projectline()
         const detail = document.getElementById('detailInput')
         const priority = document.getElementsByClassName('priority')[0]
@@ -4117,9 +4154,12 @@ function submitBTN(){
          
         projectIncrement++
         // console.log(projectIncrement)
+        addprojectstorage(myProjects)
 
     }
     addlocalstorage(myToDo)
+    addincrement(idIncrement, projectIncrement)
+    
 }
 
 
@@ -4175,6 +4215,51 @@ function todoJob() {
 
             addlocalstorage(myToDo)
             getlocalstorage()
+            addprojectstorage(myProjects)
+            getprojectstorage()
+        }
+        // delete project 
+        if (hasClass(e.target, 'delproject')) {
+            const removeproj = e.target.id
+            // remove project option from dropdown menu (on popup)
+            const getdrop = document.getElementById('file')
+            for (var i=0; i< getdrop.length; i++) {
+                if (getdrop.options[i].value == removeproj) {
+                    getdrop.remove(i)
+                }
+            }
+            // delete project myproject array 
+            e.target.parentElement.remove()
+            const projindex = myProjects.findIndex(item => item.number === removeproj)
+            myProjects.splice(projindex, 1)
+
+            //  remove all todos linked to project being deleted
+            const removetodo = myToDo.findIndex(item => item.project === removeproj)
+            myToDo.splice(removetodo)
+            
+
+            // if container same as one being deleted, go back to inbox
+            // NEED TO REDO THIS PART SOMEHOW REUSE INBOX FUNCTION FROM INBOX.JS
+            const content = document.getElementById('content')
+            content.replaceChildren()
+
+            const inboxheader = document.createElement('div')
+            inboxheader.setAttribute('id', 'containertitle')
+            inboxheader.innerText = 'Inbox'
+            content.appendChild(inboxheader)
+    
+            myToDo.forEach((item) => (0,_inbox_js__WEBPACK_IMPORTED_MODULE_0__.line)(item))
+
+
+            
+            console.log(myToDo)
+            console.log(myProjects)
+            console.log(removeproj)
+
+            addlocalstorage(myToDo)
+            getlocalstorage()
+            addprojectstorage(myProjects)
+            getprojectstorage()
         }
         // edit BTN
         if(hasClass(e.target, 'editBTN')) {
@@ -4219,6 +4304,15 @@ function todoJob() {
     })
 }
 
+function addproject() {
+    const title = document.getElementById('titleInput').value
+    const number = String(projectIncrement)
+    const newproject = new Project(title, number)
+    myProjects.push(newproject)
+    console.log(myProjects)
+    return myProjects
+}
+
 function projectline() {
     // add project name under project sidebar
     const listprojects = document.getElementsByClassName('listprojects')[0]
@@ -4229,7 +4323,13 @@ function projectline() {
     newdiv.setAttribute('id', projectIncrement)
     newdiv.innerText = projecttitle
 
+    const delproject = document.createElement('button')
+    delproject.setAttribute('class', 'delproject')
+    delproject.setAttribute('id', projectIncrement)
+    delproject.innerText = 'x'
+
     listprojects.appendChild(newdiv)
+    newdiv.appendChild(delproject)
 
     // add project name into option value on popup
     const fileoption = document.getElementById('file')
@@ -4237,6 +4337,37 @@ function projectline() {
 
     newoption.setAttribute('value', projectIncrement)
     newoption.innerText = projecttitle
+
+    fileoption.appendChild(newoption)
+}
+
+
+function updateproject(item) {
+    // add project name under project sidebar
+    const listprojects = document.getElementsByClassName('listprojects')[0]
+    // const projecttitle = document.getElementById('titleInput').value
+
+    const newdiv = document.createElement('div')
+    newdiv.setAttribute('class', 'projects')
+    newdiv.setAttribute('id', item.number)
+    newdiv.innerText = item.title
+
+    const delproject = document.createElement('button')
+    delproject.setAttribute('class', 'delproject')
+    delproject.setAttribute('id', item.number)
+    delproject.innerText = 'x'
+
+    listprojects.appendChild(newdiv)
+    newdiv.appendChild(delproject)
+
+    
+
+    // add project name into option value on popup
+    const fileoption = document.getElementById('file')
+    const newoption = document.createElement('option')
+
+    newoption.setAttribute('value', item.number)
+    newoption.innerText = item.title
 
     fileoption.appendChild(newoption)
 }
