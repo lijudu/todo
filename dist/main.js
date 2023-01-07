@@ -4237,9 +4237,9 @@ function todoJob() {
 
             //  remove all todos linked to project being deleted
             const removetodo = myToDo.filter(item => item.project === removeproj)
-            for (let i=(removetodo.length -1); i>=0; i--) {
-                myToDo.splice(removetodo[i],1)
-            }
+            myToDo = myToDo.filter((item) => !removetodo.includes(item))
+
+            console.log(removetodo)
 
             // if container same as one being deleted, go back to inbox
             // NEED TO REDO THIS PART SOMEHOW REUSE INBOX FUNCTION FROM INBOX.JS
