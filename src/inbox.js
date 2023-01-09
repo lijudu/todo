@@ -64,6 +64,7 @@ function line(item) {
         detailBTN.id = item.number
         deleteBTN.id = item.number
         editBTN.id = item.number
+        check.id = item.number
 
         title.innerText = item.title
         due.innerText = item.date
@@ -75,7 +76,15 @@ function line(item) {
         } else if (item.priority == 'high') {
             todoContainer.style.backgroundColor = 'red'
         } 
+
+        if (item.complete == true) {
+            check.checked = true
+            check.parentElement.style.textDecoration = 'line-through'
+        }
     }
+
+    // if completed todo then cross out
+
 
     filltodo()
     return todoContainer

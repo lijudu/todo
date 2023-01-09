@@ -13,13 +13,14 @@ let idIncrement = 0
 let projectIncrement = 0
 
 // object contructor for todo
-function Todo(title, description, priority, date, number, project) {
+function Todo(title, description, priority, date, number, project, complete) {
     this.title = title
     this.description = description
     this.priority = priority
     this.date = date
     this.number = number
     this.project = project
+    this.complete = complete
 }
 
 // object constructor for projects
@@ -49,7 +50,10 @@ function createNew(){
     // set project
     const project = document.getElementById('file').value
 
-    const newToDo = new Todo(title, detail, priority, date, number, project)
+    // set completed status as incomplete
+    const complete  = false
+
+    const newToDo = new Todo(title, detail, priority, date, number, project, complete)
     myToDo.push(newToDo)
     console.log(myToDo)
     return myToDo, idIncrement 
@@ -114,6 +118,8 @@ function newLine() {
         } else if (myToDo[myToDo.length - 1].priority == 'high') {
             todoContainer.style.backgroundColor = 'red'
         } 
+
+
 
     // filltodo()
     // increment number so when new todo created number increments
@@ -370,11 +376,28 @@ function todoJob() {
     
     // strikethrough when checkbox checked
     document.addEventListener('click', function(e) {
-        if(hasClass(e.target, 'check')) {
-            e.target.parentElement.style.textDecoration = 'line-through'
-    
-        } if (e.target.checked == false) {
-            e.target.parentElement.style.textDecoration = 'none'
+        if(hasClass(e.target, 'check')) { 
+            if (e.target.checked == true) {      
+                const completenumb = e.target.id
+                const findcomplete = myToDo.findIndex(item => item.number == completenumb)
+                const newcomplete = true
+                myToDo[findcomplete].complete = newcomplete
+                e.target.parentElement.style.textDecoration = 'line-through'
+                console.log(myToDo)
+                addlocalstorage(myToDo)
+                getlocalstorage()
+            }
+            if (e.target.checked == false) {
+                const completenumb = e.target.id
+                const findcomplete = myToDo.findIndex(item => item.number == completenumb)
+                const newcomplete = false
+                myToDo[findcomplete].complete = newcomplete
+                e.target.parentElement.style.textDecoration = 'none'
+                console.log(myToDo)
+                addlocalstorage(myToDo)
+                getlocalstorage()
+            }
+            return myToDo
         }
         // pop up detiail modal when detailBTN clicked
         if (hasClass(e.target, 'detail')) {
