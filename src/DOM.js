@@ -8,27 +8,21 @@ function popup(){
     const popup = document.getElementById('popup')
     const submit = document.getElementById('submit')
     const titleInput = document.getElementById('titleInput')
-    const detailInput = document.getElementById('detailInput')
     const priority = document.getElementsByClassName('priority')[0]
     const duedate = document.getElementsByClassName('duedate')[0]
     const file = document.getElementsByClassName('filetodo')[0]
     
     const date = document.getElementById('setDate')
-    
-    // const today = startOfToday()
-    // const newdate = format(new Date(today), 'yyyy-MM-dd')
-    // date.setAttribute('min', newdate)
+
     
     newBTN.addEventListener('click', function() {
         popup.style.display = 'inline-block'  
         document.getElementsByClassName('popTitle')[0].innerText = 'CREATE NEW'
         submit.innerText = 'ADD TODO'
         titleInput.value = ""
-        detailInput.value = ""
         // priority.value = 'low'
         duedate.value = ""
 
-        detailInput.style.display = 'inline-block'
         priority.style.display = 'inline-block'
         duedate.style.display = 'inline-block'
         file.style.display = 'inline-block'
@@ -63,15 +57,4 @@ function deletepop(){
     }
 }
 
-function deleteDeet(){
-    const deet = document.getElementById('deet')
-    const deetDel = document.getElementById('deetDelete')
-
-    // delete if x button clicked
-    deetDel.onclick = function(){
-        deet.style.display = 'none'
-    }
-    
-}
-
-export { popup, deletepop, deleteDeet }
+export { popup, deletepop }

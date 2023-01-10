@@ -27,7 +27,6 @@ function line(item) {
     const leftcontainer = document.createElement('div')
     const check = document.createElement('input')
     const title = document.createElement('label')
-    const detailBTN = document.createElement('button')
     const due = document.createElement('div')
     const editBTN = document.createElement('button')
     const deleteBTN = document.createElement('button')
@@ -38,30 +37,25 @@ function line(item) {
     check.setAttribute('type', 'checkbox')
     check.setAttribute('class', 'check')
     title.className = 'todo'
-    detailBTN.setAttribute('type', 'button')
     deleteBTN.setAttribute('class', 'deletetodo')
     editBTN.setAttribute('class', 'editBTN')
     due.setAttribute('class', 'duedate')
     editBTN.setAttribute('type', 'button')
     deleteBTN.setAttribute('type', 'button')
-    detailBTN.className = 'detail'
 
     editBTN.innerText = 'Edit'
     deleteBTN.innerText = 'Delete'
-    detailBTN.innerText = 'Details'
 
     content.appendChild(todoContainer)
     todoContainer.appendChild(leftcontainer)
     leftcontainer.appendChild(check)
     leftcontainer.appendChild(title)
-    todoContainer.appendChild(detailBTN)
     todoContainer.appendChild(due)
     todoContainer.appendChild(editBTN)
     todoContainer.appendChild(deleteBTN)
 
 
     function filltodo(){
-        detailBTN.id = item.number
         deleteBTN.id = item.number
         editBTN.id = item.number
         check.id = item.number
@@ -115,8 +109,6 @@ function today() {
 const projectbtn = document.getElementById('newproject')
 const popup = document.getElementById('popup')
 const submit = document.getElementById('submit')
-
-const detail = document.getElementById('detailInput')
 const priority = document.getElementsByClassName('priority')[0]
 const duedate = document.getElementById('date')
 const filetodo = document.getElementsByClassName('filetodo')[0]
@@ -128,7 +120,6 @@ function newproject() {
         document.getElementsByClassName('popTitle')[0].innerText = 'NEW PROJECT'
         submit.innerText = 'ADD NEW PROJECT'
         
-        detail.style.display = 'none'
         priority.style.display = 'none'
         duedate.style.display = 'none'
         filetodo.style.display = 'none'

@@ -1,15 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;400&display=swap');
+
 :root {
     --rowNum: "";
 }
 
 body {
     margin: 0;
+    font-family: 'raleway', 'sans-serif'
 }
 
 #header {
-    background: rgba(221, 44, 195, 0.2);
-    /* min-height: 80px; */
-    height: 10vh;
+    background-color: #FFD4B2;
+    opacity: 0.8;
+    background-image:  linear-gradient(135deg, #fffdf2 25%, transparent 25%), linear-gradient(225deg, #fffdf2 25%, transparent 25%), linear-gradient(45deg, #fffdf2 25%, transparent 25%), linear-gradient(315deg, #fffdf2 25%, #FFD4B2 25%);
+    background-position:  27px 0, 27px 0, 0 0, 0 0;
+    background-size: 54px 54px;
+    background-repeat: repeat;
+    /* font-weight: 400; */
+    font-size: 25px;
+    /* height: 10vh; */
+    padding: 16px;
+
 }
 
 #container {
@@ -19,19 +30,23 @@ body {
 
 }
 
+#containertitle {
+    text-align: center;
+    padding: 5px;
+    font-size: 20px;
+}
+
 .sidebar {
-    background: rgba(35, 131, 92, 0.4);
+    background-color: #fffdf2
     /* height: 90vh; */
 }
 
 #content {
-    /* display: grid; */
-    /* height: 90vh;  */
-    /* grid-template-columns: auto; */
-    /* grid-template-rows: repeat((--rowNum), 50px); */
-    /* gap: 10px; */
-    background: rgb(238,174,202);
-    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    background-color: #fffdf2;
+    opacity: 0.8;
+    background-image:  linear-gradient(#d2d2d2 1.1px, transparent 1.1px), linear-gradient(to right, #d2d2d2 1.1px, #fffdf2 1.1px);
+    background-size: 22px 22px;
+    /* background: #FFF6BD */
     
 }
 
@@ -56,7 +71,7 @@ body {
     justify-content: space-between;
 }
 
-#popDelete::before, #deetDelete::before {
+#popDelete::before {
     content: "\2715";
     font-size: 10px;
     /* position: fixed; */
@@ -105,17 +120,6 @@ body {
     height: 50px;
     border: 1px solid black;
     margin: 10px;
-}
-
-#deet {
-    z-index: 1; 
-    width: 200px;
-    height: 200px;
-    background-color: white;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    
 }
 
 #new, #popDelete, #submit, .detail, .editBTN, .deletetodo {

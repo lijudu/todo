@@ -20,8 +20,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Raleway:wght@100;400&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ":root {\n    --rowNum: \"\";\n}\n\nbody {\n    margin: 0;\n}\n\n#header {\n    background: rgba(221, 44, 195, 0.2);\n    /* min-height: 80px; */\n    height: 10vh;\n}\n\n#container {\n    display: grid;\n    grid-template-columns: 15vw auto; \n    height: 90vh;\n\n}\n\n.sidebar {\n    background: rgba(35, 131, 92, 0.4);\n    /* height: 90vh; */\n}\n\n#content {\n    /* display: grid; */\n    /* height: 90vh;  */\n    /* grid-template-columns: auto; */\n    /* grid-template-rows: repeat((--rowNum), 50px); */\n    /* gap: 10px; */\n    background: rgb(238,174,202);\n    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);\n    \n}\n\n#popup {\n    /* display: none; */\n    z-index: 1;\n    position: fixed;\n    top: 0;\n    left: 0;\n    padding-top: 20%;\n    overflow: auto; \n    background: white;\n    height: 100%;\n    width: 100%;\n    background-color: rgba(0,0,0,0);\n    /* filter: blur(8px); */\n    /* margin: auto; */\n}\n\n.popTop {\n    display: flex;\n    justify-content: space-between;\n}\n\n#popDelete::before, #deetDelete::before {\n    content: \"\\2715\";\n    font-size: 10px;\n    /* position: fixed; */\n    /* z-index: 1; */\n\n}\n\n#popContent {\n    background-color: white;\n    /* width: 70%; */\n    /* height: 30%; */\n    position: fixed;\n    left: 30%;\n    width: 400px;\n    /* display: flex; */\n    /* align-items:flex-start; */\n    /* justify-content: space-between; */\n}\n\n.popTitle {\n    background-color: yellow;\n}\n\n.popSidebar {\n    /* width: 10vw; */\n    height: 40vh;\n    /* border-right: 1px solid black; */\n}\n\n.popBelow {\n    display: flex;\n}\n\n.popInput {\n    width: 100%;\n    background-color: pink;\n    display: flex;\n    flex-direction: column;\n}\n\n.todoContainer {\n    display: flex;\n    /* align-content: center; */\n    justify-content: space-around;\n    flex-direction: row;\n    height: 50px;\n    border: 1px solid black;\n    margin: 10px;\n}\n\n#deet {\n    z-index: 1; \n    width: 200px;\n    height: 200px;\n    background-color: white;\n    position: fixed;\n    top: 50%;\n    left: 50%;\n    \n}\n\n#new, #popDelete, #submit, .detail, .editBTN, .deletetodo {\n    cursor: pointer;\n}\n\nli {\n    cursor: pointer;\n    list-style-type: none;\n    padding: 10px;\n}\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ":root {\n    --rowNum: \"\";\n}\n\nbody {\n    margin: 0;\n    font-family: 'raleway', 'sans-serif'\n}\n\n#header {\n    background-color: #FFD4B2;\n    opacity: 0.8;\n    background-image:  linear-gradient(135deg, #fffdf2 25%, transparent 25%), linear-gradient(225deg, #fffdf2 25%, transparent 25%), linear-gradient(45deg, #fffdf2 25%, transparent 25%), linear-gradient(315deg, #fffdf2 25%, #FFD4B2 25%);\n    background-position:  27px 0, 27px 0, 0 0, 0 0;\n    background-size: 54px 54px;\n    background-repeat: repeat;\n    /* font-weight: 400; */\n    font-size: 25px;\n    /* height: 10vh; */\n    padding: 16px;\n\n}\n\n#container {\n    display: grid;\n    grid-template-columns: 15vw auto; \n    height: 90vh;\n\n}\n\n#containertitle {\n    text-align: center;\n    padding: 5px;\n    font-size: 20px;\n}\n\n.sidebar {\n    background-color: #fffdf2\n    /* height: 90vh; */\n}\n\n#content {\n    background-color: #fffdf2;\n    opacity: 0.8;\n    background-image:  linear-gradient(#d2d2d2 1.1px, transparent 1.1px), linear-gradient(to right, #d2d2d2 1.1px, #fffdf2 1.1px);\n    background-size: 22px 22px;\n    /* background: #FFF6BD */\n    \n}\n\n#popup {\n    /* display: none; */\n    z-index: 1;\n    position: fixed;\n    top: 0;\n    left: 0;\n    padding-top: 20%;\n    overflow: auto; \n    background: white;\n    height: 100%;\n    width: 100%;\n    background-color: rgba(0,0,0,0);\n    /* filter: blur(8px); */\n    /* margin: auto; */\n}\n\n.popTop {\n    display: flex;\n    justify-content: space-between;\n}\n\n#popDelete::before {\n    content: \"\\2715\";\n    font-size: 10px;\n    /* position: fixed; */\n    /* z-index: 1; */\n\n}\n\n#popContent {\n    background-color: white;\n    /* width: 70%; */\n    /* height: 30%; */\n    position: fixed;\n    left: 30%;\n    width: 400px;\n    /* display: flex; */\n    /* align-items:flex-start; */\n    /* justify-content: space-between; */\n}\n\n.popTitle {\n    background-color: yellow;\n}\n\n.popSidebar {\n    /* width: 10vw; */\n    height: 40vh;\n    /* border-right: 1px solid black; */\n}\n\n.popBelow {\n    display: flex;\n}\n\n.popInput {\n    width: 100%;\n    background-color: pink;\n    display: flex;\n    flex-direction: column;\n}\n\n.todoContainer {\n    display: flex;\n    /* align-content: center; */\n    justify-content: space-around;\n    flex-direction: row;\n    height: 50px;\n    border: 1px solid black;\n    margin: 10px;\n}\n\n#new, #popDelete, #submit, .detail, .editBTN, .deletetodo {\n    cursor: pointer;\n}\n\nli {\n    cursor: pointer;\n    list-style-type: none;\n    padding: 10px;\n}\n\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -3514,7 +3515,6 @@ module.exports = styleTagTransform;
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "deleteDeet": () => (/* binding */ deleteDeet),
 /* harmony export */   "deletepop": () => (/* binding */ deletepop),
 /* harmony export */   "popup": () => (/* binding */ popup)
 /* harmony export */ });
@@ -3530,27 +3530,21 @@ function popup(){
     const popup = document.getElementById('popup')
     const submit = document.getElementById('submit')
     const titleInput = document.getElementById('titleInput')
-    const detailInput = document.getElementById('detailInput')
     const priority = document.getElementsByClassName('priority')[0]
     const duedate = document.getElementsByClassName('duedate')[0]
     const file = document.getElementsByClassName('filetodo')[0]
     
     const date = document.getElementById('setDate')
-    
-    // const today = startOfToday()
-    // const newdate = format(new Date(today), 'yyyy-MM-dd')
-    // date.setAttribute('min', newdate)
+
     
     newBTN.addEventListener('click', function() {
         popup.style.display = 'inline-block'  
         document.getElementsByClassName('popTitle')[0].innerText = 'CREATE NEW'
         submit.innerText = 'ADD TODO'
         titleInput.value = ""
-        detailInput.value = ""
         // priority.value = 'low'
         duedate.value = ""
 
-        detailInput.style.display = 'inline-block'
         priority.style.display = 'inline-block'
         duedate.style.display = 'inline-block'
         file.style.display = 'inline-block'
@@ -3583,17 +3577,6 @@ function deletepop(){
     submit.onclick = function(){
         popup.style.display = 'none'
     }
-}
-
-function deleteDeet(){
-    const deet = document.getElementById('deet')
-    const deetDel = document.getElementById('deetDelete')
-
-    // delete if x button clicked
-    deetDel.onclick = function(){
-        deet.style.display = 'none'
-    }
-    
 }
 
 
@@ -3646,7 +3629,6 @@ function line(item) {
     const leftcontainer = document.createElement('div')
     const check = document.createElement('input')
     const title = document.createElement('label')
-    const detailBTN = document.createElement('button')
     const due = document.createElement('div')
     const editBTN = document.createElement('button')
     const deleteBTN = document.createElement('button')
@@ -3657,30 +3639,25 @@ function line(item) {
     check.setAttribute('type', 'checkbox')
     check.setAttribute('class', 'check')
     title.className = 'todo'
-    detailBTN.setAttribute('type', 'button')
     deleteBTN.setAttribute('class', 'deletetodo')
     editBTN.setAttribute('class', 'editBTN')
     due.setAttribute('class', 'duedate')
     editBTN.setAttribute('type', 'button')
     deleteBTN.setAttribute('type', 'button')
-    detailBTN.className = 'detail'
 
     editBTN.innerText = 'Edit'
     deleteBTN.innerText = 'Delete'
-    detailBTN.innerText = 'Details'
 
     content.appendChild(todoContainer)
     todoContainer.appendChild(leftcontainer)
     leftcontainer.appendChild(check)
     leftcontainer.appendChild(title)
-    todoContainer.appendChild(detailBTN)
     todoContainer.appendChild(due)
     todoContainer.appendChild(editBTN)
     todoContainer.appendChild(deleteBTN)
 
 
     function filltodo(){
-        detailBTN.id = item.number
         deleteBTN.id = item.number
         editBTN.id = item.number
         check.id = item.number
@@ -3734,8 +3711,6 @@ function today() {
 const projectbtn = document.getElementById('newproject')
 const popup = document.getElementById('popup')
 const submit = document.getElementById('submit')
-
-const detail = document.getElementById('detailInput')
 const priority = document.getElementsByClassName('priority')[0]
 const duedate = document.getElementById('date')
 const filetodo = document.getElementsByClassName('filetodo')[0]
@@ -3747,7 +3722,6 @@ function newproject() {
         document.getElementsByClassName('popTitle')[0].innerText = 'NEW PROJECT'
         submit.innerText = 'ADD NEW PROJECT'
         
-        detail.style.display = 'none'
         priority.style.display = 'none'
         duedate.style.display = 'none'
         filetodo.style.display = 'none'
@@ -3833,9 +3807,8 @@ let idIncrement = 0
 let projectIncrement = 0
 
 // object contructor for todo
-function Todo(title, description, priority, date, number, project, complete) {
+function Todo(title, priority, date, number, project, complete) {
     this.title = title
-    this.description = description
     this.priority = priority
     this.date = date
     this.number = number
@@ -3855,7 +3828,6 @@ function createNew(){
     const submit = document.getElementById('submit')
 
     const title = document.getElementById('titleInput').value
-    const detail = document.getElementById('detailInput').value
     // get priority value
     const priority = document.querySelector('input[name="priority"]:checked').value
 
@@ -3873,7 +3845,7 @@ function createNew(){
     // set completed status as incomplete
     const complete  = false
 
-    const newToDo = new Todo(title, detail, priority, date, number, project, complete)
+    const newToDo = new Todo(title, priority, date, number, project, complete)
     myToDo.push(newToDo)
     console.log(myToDo)
     return myToDo, idIncrement 
@@ -3887,7 +3859,6 @@ function newLine() {
     const leftcontainer = document.createElement('div')
     const check = document.createElement('input')
     const title = document.createElement('label')
-    const detailBTN = document.createElement('button')
     const due = document.createElement('div')
     const editBTN = document.createElement('button')
     const deleteBTN = document.createElement('button')
@@ -3898,17 +3869,14 @@ function newLine() {
     check.setAttribute('type', 'checkbox')
     check.setAttribute('class', 'check')
     title.className = 'todo'
-    detailBTN.setAttribute('type', 'button')
     deleteBTN.setAttribute('class', 'deletetodo')
     editBTN.setAttribute('class', 'editBTN')
     due.setAttribute('class', 'duedate')
     editBTN.setAttribute('type', 'button')
     deleteBTN.setAttribute('type', 'button')
-    detailBTN.className = 'detail'
 
     editBTN.innerText = 'Edit'
     deleteBTN.innerText = 'Delete'
-    detailBTN.innerText = 'Details'
 
     content.appendChild(todoContainer)
     todoContainer.appendChild(leftcontainer)
@@ -3920,7 +3888,6 @@ function newLine() {
     todoContainer.appendChild(deleteBTN)
 
     // link detailBTN id to a value in array so theyre linked
-    detailBTN.id = idIncrement
     deleteBTN.id = idIncrement
     editBTN.id = idIncrement
 
@@ -3951,7 +3918,6 @@ function newLine() {
 // pressing confirm edit will update myToDo array
 function todoedit() {
     const edittitle = document.getElementById('titleInput').value
-    const editdetail = document.getElementById('detailInput').value
     const editpriority = document.querySelector('input[name="priority"]:checked').value
     const editdate = document.getElementById('setDate').value
     const editNumber = document.getElementById('submit').name
@@ -3960,7 +3926,6 @@ function todoedit() {
 
     // console.log(editNumber)
     myToDo[editNumber].title = edittitle
-    myToDo[editNumber].description = editdetail
     myToDo[editNumber].priority = editpriority
     myToDo[editNumber].date = editdate
     myToDo[editNumber].project = editproject
@@ -4159,12 +4124,10 @@ function submitBTN(){
     } else if (submit.innerText == 'ADD NEW PROJECT') {
         addproject()
         projectline()
-        const detail = document.getElementById('detailInput')
         const priority = document.getElementsByClassName('priority')[0]
         const duedate = document.getElementById('date')
         const filetodo = document.getElementsByClassName('filetodo')[0]
 
-        detail.style.display = 'inline-block'
         priority.style.display = 'inline-block'
         duedate.style.display = 'inline-block'
         filetodo.style.display = 'inline-block'
@@ -4219,26 +4182,6 @@ function todoJob() {
             }
             return myToDo
         }
-        // pop up detiail modal when detailBTN clicked
-        if (hasClass(e.target, 'detail')) {
-            const detail = e.target.id
-            let getIndex = myToDo.findIndex(item => item.number === detail)
-            
-            const deet = document.getElementById('deet')
-            const deettitle = document.getElementsByClassName('deettitle')[0]
-            const deetdetails = document.getElementsByClassName('deetdetails')[0]
-            const deetpriority = document.getElementsByClassName('deetpriority')[0]
-            const deetdate  = document.getElementsByClassName('deetdate')[0]
-
-
-            if (deet.style.display = 'inline-block') {
-                deettitle.innerText = 'Title: ' + myToDo[getIndex].title
-                deetdetails.innerText = 'Details: ' + myToDo[getIndex].description
-                deetpriority.innerText = 'Priority: ' + myToDo[getIndex].priority
-                deetdate.innerText = 'Due: ' + myToDo[getIndex].date
-            }
-            return getIndex
-        }
         // delete BTN
         if (hasClass(e.target, 'deletetodo')) {
             const removetodo = e.target.id
@@ -4285,12 +4228,6 @@ function todoJob() {
     
             myToDo.forEach((item) => (0,_inbox_js__WEBPACK_IMPORTED_MODULE_0__.line)(item))
 
-
-            
-            // console.log(myToDo)
-            // console.log(myProjects)
-            // console.log(removeproj)
-
             addlocalstorage(myToDo)
             getlocalstorage()
             addprojectstorage(myProjects)
@@ -4303,7 +4240,6 @@ function todoJob() {
             const popup = document.getElementById('popup')
             const submit = document.getElementById('submit')
             const titleInput = document.getElementById('titleInput')
-            const detailInput = document.getElementById('detailInput')
             // const priority = document.getElementById('priority')
             const priority = document.querySelector('input[name="priority"]')
             const date = document.getElementById('setDate')
@@ -4317,7 +4253,6 @@ function todoJob() {
             document.getElementsByClassName('popTitle')[0].innerText = 'EDIT'
             submit.innerText = 'CONFIRM EDIT'
             titleInput.value = myToDo[editIndex].title
-            detailInput.value = myToDo[editIndex].description
             date.value = myToDo[editIndex].date
             file.value = myToDo[editIndex].project
 
@@ -4508,20 +4443,11 @@ __webpack_require__.r(__webpack_exports__);
 ;(0,_DOM_js__WEBPACK_IMPORTED_MODULE_1__.deletepop)()
 ;(0,_todo_js__WEBPACK_IMPORTED_MODULE_2__.createCard)()
 ;(0,_todo_js__WEBPACK_IMPORTED_MODULE_2__.todoJob)()
-;(0,_DOM_js__WEBPACK_IMPORTED_MODULE_1__.deleteDeet)()
 ;(0,_inbox_js__WEBPACK_IMPORTED_MODULE_3__.inbox)()
 ;(0,_inbox_js__WEBPACK_IMPORTED_MODULE_3__.today)()
 ;(0,_inbox_js__WEBPACK_IMPORTED_MODULE_3__.newproject)()
 ;(0,_inbox_js__WEBPACK_IMPORTED_MODULE_3__.fillproject)()
 
-// // add todos to local storage
-// function addlocalstorage(myToDo) {
-//     localStorage.setItem('todo', JSON.stringify(myToDo))
-// }
-
-// const test1 = JSON.parse(localStorage.getItem('todo'))
-
-// console.log(test1)
 
 
 

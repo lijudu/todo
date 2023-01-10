@@ -13,9 +13,8 @@ let idIncrement = 0
 let projectIncrement = 0
 
 // object contructor for todo
-function Todo(title, description, priority, date, number, project, complete) {
+function Todo(title, priority, date, number, project, complete) {
     this.title = title
-    this.description = description
     this.priority = priority
     this.date = date
     this.number = number
@@ -35,7 +34,6 @@ function createNew(){
     const submit = document.getElementById('submit')
 
     const title = document.getElementById('titleInput').value
-    const detail = document.getElementById('detailInput').value
     // get priority value
     const priority = document.querySelector('input[name="priority"]:checked').value
 
@@ -53,7 +51,7 @@ function createNew(){
     // set completed status as incomplete
     const complete  = false
 
-    const newToDo = new Todo(title, detail, priority, date, number, project, complete)
+    const newToDo = new Todo(title, priority, date, number, project, complete)
     myToDo.push(newToDo)
     console.log(myToDo)
     return myToDo, idIncrement 
@@ -67,7 +65,6 @@ function newLine() {
     const leftcontainer = document.createElement('div')
     const check = document.createElement('input')
     const title = document.createElement('label')
-    const detailBTN = document.createElement('button')
     const due = document.createElement('div')
     const editBTN = document.createElement('button')
     const deleteBTN = document.createElement('button')
@@ -78,17 +75,14 @@ function newLine() {
     check.setAttribute('type', 'checkbox')
     check.setAttribute('class', 'check')
     title.className = 'todo'
-    detailBTN.setAttribute('type', 'button')
     deleteBTN.setAttribute('class', 'deletetodo')
     editBTN.setAttribute('class', 'editBTN')
     due.setAttribute('class', 'duedate')
     editBTN.setAttribute('type', 'button')
     deleteBTN.setAttribute('type', 'button')
-    detailBTN.className = 'detail'
 
     editBTN.innerText = 'Edit'
     deleteBTN.innerText = 'Delete'
-    detailBTN.innerText = 'Details'
 
     content.appendChild(todoContainer)
     todoContainer.appendChild(leftcontainer)
@@ -100,7 +94,6 @@ function newLine() {
     todoContainer.appendChild(deleteBTN)
 
     // link detailBTN id to a value in array so theyre linked
-    detailBTN.id = idIncrement
     deleteBTN.id = idIncrement
     editBTN.id = idIncrement
 
@@ -131,7 +124,6 @@ function newLine() {
 // pressing confirm edit will update myToDo array
 function todoedit() {
     const edittitle = document.getElementById('titleInput').value
-    const editdetail = document.getElementById('detailInput').value
     const editpriority = document.querySelector('input[name="priority"]:checked').value
     const editdate = document.getElementById('setDate').value
     const editNumber = document.getElementById('submit').name
@@ -140,7 +132,6 @@ function todoedit() {
 
     // console.log(editNumber)
     myToDo[editNumber].title = edittitle
-    myToDo[editNumber].description = editdetail
     myToDo[editNumber].priority = editpriority
     myToDo[editNumber].date = editdate
     myToDo[editNumber].project = editproject
@@ -339,12 +330,10 @@ function submitBTN(){
     } else if (submit.innerText == 'ADD NEW PROJECT') {
         addproject()
         projectline()
-        const detail = document.getElementById('detailInput')
         const priority = document.getElementsByClassName('priority')[0]
         const duedate = document.getElementById('date')
         const filetodo = document.getElementsByClassName('filetodo')[0]
 
-        detail.style.display = 'inline-block'
         priority.style.display = 'inline-block'
         duedate.style.display = 'inline-block'
         filetodo.style.display = 'inline-block'
@@ -399,26 +388,6 @@ function todoJob() {
             }
             return myToDo
         }
-        // pop up detiail modal when detailBTN clicked
-        if (hasClass(e.target, 'detail')) {
-            const detail = e.target.id
-            let getIndex = myToDo.findIndex(item => item.number === detail)
-            
-            const deet = document.getElementById('deet')
-            const deettitle = document.getElementsByClassName('deettitle')[0]
-            const deetdetails = document.getElementsByClassName('deetdetails')[0]
-            const deetpriority = document.getElementsByClassName('deetpriority')[0]
-            const deetdate  = document.getElementsByClassName('deetdate')[0]
-
-
-            if (deet.style.display = 'inline-block') {
-                deettitle.innerText = 'Title: ' + myToDo[getIndex].title
-                deetdetails.innerText = 'Details: ' + myToDo[getIndex].description
-                deetpriority.innerText = 'Priority: ' + myToDo[getIndex].priority
-                deetdate.innerText = 'Due: ' + myToDo[getIndex].date
-            }
-            return getIndex
-        }
         // delete BTN
         if (hasClass(e.target, 'deletetodo')) {
             const removetodo = e.target.id
@@ -465,12 +434,6 @@ function todoJob() {
     
             myToDo.forEach((item) => line(item))
 
-
-            
-            // console.log(myToDo)
-            // console.log(myProjects)
-            // console.log(removeproj)
-
             addlocalstorage(myToDo)
             getlocalstorage()
             addprojectstorage(myProjects)
@@ -483,7 +446,6 @@ function todoJob() {
             const popup = document.getElementById('popup')
             const submit = document.getElementById('submit')
             const titleInput = document.getElementById('titleInput')
-            const detailInput = document.getElementById('detailInput')
             // const priority = document.getElementById('priority')
             const priority = document.querySelector('input[name="priority"]')
             const date = document.getElementById('setDate')
@@ -497,7 +459,6 @@ function todoJob() {
             document.getElementsByClassName('popTitle')[0].innerText = 'EDIT'
             submit.innerText = 'CONFIRM EDIT'
             titleInput.value = myToDo[editIndex].title
-            detailInput.value = myToDo[editIndex].description
             date.value = myToDo[editIndex].date
             file.value = myToDo[editIndex].project
 
