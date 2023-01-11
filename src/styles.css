@@ -144,7 +144,6 @@ input[type=text], input[type=radio], input[type=date], #file, #submit {
 
 .todoContainer {
     display: flex;
-    /* align-content: center; */
     justify-content: space-around;
     flex-direction: row;
     height: 50px;
@@ -171,4 +170,16 @@ li {
     gap: 5px;
     border: none;
     background-color: transparent;
+}
+
+.check-container, .duedate {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    min-width: 400px;
+}
+
+.duedate {
+    background-color: white;
+    min-width: 80px;
 }
