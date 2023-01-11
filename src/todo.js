@@ -42,7 +42,7 @@ function createNew(){
     // const date = format (new Date(inputdate), 'yyyy-MM-dd')
     const date = document.getElementById('setDate').value
 
-    // set a number to refer to later when clicking details/link to DOM
+    // set a number to refer to later when clicking link to DOM
     const number = String(idIncrement)
 
     // set project
@@ -84,16 +84,24 @@ function newLine() {
     editBTN.innerText = 'Edit'
     deleteBTN.innerText = 'Delete'
 
+    const editicon = document.createElement('div')
+    editicon.innerHTML = '<i class="material-symbols-outlined">Edit</i>'
+    editBTN.appendChild(editicon)
+
+    const deleteicon = document.createElement('div')
+    deleteicon.innerHTML = '<i class="material-symbols-outlined">Delete</i>'
+    deleteBTN.appendChild(deleteicon)
+
+
     content.appendChild(todoContainer)
     todoContainer.appendChild(leftcontainer)
     leftcontainer.appendChild(check)
     leftcontainer.appendChild(title)
-    todoContainer.appendChild(detailBTN)
     todoContainer.appendChild(due)
     todoContainer.appendChild(editBTN)
     todoContainer.appendChild(deleteBTN)
 
-    // link detailBTN id to a value in array so theyre linked
+    // link  id to a value in array so theyre linked
     deleteBTN.id = idIncrement
     editBTN.id = idIncrement
 
@@ -105,11 +113,11 @@ function newLine() {
 
     // set background based on priority (should this be switch statement?)
         if (myToDo[myToDo.length - 1].priority == 'low') {
-            todoContainer.style.backgroundColor = 'green'
+            todoContainer.style.backgroundColor = '#C7E6B8'
         } else if (myToDo[myToDo.length - 1].priority == "medium") {
-            todoContainer.style.backgroundColor = 'yellow'
+            todoContainer.style.backgroundColor = '#FCEC89'
         } else if (myToDo[myToDo.length - 1].priority == 'high') {
-            todoContainer.style.backgroundColor = 'red'
+            todoContainer.style.backgroundColor = '#FAAFA0'
         } 
 
 
@@ -151,11 +159,11 @@ function editline() {
     date.innerText = myToDo[editNumber].date
     
     if (myToDo[editNumber].priority == 'low') {
-        todoContainer.style.backgroundColor = 'green'
+        todoContainer.style.backgroundColor = '#C7E6B8'
     } else if (myToDo[editNumber].priority == "medium") {
-        todoContainer.style.backgroundColor = 'yellow'
+        todoContainer.style.backgroundColor = '#FCEC89'
     } else if (myToDo[editNumber].priority == 'high') {
-        todoContainer.style.backgroundColor = 'red'
+        todoContainer.style.backgroundColor = '#FAAFA0'
     } 
 
 

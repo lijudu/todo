@@ -22,7 +22,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Raleway:wght@100;400&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ":root {\n    --rowNum: \"\";\n}\n\nbody {\n    margin: 0;\n    font-family: 'raleway', 'sans-serif'\n}\n\n#header {\n    background-color: #FFD4B2;\n    opacity: 0.8;\n    background-image:  linear-gradient(135deg, #fffdf2 25%, transparent 25%), linear-gradient(225deg, #fffdf2 25%, transparent 25%), linear-gradient(45deg, #fffdf2 25%, transparent 25%), linear-gradient(315deg, #fffdf2 25%, #FFD4B2 25%);\n    background-position:  27px 0, 27px 0, 0 0, 0 0;\n    background-size: 54px 54px;\n    background-repeat: repeat;\n    /* font-weight: 400; */\n    font-size: 25px;\n    /* height: 10vh; */\n    padding: 16px;\n\n}\n\n#container {\n    display: grid;\n    grid-template-columns: 15vw auto; \n    height: 90vh;\n\n}\n\n#containertitle {\n    text-align: center;\n    padding: 5px;\n    font-size: 20px;\n}\n\n.sidebar {\n    background-color: #fffdf2\n    /* height: 90vh; */\n}\n\n#content {\n    background-color: #fffdf2;\n    opacity: 0.8;\n    background-image:  linear-gradient(#d2d2d2 1.1px, transparent 1.1px), linear-gradient(to right, #d2d2d2 1.1px, #fffdf2 1.1px);\n    background-size: 22px 22px;\n    /* background: #FFF6BD */\n    \n}\n\n#popup {\n    /* display: none; */\n    z-index: 1;\n    position: fixed;\n    top: 0;\n    left: 0;\n    padding-top: 20%;\n    overflow: auto; \n    background: white;\n    height: 100%;\n    width: 100%;\n    background-color: rgba(0,0,0,0);\n    /* filter: blur(8px); */\n    /* margin: auto; */\n}\n\n.popTop {\n    display: flex;\n    justify-content: space-between;\n}\n\n#popDelete::before {\n    content: \"\\2715\";\n    font-size: 10px;\n    /* position: fixed; */\n    /* z-index: 1; */\n\n}\n\n#popContent {\n    background-color: white;\n    /* width: 70%; */\n    /* height: 30%; */\n    position: fixed;\n    left: 30%;\n    width: 400px;\n    /* display: flex; */\n    /* align-items:flex-start; */\n    /* justify-content: space-between; */\n}\n\n.popTitle {\n    background-color: yellow;\n}\n\n.popSidebar {\n    /* width: 10vw; */\n    height: 40vh;\n    /* border-right: 1px solid black; */\n}\n\n.popBelow {\n    display: flex;\n}\n\n.popInput {\n    width: 100%;\n    background-color: pink;\n    display: flex;\n    flex-direction: column;\n}\n\n.todoContainer {\n    display: flex;\n    /* align-content: center; */\n    justify-content: space-around;\n    flex-direction: row;\n    height: 50px;\n    border: 1px solid black;\n    margin: 10px;\n}\n\n#new, #popDelete, #submit, .detail, .editBTN, .deletetodo {\n    cursor: pointer;\n}\n\nli {\n    cursor: pointer;\n    list-style-type: none;\n    padding: 10px;\n}\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ":root {\n    --rowNum: \"\";\n}\n\nbody {\n    margin: 0;\n    font-family: 'raleway', 'sans-serif'\n}\n\n#header {\n    background-color: #FFD4B2;\n    opacity: 0.8;\n    background-image:  linear-gradient(135deg, #fffdf2 25%, transparent 25%), linear-gradient(225deg, #fffdf2 25%, transparent 25%), linear-gradient(45deg, #fffdf2 25%, transparent 25%), linear-gradient(315deg, #fffdf2 25%, #FFD4B2 25%);\n    background-position:  27px 0, 27px 0, 0 0, 0 0;\n    background-size: 54px 54px;\n    background-repeat: repeat;\n    /* font-weight: 400; */\n    font-size: 25px;\n    /* height: 10vh; */\n    padding: 16px;\n\n}\n\n#container {\n    display: grid;\n    grid-template-columns: 15vw auto; \n    height: 90vh;\n\n}\n\n#containertitle {\n    text-align: center;\n    padding: 5px;\n    font-size: 20px;\n}\n\n.sidebar {\n    background-color: #fffdf2\n    /* height: 90vh; */\n}\n\n#content {\n    background-color: #fffdf2;\n    opacity: 0.8;\n    background-image:  linear-gradient(#d2d2d2 1.1px, transparent 1.1px), linear-gradient(to right, #d2d2d2 1.1px, #fffdf2 1.1px);\n    background-size: 22px 22px;\n    /* background: #FFF6BD */\n    \n}\n\n#popup {\n    z-index: 1;\n    position: fixed;\n    top: 0;\n    left: 0;\n    padding-top: 20%;\n    overflow: auto; \n    background: white;\n    height: 100%;\n    width: 100%;\n    background-color: rgba(0,0,0,0);\n    /* filter: blur(8px); */\n    /* margin: auto; */\n}\n\n.popTop {\n    display: flex;\n    justify-content: space-between;\n    background-color: #86C8BC;\n    padding: 10px 30px 10px 30px;\n    font-size: 17px;\n}\n\n#popDelete::before {\n    content: \"\\2715\";\n    font-size: 10px;\n    /* position: fixed; */\n    /* z-index: 1; */\n\n}\n\n#popContent {\n    border-radius: 40px 15px;\n    overflow: hidden;\n    border:#d2d2d2;\n    position: fixed;\n    left: 30%;\n    width: 400px;\n}\n\n\n.popSidebar {\n    /* width: 10vw; */\n    height: 40vh;\n    /* border-right: 1px solid black; */\n}\n\n.popBelow {\n    display: flex;\n    padding: 20px 30px;\n    background-color: #CEEDC7;\n}\n\n.popInput {\n    width: 100%;\n    /* background-color: #CEEDC7; */\n    display: flex;\n    flex-direction: column;\n    gap: 10px;\n\n}\n\ninput[type=text], input[type=radio], input[type=date], #file, #submit {\n    /* border: 1px solid #d2d2d2; */\n    border: none;\n    font-size: 15px;\n    height: 20px;\n    border-radius: 5px;\n    background-color: #fffdf2;\n}\n\n#lowlabel {\n    background-color: #C7E6B8;\n}\n\n#mediumlabel {\n    background-color: #FCEC89;\n}\n\n#highlabel {\n    background-color: #FAAFA0;\n}\n\n#submit {\n    background-color: #86C8BC;\n    /* padding: 10px; */\n    font-size: 15px;\n    border-radius: 40px;\n    margin-top: 10px;\n    height: 25px;\n}\n\n.todoContainer {\n    display: flex;\n    /* align-content: center; */\n    justify-content: space-around;\n    flex-direction: row;\n    height: 50px;\n    border: 1px solid #d2d2d2;\n    border-radius: 20px;\n    margin: 10px;\n\n}\n\n#new, #popDelete, #submit, .detail, .editBTN, .deletetodo {\n    cursor: pointer;\n}\n\nli {\n    cursor: pointer;\n    list-style-type: none;\n    padding: 10px;\n}\n\n.editBTN, .deletetodo {\n    display: flex;\n    flex-direction: row-reverse;\n    align-items: center;\n    gap: 5px;\n    border: none;\n    background-color: transparent;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -3648,6 +3648,14 @@ function line(item) {
     editBTN.innerText = 'Edit'
     deleteBTN.innerText = 'Delete'
 
+    const editicon = document.createElement('div')
+    editicon.innerHTML = '<i class="material-symbols-outlined">Edit</i>'
+    editBTN.appendChild(editicon)
+
+    const deleteicon = document.createElement('div')
+    deleteicon.innerHTML = '<i class="material-symbols-outlined">Delete</i>'
+    deleteBTN.appendChild(deleteicon)
+
     content.appendChild(todoContainer)
     todoContainer.appendChild(leftcontainer)
     leftcontainer.appendChild(check)
@@ -3666,11 +3674,11 @@ function line(item) {
         due.innerText = item.date
 
         if (item.priority == 'low') {
-            todoContainer.style.backgroundColor = 'green'
+            todoContainer.style.backgroundColor = '#C7E6B8'
         } else if (item.priority == "medium") {
-            todoContainer.style.backgroundColor = 'yellow'
+            todoContainer.style.backgroundColor = '#FCEC89'
         } else if (item.priority == 'high') {
-            todoContainer.style.backgroundColor = 'red'
+            todoContainer.style.backgroundColor = '#FAAFA0'
         } 
 
         if (item.complete == true) {
@@ -3836,7 +3844,7 @@ function createNew(){
     // const date = format (new Date(inputdate), 'yyyy-MM-dd')
     const date = document.getElementById('setDate').value
 
-    // set a number to refer to later when clicking details/link to DOM
+    // set a number to refer to later when clicking link to DOM
     const number = String(idIncrement)
 
     // set project
@@ -3878,16 +3886,24 @@ function newLine() {
     editBTN.innerText = 'Edit'
     deleteBTN.innerText = 'Delete'
 
+    const editicon = document.createElement('div')
+    editicon.innerHTML = '<i class="material-symbols-outlined">Edit</i>'
+    editBTN.appendChild(editicon)
+
+    const deleteicon = document.createElement('div')
+    deleteicon.innerHTML = '<i class="material-symbols-outlined">Delete</i>'
+    deleteBTN.appendChild(deleteicon)
+
+
     content.appendChild(todoContainer)
     todoContainer.appendChild(leftcontainer)
     leftcontainer.appendChild(check)
     leftcontainer.appendChild(title)
-    todoContainer.appendChild(detailBTN)
     todoContainer.appendChild(due)
     todoContainer.appendChild(editBTN)
     todoContainer.appendChild(deleteBTN)
 
-    // link detailBTN id to a value in array so theyre linked
+    // link  id to a value in array so theyre linked
     deleteBTN.id = idIncrement
     editBTN.id = idIncrement
 
@@ -3899,11 +3915,11 @@ function newLine() {
 
     // set background based on priority (should this be switch statement?)
         if (myToDo[myToDo.length - 1].priority == 'low') {
-            todoContainer.style.backgroundColor = 'green'
+            todoContainer.style.backgroundColor = '#C7E6B8'
         } else if (myToDo[myToDo.length - 1].priority == "medium") {
-            todoContainer.style.backgroundColor = 'yellow'
+            todoContainer.style.backgroundColor = '#FCEC89'
         } else if (myToDo[myToDo.length - 1].priority == 'high') {
-            todoContainer.style.backgroundColor = 'red'
+            todoContainer.style.backgroundColor = '#FAAFA0'
         } 
 
 
@@ -3945,11 +3961,11 @@ function editline() {
     date.innerText = myToDo[editNumber].date
     
     if (myToDo[editNumber].priority == 'low') {
-        todoContainer.style.backgroundColor = 'green'
+        todoContainer.style.backgroundColor = '#C7E6B8'
     } else if (myToDo[editNumber].priority == "medium") {
-        todoContainer.style.backgroundColor = 'yellow'
+        todoContainer.style.backgroundColor = '#FCEC89'
     } else if (myToDo[editNumber].priority == 'high') {
-        todoContainer.style.backgroundColor = 'red'
+        todoContainer.style.backgroundColor = '#FAAFA0'
     } 
 
 

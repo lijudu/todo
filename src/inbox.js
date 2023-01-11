@@ -46,6 +46,14 @@ function line(item) {
     editBTN.innerText = 'Edit'
     deleteBTN.innerText = 'Delete'
 
+    const editicon = document.createElement('div')
+    editicon.innerHTML = '<i class="material-symbols-outlined">Edit</i>'
+    editBTN.appendChild(editicon)
+
+    const deleteicon = document.createElement('div')
+    deleteicon.innerHTML = '<i class="material-symbols-outlined">Delete</i>'
+    deleteBTN.appendChild(deleteicon)
+
     content.appendChild(todoContainer)
     todoContainer.appendChild(leftcontainer)
     leftcontainer.appendChild(check)
@@ -64,11 +72,11 @@ function line(item) {
         due.innerText = item.date
 
         if (item.priority == 'low') {
-            todoContainer.style.backgroundColor = 'green'
+            todoContainer.style.backgroundColor = '#C7E6B8'
         } else if (item.priority == "medium") {
-            todoContainer.style.backgroundColor = 'yellow'
+            todoContainer.style.backgroundColor = '#FCEC89'
         } else if (item.priority == 'high') {
-            todoContainer.style.backgroundColor = 'red'
+            todoContainer.style.backgroundColor = '#FAAFA0'
         } 
 
         if (item.complete == true) {

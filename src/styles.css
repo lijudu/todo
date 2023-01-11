@@ -51,7 +51,6 @@ body {
 }
 
 #popup {
-    /* display: none; */
     z-index: 1;
     position: fixed;
     top: 0;
@@ -69,6 +68,9 @@ body {
 .popTop {
     display: flex;
     justify-content: space-between;
+    background-color: #86C8BC;
+    padding: 10px 30px 10px 30px;
+    font-size: 17px;
 }
 
 #popDelete::before {
@@ -80,20 +82,14 @@ body {
 }
 
 #popContent {
-    background-color: white;
-    /* width: 70%; */
-    /* height: 30%; */
+    border-radius: 40px 15px;
+    overflow: hidden;
+    border:#d2d2d2;
     position: fixed;
     left: 30%;
     width: 400px;
-    /* display: flex; */
-    /* align-items:flex-start; */
-    /* justify-content: space-between; */
 }
 
-.popTitle {
-    background-color: yellow;
-}
 
 .popSidebar {
     /* width: 10vw; */
@@ -103,13 +99,47 @@ body {
 
 .popBelow {
     display: flex;
+    padding: 20px 30px;
+    background-color: #CEEDC7;
 }
 
 .popInput {
     width: 100%;
-    background-color: pink;
+    /* background-color: #CEEDC7; */
     display: flex;
     flex-direction: column;
+    gap: 10px;
+
+}
+
+input[type=text], input[type=radio], input[type=date], #file, #submit {
+    /* border: 1px solid #d2d2d2; */
+    border: none;
+    font-size: 15px;
+    height: 20px;
+    border-radius: 5px;
+    background-color: #fffdf2;
+}
+
+#lowlabel {
+    background-color: #C7E6B8;
+}
+
+#mediumlabel {
+    background-color: #FCEC89;
+}
+
+#highlabel {
+    background-color: #FAAFA0;
+}
+
+#submit {
+    background-color: #86C8BC;
+    /* padding: 10px; */
+    font-size: 15px;
+    border-radius: 40px;
+    margin-top: 10px;
+    height: 25px;
 }
 
 .todoContainer {
@@ -118,8 +148,10 @@ body {
     justify-content: space-around;
     flex-direction: row;
     height: 50px;
-    border: 1px solid black;
+    border: 1px solid #d2d2d2;
+    border-radius: 20px;
     margin: 10px;
+
 }
 
 #new, #popDelete, #submit, .detail, .editBTN, .deletetodo {
@@ -132,3 +164,11 @@ li {
     padding: 10px;
 }
 
+.editBTN, .deletetodo {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 5px;
+    border: none;
+    background-color: transparent;
+}
