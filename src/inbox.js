@@ -134,6 +134,7 @@ function newproject() {
 
         titleInput.value = ""
         titleInput.setAttribute('placeholder', "")
+        titleInput.setAttribute('maxlength', "11")
 
     })
 }

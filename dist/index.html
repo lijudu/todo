@@ -12,12 +12,15 @@
     </head>
     <body>
         <div id="main">
-            <header id="header">ToDo App</header>
+            <header id="header">
+                <span id="headtitle">ToDo App</span>
+            </header>
             <div id="container">
                 <div class="sidebar">
                     <button id="new">Create New ToDo</button>
-                    <li id="inbox">Inbox</li>
-                    <li id="today">Today</li>
+                    <li id="inbox"><span class="material-symbols-outlined">upcoming</span>Inbox</li>
+                    <li id="today"><span class="material-symbols-outlined">today</span>Today</li>
+                    <div id="separate"></div>
                     <li id="projects">Projects
                       <button id="newproject">+</button>
                       <div class="listprojects">
@@ -36,7 +39,7 @@
                     </div>
                     <div class="popBelow">
                         <div class="popInput">
-                            <input type="text" id="titleInput" placeholder= "Title: Go for a run" required>
+                            <input type="text" id="titleInput" placeholder= "Title: Go for a run" maxlength="40">
                             <div class="priority">
                                 <label for="priority">Priority: </label>
                                 <input type="radio" id="priority1" name="priority" value="low" checked>

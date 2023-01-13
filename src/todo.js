@@ -1,5 +1,6 @@
 import format from 'date-fns/format'
 import startOfToday from 'date-fns/startOfToday'
+import { popup } from './DOM.js'
 
 import { inbox, line }  from './inbox.js'
 
@@ -233,7 +234,12 @@ function submitBTN(){
     const submit = document.getElementById('submit')
     let header = document.getElementById('containertitle')
 
+    if(document.getElementById('titleInput').value == "") {
+        alert('Please enter a title')
+        return
+    }
     if (submit.innerText == 'ADD TODO') {
+
         if (header.textContent == 'Inbox') {
             createNew()
             newLine()
@@ -510,7 +516,8 @@ function projectline() {
     const delproject = document.createElement('button')
     delproject.setAttribute('class', 'delproject')
     delproject.setAttribute('id', projectIncrement)
-    delproject.innerText = 'x'
+    delproject.innerHTML = '&times;'
+    // delproject.innerHTML = '<span class="material-symbols-outlined">backspace</span>'
 
     listprojects.appendChild(newdiv)
     newdiv.appendChild(delproject)
@@ -539,7 +546,8 @@ function updateproject(item) {
     const delproject = document.createElement('button')
     delproject.setAttribute('class', 'delproject')
     delproject.setAttribute('id', item.number)
-    delproject.innerText = 'x'
+    delproject.innerHTML = '&times;'
+    // delproject.innerHTML = '<span class="material-symbols-outlined">backspace</span>'
 
     listprojects.appendChild(newdiv)
     newdiv.appendChild(delproject)

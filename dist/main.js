@@ -22,7 +22,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Raleway:wght@100;400&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ":root {\n    --rowNum: \"\";\n}\n\nbody {\n    margin: 0;\n    font-family: 'raleway', 'sans-serif'\n}\n\n#header {\n    background-color: #FFD4B2;\n    opacity: 0.8;\n    background-image:  linear-gradient(135deg, #fffdf2 25%, transparent 25%), linear-gradient(225deg, #fffdf2 25%, transparent 25%), linear-gradient(45deg, #fffdf2 25%, transparent 25%), linear-gradient(315deg, #fffdf2 25%, #FFD4B2 25%);\n    background-position:  27px 0, 27px 0, 0 0, 0 0;\n    background-size: 54px 54px;\n    background-repeat: repeat;\n    /* font-weight: 400; */\n    font-size: 25px;\n    /* height: 10vh; */\n    padding: 16px;\n\n}\n\n#container {\n    display: grid;\n    grid-template-columns: 15vw auto; \n    height: 90vh;\n\n}\n\n#containertitle {\n    text-align: center;\n    padding: 5px;\n    font-size: 20px;\n}\n\n.sidebar {\n    background-color: #fffdf2\n    /* height: 90vh; */\n}\n\n#content {\n    background-color: #fffdf2;\n    opacity: 0.8;\n    background-image:  linear-gradient(#d2d2d2 1.1px, transparent 1.1px), linear-gradient(to right, #d2d2d2 1.1px, #fffdf2 1.1px);\n    background-size: 22px 22px;\n    /* background: #FFF6BD */\n    \n}\n\n#popup {\n    z-index: 1;\n    position: fixed;\n    top: 0;\n    left: 0;\n    padding-top: 20%;\n    overflow: auto; \n    background: white;\n    height: 100%;\n    width: 100%;\n    background-color: rgba(0,0,0,0);\n    /* filter: blur(8px); */\n    /* margin: auto; */\n}\n\n.popTop {\n    display: flex;\n    justify-content: space-between;\n    background-color: #86C8BC;\n    padding: 10px 30px 10px 30px;\n    font-size: 17px;\n}\n\n#popDelete::before {\n    content: \"\\2715\";\n    font-size: 10px;\n    /* position: fixed; */\n    /* z-index: 1; */\n\n}\n\n#popContent {\n    border-radius: 40px 15px;\n    overflow: hidden;\n    border:#d2d2d2;\n    position: fixed;\n    left: 30%;\n    width: 400px;\n}\n\n\n.popSidebar {\n    /* width: 10vw; */\n    height: 40vh;\n    /* border-right: 1px solid black; */\n}\n\n.popBelow {\n    display: flex;\n    padding: 20px 30px;\n    background-color: #CEEDC7;\n}\n\n.popInput {\n    width: 100%;\n    /* background-color: #CEEDC7; */\n    display: flex;\n    flex-direction: column;\n    gap: 10px;\n\n}\n\ninput[type=text], input[type=radio], input[type=date], #file, #submit {\n    /* border: 1px solid #d2d2d2; */\n    border: none;\n    font-size: 15px;\n    height: 20px;\n    border-radius: 5px;\n    background-color: #fffdf2;\n}\n\n#lowlabel {\n    background-color: #C7E6B8;\n}\n\n#mediumlabel {\n    background-color: #FCEC89;\n}\n\n#highlabel {\n    background-color: #FAAFA0;\n}\n\n#submit {\n    background-color: #86C8BC;\n    /* padding: 10px; */\n    font-size: 15px;\n    border-radius: 40px;\n    margin-top: 10px;\n    height: 25px;\n}\n\n.todoContainer {\n    display: flex;\n    justify-content: space-around;\n    flex-direction: row;\n    height: 50px;\n    border: 1px solid #d2d2d2;\n    border-radius: 20px;\n    margin: 10px;\n\n}\n\n#new, #popDelete, #submit, .detail, .editBTN, .deletetodo {\n    cursor: pointer;\n}\n\nli {\n    cursor: pointer;\n    list-style-type: none;\n    padding: 10px;\n}\n\n.editBTN, .deletetodo {\n    display: flex;\n    flex-direction: row-reverse;\n    align-items: center;\n    gap: 5px;\n    border: none;\n    background-color: transparent;\n}\n\n.check-container, .duedate {\n    display: flex;\n    align-items: center;\n    background-color: white;\n    min-width: 400px;\n}\n\n.duedate {\n    background-color: white;\n    min-width: 80px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ":root {\n    --rowNum: \"\";\n}\n\nbody {\n    margin: 0;\n    font-family: 'raleway', 'sans-serif'\n}\n\n#header {\n    background-color: #FFD4B2;\n    /* opacity: 0.8; */\n    background-image:  linear-gradient(135deg, #fffdf2 25%, transparent 25%), linear-gradient(225deg, #fffdf2 25%, transparent 25%), linear-gradient(45deg, #fffdf2 25%, transparent 25%), linear-gradient(315deg, #fffdf2 25%, #FFD4B2 25%);\n    background-position:  27px 0, 27px 0, 0 0, 0 0;\n    background-size: 54px 54px;\n    background-repeat: repeat;\n    /* font-weight: 400; */\n    font-size: 25px;\n    /* height: 10vh; */\n    padding-top: 16px;\n    padding-bottom: 16px;\n    padding-left: 30px;\n\n}\n\n#container {\n    /* display: grid; */\n    /* grid-template-columns: 13.7vw auto;  */\n    /* height: 90vh; */\n\n}\n\n#containertitle {\n    text-align: center;\n    padding: 5px;\n    font-size: 20px;\n}\n\n.sidebar {\n    background-color: #fffdf2;\n\n    height: 100%;\n    width: 0;\n    position: fixed;\n    z-index: 1;\n    top: 0;\n    left: 0;\n    overflow-x: hidden;\n    transition: 0.5s;\n    margin-top: 60px;\n}\n\n#content {\n    background-color: #fffdf2;\n    opacity: 0.8;\n    background-image:  linear-gradient(#d2d2d2 1.1px, transparent 1.1px), linear-gradient(to right, #d2d2d2 1.1px, #fffdf2 1.1px);\n    background-size: 22px 22px;\n    transition: margin-left 0.5s;\n    height: 100vh;\n    /* background: #FFF6BD */\n    \n}\n\n#popup {\n    z-index: 1;\n    position: fixed;\n    top: 0;\n    left: 0;\n    padding-top: 20%;\n    overflow: auto; \n    background: white;\n    height: 100%;\n    width: 100%;\n    background-color: rgba(0,0,0,0);\n    /* filter: blur(8px); */\n    /* margin: auto; */\n}\n\n.popTop {\n    display: flex;\n    justify-content: space-between;\n    background-color: #86C8BC;\n    padding: 10px 30px 10px 30px;\n    font-size: 17px;\n}\n\n#popDelete::before {\n    content: \"\\2715\";\n    font-size: 10px;\n    /* position: fixed; */\n    /* z-index: 1; */\n\n}\n\n#popContent {\n    border-radius: 40px 15px;\n    overflow: hidden;\n    border:#d2d2d2;\n    position: fixed;\n    left: 30%;\n    width: 400px;\n}\n\n\n.popSidebar {\n    /* width: 10vw; */\n    height: 40vh;\n    /* border-right: 1px solid black; */\n}\n\n.popBelow {\n    display: flex;\n    padding: 20px 30px;\n    background-color: #CEEDC7;\n}\n\n.popInput {\n    width: 100%;\n    /* background-color: #CEEDC7; */\n    display: flex;\n    flex-direction: column;\n    gap: 10px;\n\n}\n\ninput[type=text], input[type=radio], input[type=date], #file, #submit {\n    /* border: 1px solid #d2d2d2; */\n    border: none;\n    font-size: 15px;\n    height: 20px;\n    border-radius: 5px;\n    background-color: #fffdf2;\n}\n\n#lowlabel {\n    background-color: #C7E6B8;\n}\n\n#mediumlabel {\n    background-color: #FCEC89;\n}\n\n#highlabel {\n    background-color: #FAAFA0;\n}\n\n#submit {\n    background-color: #86C8BC;\n    /* padding: 10px; */\n    font-size: 15px;\n    border-radius: 40px;\n    margin-top: 10px;\n    height: 25px;\n}\n\n.todoContainer {\n    display: flex;\n    justify-content: space-around;\n    flex-direction: row;\n    height: 50px;\n    border: 1px solid #d2d2d2;\n    border-radius: 20px;\n    margin: 10px;\n\n}\n\n#new, #popDelete, #submit, .detail, .editBTN, .deletetodo, #newproject, .delproject, #headtitle{\n    cursor: pointer;\n}\n\nli {\n    cursor: pointer;\n    list-style-type: none;\n    padding: 16px;\n}\n\n.editBTN, .deletetodo {\n    display: flex;\n    flex-direction: row-reverse;\n    align-items: center;\n    gap: 5px;\n    border: none;\n    background-color: transparent;\n}\n\n.check-container, .duedate {\n    display: flex;\n    align-items: center;\n    min-width: 400px;\n}\n\n.duedate {\n    min-width: 80px;\n}\n\n.material-symbols-outlined {\n    pointer-events: all;\n}\n\n.listprojects {\n    padding-left: 10px;\n}\n#new {\n    border: 1px dashed;\n    border-radius: 20px;\n    background-color: #FFD4B2;\n    height: 50px;\n    width: 174px;\n    font-size: 18px;\n    opacity: 0.8;\n    margin-top: 1px;\n\n}\n\n.projects {\n    padding-top: 10px;\n    font-size: 15px;\n    display: flex;\n    justify-content: space-between;\n}\n\n#newproject {\n    border: 1px dashed;\n    border-radius: 50%;\n    background-color: #FFD4B2;\n    height: 25px;\n    width: 25px;\n    margin-left: 30px;\n}\n\n.delproject {\n    border: none;\n    background-color: transparent;\n    font-size: 15px;\n    font-weight: 100;\n    color: grey;\n}\n\n#inbox, #today {\n    display: flex;\n    align-items: center;\n    gap: 5px;\n}\n\n#separate {\n    background-color: #FFD4B2;\n    opacity: 0.8;\n    height: 10px;\n}\n\n#headtitle:hover {\n    color: red;\n}\n\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -3736,6 +3736,7 @@ function newproject() {
 
         titleInput.value = ""
         titleInput.setAttribute('placeholder', "")
+        titleInput.setAttribute('maxlength', "11")
 
     })
 }
@@ -3797,9 +3798,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "projectIncrement": () => (/* binding */ projectIncrement),
 /* harmony export */   "todoJob": () => (/* binding */ todoJob)
 /* harmony export */ });
-/* harmony import */ var date_fns_format__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! date-fns/format */ "./node_modules/date-fns/esm/format/index.js");
-/* harmony import */ var date_fns_startOfToday__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! date-fns/startOfToday */ "./node_modules/date-fns/esm/startOfToday/index.js");
-/* harmony import */ var _inbox_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./inbox.js */ "./src/inbox.js");
+/* harmony import */ var date_fns_format__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! date-fns/format */ "./node_modules/date-fns/esm/format/index.js");
+/* harmony import */ var date_fns_startOfToday__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! date-fns/startOfToday */ "./node_modules/date-fns/esm/startOfToday/index.js");
+/* harmony import */ var _DOM_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DOM.js */ "./src/DOM.js");
+/* harmony import */ var _inbox_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./inbox.js */ "./src/inbox.js");
+
 
 
 
@@ -4024,7 +4027,7 @@ window.onload = (e) => {
     getlocalstorage()
     getprojectstorage()
     getincrement()
-    myToDo.forEach((item) => (0,_inbox_js__WEBPACK_IMPORTED_MODULE_0__.line)(item))
+    myToDo.forEach((item) => (0,_inbox_js__WEBPACK_IMPORTED_MODULE_1__.line)(item))
     myProjects.forEach((item) => updateproject(item))
     console.log(myToDo)
 }
@@ -4035,7 +4038,12 @@ function submitBTN(){
     const submit = document.getElementById('submit')
     let header = document.getElementById('containertitle')
 
+    if(document.getElementById('titleInput').value == "") {
+        alert('Please enter a title')
+        return
+    }
     if (submit.innerText == 'ADD TODO') {
+
         if (header.textContent == 'Inbox') {
             createNew()
             newLine()
@@ -4043,8 +4051,8 @@ function submitBTN(){
         } else if (header.textContent == 'Today') {
             createNew()
             
-            const today = (0,date_fns_startOfToday__WEBPACK_IMPORTED_MODULE_1__["default"])()
-            const newdate = (0,date_fns_format__WEBPACK_IMPORTED_MODULE_2__["default"])(new Date(today), 'yyyy-MM-dd')
+            const today = (0,date_fns_startOfToday__WEBPACK_IMPORTED_MODULE_2__["default"])()
+            const newdate = (0,date_fns_format__WEBPACK_IMPORTED_MODULE_3__["default"])(new Date(today), 'yyyy-MM-dd')
             
             content.replaceChildren()
     
@@ -4054,7 +4062,7 @@ function submitBTN(){
             content.appendChild(todayheader)
     
             const filterdates = myToDo.filter(item => item.date == newdate)
-            filterdates.forEach((item) => (0,_inbox_js__WEBPACK_IMPORTED_MODULE_0__.line)(item))
+            filterdates.forEach((item) => (0,_inbox_js__WEBPACK_IMPORTED_MODULE_1__.line)(item))
             // console.log(filterdates)
             idIncrement++
         } else if (document.getElementById('file').value == document.getElementById('containertitle').attributes['name'].value) {
@@ -4073,7 +4081,7 @@ function submitBTN(){
             content.appendChild(projectheader)
 
             const filtertodo = myToDo.filter(item => item.project == editproject)
-            filtertodo.forEach((item) => (0,_inbox_js__WEBPACK_IMPORTED_MODULE_0__.line)(item))
+            filtertodo.forEach((item) => (0,_inbox_js__WEBPACK_IMPORTED_MODULE_1__.line)(item))
 
             console.log(editproject)
             idIncrement++
@@ -4090,8 +4098,8 @@ function submitBTN(){
         } else if (header.textContent == 'Today') {
             todoedit()
 
-            const today = (0,date_fns_startOfToday__WEBPACK_IMPORTED_MODULE_1__["default"])()
-            const newdate = (0,date_fns_format__WEBPACK_IMPORTED_MODULE_2__["default"])(new Date(today), 'yyyy-MM-dd')
+            const today = (0,date_fns_startOfToday__WEBPACK_IMPORTED_MODULE_2__["default"])()
+            const newdate = (0,date_fns_format__WEBPACK_IMPORTED_MODULE_3__["default"])(new Date(today), 'yyyy-MM-dd')
             
             content.replaceChildren()
     
@@ -4101,7 +4109,7 @@ function submitBTN(){
             content.appendChild(todayheader)
     
             const filterdates = myToDo.filter(item => item.date == newdate)
-            filterdates.forEach((item) => (0,_inbox_js__WEBPACK_IMPORTED_MODULE_0__.line)(item))
+            filterdates.forEach((item) => (0,_inbox_js__WEBPACK_IMPORTED_MODULE_1__.line)(item))
         } else if (document.getElementById('file').value == document.getElementById('containertitle').attributes['name'].value) {
             const editproject = document.getElementById('file').value
             const projectbox = header.textContent
@@ -4118,7 +4126,7 @@ function submitBTN(){
             content.appendChild(projectheader)
 
             const filtertodo = myToDo.filter(item => item.project == newname)
-            filtertodo.forEach((item) => (0,_inbox_js__WEBPACK_IMPORTED_MODULE_0__.line)(item))
+            filtertodo.forEach((item) => (0,_inbox_js__WEBPACK_IMPORTED_MODULE_1__.line)(item))
 
             console.log(editproject)
         } else {
@@ -4135,7 +4143,7 @@ function submitBTN(){
             content.appendChild(projectheader)
 
             const filtertodo = myToDo.filter(item => item.project == newname)
-            filtertodo.forEach((item) => (0,_inbox_js__WEBPACK_IMPORTED_MODULE_0__.line)(item))
+            filtertodo.forEach((item) => (0,_inbox_js__WEBPACK_IMPORTED_MODULE_1__.line)(item))
         }
     } else if (submit.innerText == 'ADD NEW PROJECT') {
         addproject()
@@ -4242,7 +4250,7 @@ function todoJob() {
             inboxheader.innerText = 'Inbox'
             content.appendChild(inboxheader)
     
-            myToDo.forEach((item) => (0,_inbox_js__WEBPACK_IMPORTED_MODULE_0__.line)(item))
+            myToDo.forEach((item) => (0,_inbox_js__WEBPACK_IMPORTED_MODULE_1__.line)(item))
 
             addlocalstorage(myToDo)
             getlocalstorage()
@@ -4312,7 +4320,8 @@ function projectline() {
     const delproject = document.createElement('button')
     delproject.setAttribute('class', 'delproject')
     delproject.setAttribute('id', projectIncrement)
-    delproject.innerText = 'x'
+    delproject.innerHTML = '&times;'
+    // delproject.innerHTML = '<span class="material-symbols-outlined">backspace</span>'
 
     listprojects.appendChild(newdiv)
     newdiv.appendChild(delproject)
@@ -4341,7 +4350,8 @@ function updateproject(item) {
     const delproject = document.createElement('button')
     delproject.setAttribute('class', 'delproject')
     delproject.setAttribute('id', item.number)
-    delproject.innerText = 'x'
+    delproject.innerHTML = '&times;'
+    // delproject.innerHTML = '<span class="material-symbols-outlined">backspace</span>'
 
     listprojects.appendChild(newdiv)
     newdiv.appendChild(delproject)
@@ -4464,9 +4474,15 @@ __webpack_require__.r(__webpack_exports__);
 ;(0,_inbox_js__WEBPACK_IMPORTED_MODULE_3__.newproject)()
 ;(0,_inbox_js__WEBPACK_IMPORTED_MODULE_3__.fillproject)()
 
+document.getElementById('headtitle').addEventListener('click', function(){  
+    document.getElementsByClassName('sidebar')[0].style.width = '175px';
+    document.getElementById('content').style.marginLeft = "175px";
+})
 
-
-
+document.getElementById('content').addEventListener('click', function(){
+    document.getElementsByClassName('sidebar')[0].style.width = '0';
+    document.getElementById('content').style.marginLeft = '0';
+})
 })();
 
 /******/ })()

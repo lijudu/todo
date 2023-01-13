@@ -11,7 +11,7 @@ body {
 
 #header {
     background-color: #FFD4B2;
-    opacity: 0.8;
+    /* opacity: 0.8; */
     background-image:  linear-gradient(135deg, #fffdf2 25%, transparent 25%), linear-gradient(225deg, #fffdf2 25%, transparent 25%), linear-gradient(45deg, #fffdf2 25%, transparent 25%), linear-gradient(315deg, #fffdf2 25%, #FFD4B2 25%);
     background-position:  27px 0, 27px 0, 0 0, 0 0;
     background-size: 54px 54px;
@@ -19,14 +19,16 @@ body {
     /* font-weight: 400; */
     font-size: 25px;
     /* height: 10vh; */
-    padding: 16px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 30px;
 
 }
 
 #container {
-    display: grid;
-    grid-template-columns: 15vw auto; 
-    height: 90vh;
+    /* display: grid; */
+    /* grid-template-columns: 13.7vw auto;  */
+    /* height: 90vh; */
 
 }
 
@@ -37,8 +39,17 @@ body {
 }
 
 .sidebar {
-    background-color: #fffdf2
-    /* height: 90vh; */
+    background-color: #fffdf2;
+
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    transition: 0.5s;
+    margin-top: 60px;
 }
 
 #content {
@@ -46,6 +57,8 @@ body {
     opacity: 0.8;
     background-image:  linear-gradient(#d2d2d2 1.1px, transparent 1.1px), linear-gradient(to right, #d2d2d2 1.1px, #fffdf2 1.1px);
     background-size: 22px 22px;
+    transition: margin-left 0.5s;
+    height: 100vh;
     /* background: #FFF6BD */
     
 }
@@ -153,14 +166,14 @@ input[type=text], input[type=radio], input[type=date], #file, #submit {
 
 }
 
-#new, #popDelete, #submit, .detail, .editBTN, .deletetodo {
+#new, #popDelete, #submit, .detail, .editBTN, .deletetodo, #newproject, .delproject, #headtitle{
     cursor: pointer;
 }
 
 li {
     cursor: pointer;
     list-style-type: none;
-    padding: 10px;
+    padding: 16px;
 }
 
 .editBTN, .deletetodo {
@@ -175,11 +188,69 @@ li {
 .check-container, .duedate {
     display: flex;
     align-items: center;
-    background-color: white;
     min-width: 400px;
 }
 
 .duedate {
-    background-color: white;
     min-width: 80px;
 }
+
+.material-symbols-outlined {
+    pointer-events: all;
+}
+
+.listprojects {
+    padding-left: 10px;
+}
+#new {
+    border: 1px dashed;
+    border-radius: 20px;
+    background-color: #FFD4B2;
+    height: 50px;
+    width: 174px;
+    font-size: 18px;
+    opacity: 0.8;
+    margin-top: 1px;
+
+}
+
+.projects {
+    padding-top: 10px;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#newproject {
+    border: 1px dashed;
+    border-radius: 50%;
+    background-color: #FFD4B2;
+    height: 25px;
+    width: 25px;
+    margin-left: 30px;
+}
+
+.delproject {
+    border: none;
+    background-color: transparent;
+    font-size: 15px;
+    font-weight: 100;
+    color: grey;
+}
+
+#inbox, #today {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#separate {
+    background-color: #FFD4B2;
+    opacity: 0.8;
+    height: 10px;
+}
+
+#headtitle:hover {
+    color: red;
+}
+

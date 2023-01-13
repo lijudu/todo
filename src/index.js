@@ -14,5 +14,12 @@ today()
 newproject()
 fillproject()
 
+document.getElementById('headtitle').addEventListener('click', function(){  
+    document.getElementsByClassName('sidebar')[0].style.width = '175px';
+    document.getElementById('content').style.marginLeft = "175px";
+})
 
-
+document.getElementById('content').addEventListener('click', function(){
+    document.getElementsByClassName('sidebar')[0].style.width = '0';
+    document.getElementById('content').style.marginLeft = '0';
+})
