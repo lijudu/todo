@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;400&display=swap');
 
+
+
 :root {
     --rowNum: "";
 }
@@ -18,19 +20,14 @@ body {
     background-repeat: repeat;
     /* font-weight: 400; */
     font-size: 25px;
-    /* height: 10vh; */
+    height: 30px;
     padding-top: 16px;
     padding-bottom: 16px;
     padding-left: 30px;
 
-}
-
-#container {
-    /* display: grid; */
-    /* grid-template-columns: 13.7vw auto;  */
-    /* height: 90vh; */
 
 }
+
 
 #containertitle {
     text-align: center;
@@ -48,7 +45,7 @@ body {
     top: 0;
     left: 0;
     overflow-x: hidden;
-    transition: 0.5s;
+    transition: 0.2s;
     margin-top: 60px;
 }
 
@@ -57,8 +54,8 @@ body {
     opacity: 0.8;
     background-image:  linear-gradient(#d2d2d2 1.1px, transparent 1.1px), linear-gradient(to right, #d2d2d2 1.1px, #fffdf2 1.1px);
     background-size: 22px 22px;
-    transition: margin-left 0.5s;
-    height: 100vh;
+    transition: margin-left 0.2s;
+    height: 90vh;
     /* background: #FFF6BD */
     
 }
@@ -89,8 +86,7 @@ body {
 #popDelete::before {
     content: "\2715";
     font-size: 10px;
-    /* position: fixed; */
-    /* z-index: 1; */
+
 
 }
 
@@ -188,7 +184,8 @@ li {
 .check-container, .duedate {
     display: flex;
     align-items: center;
-    min-width: 400px;
+    width: 300px;
+
 }
 
 .duedate {
@@ -210,7 +207,8 @@ li {
     width: 174px;
     font-size: 18px;
     opacity: 0.8;
-    margin-top: 1px;
+    /* margin-top: 20px; */
+    
 
 }
 
@@ -228,6 +226,7 @@ li {
     height: 25px;
     width: 25px;
     margin-left: 30px;
+    position: absolute;
 }
 
 .delproject {
@@ -250,7 +249,33 @@ li {
     height: 10px;
 }
 
-#headtitle:hover {
-    color: red;
+#headtitle:hover, #new:hover, #inbox:hover, #today:hover, #newproject:hover, .projects:hover {
+    color: #70492a;
 }
 
+.sidebar {
+    width: 175px;
+}
+
+#content {
+    margin-left: 175px;
+}
+
+/* mobile size is 480 lol */
+@media screen and (max-width: 800px) {
+    .check-container {
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        hyphens: auto;
+        min-width: 200px;
+    }
+
+    .sidebar {
+        width: 0px;
+    }
+
+    #content {
+        margin-left: 0px;
+
+    }
+}

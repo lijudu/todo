@@ -14,12 +14,23 @@ today()
 newproject()
 fillproject()
 
-document.getElementById('headtitle').addEventListener('click', function(){  
-    document.getElementsByClassName('sidebar')[0].style.width = '175px';
-    document.getElementById('content').style.marginLeft = "175px";
-})
+let sideopen = true
+let background = window.matchMedia('(max-width: 800px)')
 
-document.getElementById('content').addEventListener('click', function(){
-    document.getElementsByClassName('sidebar')[0].style.width = '0';
-    document.getElementById('content').style.marginLeft = '0';
-})
+document.getElementById('headtitle').addEventListener('click', function(){
+    if (sideopen == true) {
+            document.getElementsByClassName('sidebar')[0].style.width = '0';
+            document.getElementById('content').style.marginLeft = '0';
+            sideopen = false
+        } else if (sideopen == false) {
+            document.getElementsByClassName('sidebar')[0].style.width = '175px';
+            document.getElementById('content').style.marginLeft = "175px";
+            sideopen = true
+        }
+    })
+
+    // document.getElementsByClassName('sidebar')[0].style.width = '0';
+    // document.getElementById('content').style.marginLeft = '0';
+
+    //             document.getElementsByClassName('sidebar')[0].style.width = '175px';
+    //         document.getElementById('content').style.marginLeft = "175px";
