@@ -29,8 +29,12 @@ document.getElementById('headtitle').addEventListener('click', function(){
         }
     })
 
-    // document.getElementsByClassName('sidebar')[0].style.width = '0';
-    // document.getElementById('content').style.marginLeft = '0';
-
-    //             document.getElementsByClassName('sidebar')[0].style.width = '175px';
-    //         document.getElementById('content').style.marginLeft = "175px";
+window.addEventListener('resize', function() {
+    if(this.window.innerWidth > 800 ) {
+        document.getElementsByClassName('sidebar')[0].style.width = '175px';
+        document.getElementById('content').style.marginLeft = "175px";
+    } else {
+        document.getElementsByClassName('sidebar')[0].style.width = '0';
+        document.getElementById('content').style.marginLeft = '0';
+    }
+})
